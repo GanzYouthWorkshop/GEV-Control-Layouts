@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SciterSharpWindows</name>
+    </assembly>
+    <members>
+        <member name="M:SciterSharp.MessageBox.ShowMessageBox(SciterSharp.SciterWindow,System.String,System.String)">
+            <summary>
+            Show a system message-box owned by this Sciter window. If caption is null, it will be the title of the Sciter window
+            </summary>
+            <param name="wnd"></param>
+            <param name="text"></param>
+            <param name="caption"></param>
+        </member>
+        <member name="T:SciterSharp.Interop.PInvokeWindows.MessageBoxOptions">
+            <summary>
+             Flags that define appearance and behaviour of a standard message box displayed by a call to the MessageBox function.
+             </summary>    
+        </member>
+        <member name="T:SciterSharp.Interop.PInvokeWindows.MessageBoxResult">
+            <summary>
+            Represents possible values returned by the MessageBox function.
+            </summary>
+        </member>
+        <member name="T:SciterSharp.Interop.ScreenCapture">
+            <summary>
+            Provides functions to capture the entire screen, or a particular window, and save it to a file.
+            </summary>
+        </member>
+        <member name="M:SciterSharp.Interop.ScreenCapture.CaptureScreen">
+            <summary>
+            Creates an Image object containing a screen shot of the entire desktop
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SciterSharp.Interop.ScreenCapture.CaptureWindow(System.IntPtr)">
+            <summary>
+            Creates an Image object containing a screen shot of a specific window
+            </summary>
+            <param name="handle">The handle to the window. (In windows forms, this is obtained by the Handle property)</param>
+            <returns></returns>
+        </member>
+        <member name="M:SciterSharp.Interop.ScreenCapture.CaptureWindowToFile(System.IntPtr,System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Captures a screen shot of a specific window, and saves it to a file
+            </summary>
+            <param name="handle"></param>
+            <param name="filename"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:SciterSharp.Interop.ScreenCapture.CaptureScreenToFile(System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Captures a screen shot of the entire desktop, and saves it to a file
+            </summary>
+            <param name="filename"></param>
+            <param name="format"></param>
+        </member>
+        <member name="T:SciterSharp.Interop.ScreenCapture.GDI32">
+            <summary>
+            Helper class containing Gdi32 API functions
+            </summary>
+        </member>
+        <member name="T:SciterSharp.Interop.ScreenCapture.User32">
+            <summary>
+            Helper class containing User32 API functions
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterDebugOutputHandler.#ctor">
+            <summary>
+            Setup a global debug output handler
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterDebugOutputHandler.#ctor(System.IntPtr)">
+            <summary>
+            Setup a Sciter window specific debug output handler
+            </summary>
+            <param name="hwnd"></param>
+        </member>
+        <member name="M:SciterSharp.SciterElement.Test(System.String)">
+            <summary>
+            Test this element against CSS selector(s)
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterImage.#ctor(System.Byte[])">
+            <summary>
+            Loads image from PNG or JPG image buffer
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterImage.#ctor(System.IntPtr,System.UInt32,System.UInt32,System.Boolean)">
+            <summary>
+            Loads image from RAW BGRA pixmap data
+            Size of pixmap data is pixmapWidth*pixmapHeight*4
+            construct image from B[n+0],G[n+1],R[n+2],A[n+3] data
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterImage.Save(SciterSharp.Interop.SciterXGraphics.SCITER_IMAGE_ENCODING,System.UInt32)">
+            <summary>
+            Save this image to png/jpeg/WebP stream of bytes
+            </summary>
+            <param name="encoding">The output image type</param>
+            <param name="quality">png: 0, jpeg/WebP: 10 - 100</param>
+        </member>
+        <member name="M:SciterSharp.SciterHost.AttachEvh(SciterSharp.SciterEventHandler)">
+            <summary>
+            Attacheds a window level event-handler: it receives every event for all elements of the page.
+            You can only attach a single event-handler.
+            </summary>
+            <param name="evh"></param>
+        </member>
+        <member name="M:SciterSharp.SciterHost.DetachEvh">
+            <summary>
+            Detaches the event-handler previously attached with AttachEvh()
+            </summary>
+            <param name="evh"></param>
+        </member>
+        <member name="M:SciterSharp.SciterHost.InvokePost(System.Action)">
+            <summary>
+            Posts a message to the UI thread to invoke the given Action. This methods returns immediatly, does not wait for the message processing.
+            </summary>
+            <param name="what">The delegate which will be invoked</param>
+        </member>
+        <member name="M:SciterSharp.SciterHost.InvokeSend(System.Action,System.UInt32)">
+            <summary>
+            Sends a message to the UI thread to invoke the given Action. This methods waits for the message processing until timeout is exceeded.
+            </summary>
+            <param name="what">The delegate which will be invoked</param>
+        </member>
+        <member name="M:SciterSharp.SciterHost.DebugInspect">
+            <summary>
+            Runs the inspector process, waits 1 second, and calls view.connectToInspector() to inspect your page.
+            The 'inspector(.exe)' executable must be found in the PATH or can be in the same directory of the executing assembly
+            (Before everything it kills any previous instance of the inspector process)
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterHost.DebugInspect(System.String)">
+            <summary>
+            Runs the inspector process, waits 1 second, and calls view.connectToInspector() to inspect your page.
+            (Before everything it kills any previous instance of the inspector process)
+            </summary>
+            <param name="inspector_exe">Path to the inspector executable, can be an absolute or relative path.</param>
+        </member>
+        <member name="M:SciterSharp.SciterHost.PostNotification(System.IntPtr,System.IntPtr,System.UInt32)">
+            <summary>
+            Sciter cross-platform alternative for posting a message in the message queue.
+            It will be received as a SC_POSTED_NOTIFICATION notification by this SciterHost instance.
+            Override OnPostedNotification() to handle it.
+            </summary>
+            <param name="timeout">
+            If timeout is > 0 this methods SENDs the message instead of POSTing and this is the timeout for waiting the processing of the message. Leave it as 0 for actually POSTing the message.
+            </param>
+        </member>
+        <member name="M:SciterSharp.SciterValue.MakeError(System.String)">
+            <summary>
+            Returns SciterValue representing error.
+            If such value is used as a return value from native function the script runtime will throw an error in script rather than returning that value.
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.CreateWindow(SciterSharp.Interop.PInvokeUtils.RECT,SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS,System.IntPtr)">
+            <summary>
+            Creates the Sciter window and returns the native handle
+            </summary>
+            <param name="frame">Rectangle of the window</param>
+            <param name="creationFlags">Flags for the window creation, defaults to SW_MAIN | SW_TITLEBAR | SW_RESIZEABLE | SW_CONTROLS | SW_ENABLE_DEBUG</param>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.CenterTopLevelWindow">
+            <summary>
+            Centers the window in the screen. You must call it after the window is created, but before it is shown to avoid flickering
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.GetPrimaryMonitorScreenSize">
+            <summary>
+            Cross-platform handy method to get the size of the screen
+            </summary>
+            <returns>SIZE measures of the screen of primary monitor</returns>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.LoadPage(System.String)">
+            <summary>
+            Loads the page resource from the given URL or file path
+            </summary>
+            <param name="url_or_filepath">URL or file path of the page</param>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.LoadHtml(System.String,System.String)">
+            <summary>
+            Loads HTML input from a string
+            </summary>
+            <param name="html">HTML of the page to be loaded</param>
+            <param name="baseUrl">Base Url given to the loaded page</param>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.Close">
+            <summary>
+            Close the window. Posts WM_CLOSE message on Windows.
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.ElementAtPoint(System.Int32,System.Int32)">
+            <summary>
+            Find element at point x/y of the window, client area relative
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.ElementByUID(System.UInt32)">
+            <summary>
+            Searches this windows DOM tree for element with the given UID
+            </summary>
+            <returns>The element, or null if it doesn't exists</returns>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.UpdateWindow">
+            <summary>
+            Update pending changes in Sciter window and forces painting if necessary
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.SetMediaType(System.String)">
+            <summary>
+            For example media type can be "handheld", "projection", "screen", "screen-hires", etc.
+            By default sciter window has "screen" media type.
+            Media type name is used while loading and parsing style sheets in the engine so
+            you should call this function* before* loading document in it.
+            </summary>
+        </member>
+        <member name="M:SciterSharp.SciterWindow.SetMediaVars(SciterSharp.SciterValue)">
+            <summary>
+            For example media type can be "handheld:true", "projection:true", "screen:true", etc.
+            By default sciter window has "screen:true" and "desktop:true"/"handheld:true" media variables.
+            Media variables can be changed in runtime. This will cause styles of the document to be reset.
+            </summary>
+            <param name="mediaVars">Map that contains name/value pairs - media variables to be set</param>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_MOUSE">
+            attached/detached 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_KEY">
+            mouse events 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_FOCUS">
+            key events 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_SCROLL">
+            focus events, if this flag is set it also means that element it attached to is focusable 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_TIMER">
+            scroll events 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_SIZE">
+            timer event 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_DRAW">
+            size changed event 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_DATA_ARRIVED">
+            drawing request (event) 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_BEHAVIOR_EVENT">
+            requested data () has been delivered 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_METHOD_CALL">
+            logical, synthetic events:
+            													BUTTON_CLICK, HYPERLINK_CLICK, etc.,
+            													a.k.a. notifications from intrinsic behaviors 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_SCRIPTING_METHOD_CALL">
+            behavior specific methods 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_TISCRIPT_METHOD_CALL">
+            behavior specific methods 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_EXCHANGE">
+            behavior specific methods using direct tiscript::value's 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_GESTURE">
+            system drag-n-drop 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.EVENT_GROUPS.HANDLE_ALL">
+            touch input events 
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXBehaviors.GESTURE_PARAMS.flags">
+            <summary>
+            GESTURE_TYPE_FLAGS or GESTURE_STATE combination
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_UNKNOWN" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_EDIT" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_NUMERIC" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_CLICKABLE" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_BUTTON" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_CHECKBOX" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_RADIO" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_SELECT_SINGLE" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_SELECT_MULTIPLE" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_DD_SELECT" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_TEXTAREA" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_HTMLAREA" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_PASSWORD" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_PROGRESS" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_SLIDER" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_DECIMAL" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_CURRENCY" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_SCROLLBAR" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_PATH" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_LAST_INPUT" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_TOOLBAR" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_LABEL" -->
+        <!-- Badly formed XML comment ignored for member "F:SciterSharp.Interop.SciterXDom.CTL_TYPE.CTL_PLAINTEXT" -->
+        <member name="F:SciterSharp.Interop.SciterXDef.LoadResult.LOAD_OK">
+            <summary>
+            do default loading if data not set
+            </summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.LoadResult.LOAD_DISCARD">
+            <summary>
+            discard request completely
+            </summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.LoadResult.LOAD_DELAYED">
+            <summary>
+            data will be delivered later by the host
+            Host application must call SciterDataReadyAsync(,,, requestId) on each LOAD_DELAYED request to avoid memory leaks.
+            </summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.LoadResult.LOAD_MYSELF">
+            <summary>
+            you return LOAD_MYSELF result to indicate that your (the host) application took or will take care about HREQUEST in your code completely.
+            Use sciter-x-request.h[pp] API functions with SCN_LOAD_DATA::requestId handle.
+            </summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_SMOOTH_SCROLL">
+            <summary>value:TRUE - enable, value:FALSE - disable, enabled by default</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_CONNECTION_TIMEOUT">
+            <summary>value: milliseconds, connection timeout of http client</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_HTTPS_ERROR">
+            <summary>value: 0 - drop connection, 1 - use builtin dialog, 2 - accept connection silently</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_FONT_SMOOTHING">
+            <summary>value: 0 - system default, 1 - no smoothing, 2 - std smoothing, 3 - clear type</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_TRANSPARENT_WINDOW">
+            <summary>
+            Windows Aero support, value: 
+            0 - normal drawing, 
+            1 - window has transparent background after calls DwmExtendFrameIntoClientArea() or DwmEnableBlurBehindWindow()
+            </summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_SET_GPU_BLACKLIST">
+            <summary>
+            hWnd = NULL,
+            value = LPCBYTE, json - GPU black list, see: gpu-blacklist.json resource.
+            </summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_SET_SCRIPT_RUNTIME_FEATURES">
+            <summary>value - combination of SCRIPT_RUNTIME_FEATURES flags.</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_SET_GFX_LAYER">
+            <summary>hWnd = NULL, value - GFX_LAYER</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_SET_DEBUG_MODE">
+            <summary>hWnd, value - TRUE/FALSE</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_SET_UX_THEMING">
+            <summary>
+            hWnd = NULL, value - BOOL, TRUE - the engine will use "unisex" theme that is common for all platforms.
+            That UX theme is not using OS primitives for rendering input elements. Use it if you want exactly
+            the same (modulo fonts) look-n-feel on all platforms.
+            </summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_RT_OPTIONS.SCITER_ALPHA_WINDOW">
+            <summary>hWnd, value - TRUE/FALSE - window uses per pixel alpha (e.g. WS_EX_LAYERED/UpdateLayeredWindow() window)</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_CHILD">
+            <summary>Child window only, if this flag is set all other flags ignored</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_TITLEBAR">
+            <summary>Toplevel window, has titlebar</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_RESIZEABLE">
+            <summary>Has resizeable frame</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_TOOL">
+            <summary>Is tool window</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_CONTROLS">
+            <summary>Has minimize / maximize buttons</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_GLASSY">
+            <summary>Glassy window ( DwmExtendFrameIntoClientArea on windows )</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_ALPHA">
+            <summary>Transparent window ( e.g. WS_EX_LAYERED on Windows )</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_MAIN">
+            <summary>Main window of the app, will terminate app on close</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_POPUP">
+            <summary> The window is created as topmost</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_ENABLE_DEBUG">
+            <summary>Make this window inspector ready</summary>
+        </member>
+        <member name="F:SciterSharp.Interop.SciterXDef.SCITER_CREATE_WINDOW_FLAGS.SW_OWNS_VM">
+            <summary>It has its own script VM</summary>
+        </member>
+        <member name="T:SciterSharp.WinForms.SciterControl">
+            <summary>
+            Represents a SciterWindow control.
+            </summary>
+        </member>
+    </members>
+</doc>

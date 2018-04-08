@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{677BBE0E-F8C8-4AF3-A398-ED0CE7C22E69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GEV.Layouts</RootNamespace>
+    <AssemblyName>gcl</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SciterSharpWindows, Version=2.0.35.0, Culture=neutral, PublicKeyToken=917100d643775a9e, processorArchitecture=MSIL">
+      <HintPath>..\packages\SciterSharpWindows.2.0.35\lib\net45\SciterSharpWindows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataGrid\GCLDataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\StringCollectionEditor.cs" />
+    <Compile Include="Designer\StringCollectionEditorControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\StringCollectionEditorControls.Designer.cs">
+      <DependentUpon>StringCollectionEditorControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GaugeColorRegion.cs" />
+    <Compile Include="GCLButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLButton.Designer.cs">
+      <DependentUpon>GCLButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCLColorPicker.Designer.cs">
+      <DependentUpon>GCLColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLColors.cs" />
+    <Compile Include="GCLComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCLForm.Designer.cs">
+      <DependentUpon>GCLForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLGauge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLGroupBox.Designer.cs">
+      <DependentUpon>GCLGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLIconAnimator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLIndicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLLineMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCLLineMonitor.Designer.cs">
+      <DependentUpon>GCLLineMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLMiniDataLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCLNumericUpDown.Designer.cs">
+      <DependentUpon>GCLNumericUpDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLPieChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLStackPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLSystemResourcesMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCLSystemResourcesMonitor.Designer.cs">
+      <DependentUpon>GCLSystemResourcesMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLTextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCLTextbox.Designer.cs">
+      <DependentUpon>GCLTextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MenuStrip\GCLMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MenuStrip\GCLMenuStripColors.cs" />
+    <Compile Include="MenuStrip\GCLMenuStripRenderer.cs" />
+    <Compile Include="GCLTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GCLToggleButton.Designer.cs">
+      <DependentUpon>GCLToggleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCLWindowGrab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCLWindowGrab.Designer.cs">
+      <DependentUpon>GCLWindowGrab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\CategoryPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\CategoryPresenter.Designer.cs">
+      <DependentUpon>CategoryPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\CollectionDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\CollectionDisplay.Designer.cs">
+      <DependentUpon>CollectionDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\ColorDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\ColorDisplay.Designer.cs">
+      <DependentUpon>ColorDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\EditFormDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\EditFormDisplay.Designer.cs">
+      <DependentUpon>EditFormDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\SimpleDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\DisplayControls\SimpleDisplay.Designer.cs">
+      <DependentUpon>SimpleDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\EditControls\ColorEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\EditControls\ColorEditor.Designer.cs">
+      <DependentUpon>ColorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\GCLDisplayAttribute.cs" />
+    <Compile Include="PropertyGrid\GCLPropertyGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\GCLPropertyGrid.Designer.cs">
+      <DependentUpon>GCLPropertyGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\GCLPropertyGridCategoryPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\GCLPropertyGridCategoryPresenter.Designer.cs">
+      <DependentUpon>GCLPropertyGridCategoryPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\IDisplayControl.cs" />
+    <Compile Include="PropertyGrid\PropertyCategory.cs" />
+    <Compile Include="GCLWindowHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCLWindowHeader.Designer.cs">
+      <DependentUpon>GCLWindowHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\PropertyPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\PropertyPresenter.Designer.cs">
+      <DependentUpon>PropertyPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sciter\Framework\EventHandler.cs" />
+    <Compile Include="Sciter\Framework\Host.cs" />
+    <Compile Include="Sciter\Framework\HtmlControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sciter\Framework\HtmlControlBase.Designer.cs">
+      <DependentUpon>HtmlControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sciter\TestHtmlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sciter\TestHtmlControl.Designer.cs">
+      <DependentUpon>TestHtmlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TearableContainer\TearableContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TearableContainer\TearableContainer.Designer.cs">
+      <DependentUpon>TearableContainer.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Designer\StringCollectionEditorControls.resx">
+      <DependentUpon>StringCollectionEditorControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLColorPicker.resx">
+      <DependentUpon>GCLColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLForm.resx">
+      <DependentUpon>GCLForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLLineMonitor.resx">
+      <DependentUpon>GCLLineMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLNumericUpDown.resx">
+      <DependentUpon>GCLNumericUpDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLSystemResourcesMonitor.resx">
+      <DependentUpon>GCLSystemResourcesMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLTextbox.resx">
+      <DependentUpon>GCLTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLWindowGrab.resx">
+      <DependentUpon>GCLWindowGrab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\CategoryPresenter.resx">
+      <DependentUpon>CategoryPresenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\DisplayControls\CollectionDisplay.resx">
+      <DependentUpon>CollectionDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\DisplayControls\ColorDisplay.resx">
+      <DependentUpon>ColorDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\DisplayControls\EditFormDisplay.resx">
+      <DependentUpon>EditFormDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\DisplayControls\SimpleDisplay.resx">
+      <DependentUpon>SimpleDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\EditControls\ColorEditor.resx">
+      <DependentUpon>ColorEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\GCLPropertyGrid.resx">
+      <DependentUpon>GCLPropertyGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\GCLPropertyGridCategoryPresenter.resx">
+      <DependentUpon>GCLPropertyGridCategoryPresenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCLWindowHeader.resx">
+      <DependentUpon>GCLWindowHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\PropertyPresenter.resx">
+      <DependentUpon>PropertyPresenter.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\colorpicker.png" />
+    <Content Include="sciter.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

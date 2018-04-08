@@ -1,4 +1,12 @@
 
-bin/
+src/GCL and MonteCarlo Samples/bin/
 
-obj/
+src/GCL and MonteCarlo Samples/obj/
+
+src/GEV Control Layouts/bin/
+
+src/GEV Control Layouts/obj/
+
+src/GEV Control Layouts Plus/bin/
+
+src/GEV Control Layouts Plus/obj/
