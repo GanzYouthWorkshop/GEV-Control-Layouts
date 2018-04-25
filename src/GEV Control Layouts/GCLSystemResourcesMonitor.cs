@@ -17,9 +17,22 @@ namespace GEV.Layouts
     {
         public string NetworkConnectionIP { get; set; }
 
+        public Color ProgressBarBackColor
+        {
+            get { return this.lmCPU.ProgressBarBackColor; }
+            set
+            {
+                this.lmCPU.ProgressBarBackColor = value;
+                this.lmNetwork.ProgressBarBackColor = value;
+                this.lmRAM.ProgressBarBackColor = value;
+            }
+        }
+
         public GCLSystemResourcesMonitor()
         {
             InitializeComponent();
+
+            this.ProgressBarBackColor = GCLColors.Shadow;
         }
 
         public void Start()

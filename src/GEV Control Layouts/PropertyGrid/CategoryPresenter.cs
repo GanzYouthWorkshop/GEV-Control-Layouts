@@ -19,6 +19,10 @@ namespace GEV.Layouts.PropertyGrid
         public event EventHandler PropertySelected;
         public event EventHandler<int> GridChanging;
 
+        public Color GridColor { get; set; }
+        public Color ButtonColor { get; set; }
+        public Color ActiveColor { get; set; }
+
         public CategoryPresenter()
         {
             InitializeComponent();
@@ -26,6 +30,11 @@ namespace GEV.Layouts.PropertyGrid
 
         public void BuildGUI()
         {
+            this.tableLayoutPanel1.BackColor = this.GridColor;
+            this.lblCategoryName.BackColor = this.GridColor;
+            this.gclToggleButton1.FlatAppearance.CheckedBackColor = this.ActiveColor;
+            this.gclToggleButton1.BackColor = this.ButtonColor;
+
             this.lblCategoryName.Text = Category.Name.ToUpper();
 
             for (int i = 0; i < this.Category.Properties.Count; i++)
@@ -41,7 +50,11 @@ namespace GEV.Layouts.PropertyGrid
                 {
                     DataSource = this.DataSource,
                     Property = this.Category.Properties[i],
-                    Dock = DockStyle.Top
+                    Dock = DockStyle.Top,
+
+                    ActiveColor = this.ActiveColor,
+                    BackColor = this.BackColor
+                    //Property háttér, border, text?
                 };
                 tmp.PropertySelected += OnPropertySelected;
                 tmp.GridChanging += OnGridChanging;

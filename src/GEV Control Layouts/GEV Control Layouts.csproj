@@ -39,6 +39,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -127,6 +128,7 @@
     <Compile Include="GCLRadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GCLResourceProvider.cs" />
     <Compile Include="GCLStackPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -165,6 +167,11 @@
     <Compile Include="GCLWindowGrab.Designer.cs">
       <DependentUpon>GCLWindowGrab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meta\GCLDescriptionAttribute.cs" />
+    <Compile Include="Meta\GCLLanguages.cs" />
+    <Compile Include="Meta\GCLLocalizationAttribute.cs" />
+    <Compile Include="Meta\GCLNameAttribute.cs" />
+    <Compile Include="Meta\GCLUnitAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -214,12 +221,6 @@
     <Compile Include="PropertyGrid\GCLPropertyGrid.Designer.cs">
       <DependentUpon>GCLPropertyGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="PropertyGrid\GCLPropertyGridCategoryPresenter.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PropertyGrid\GCLPropertyGridCategoryPresenter.Designer.cs">
-      <DependentUpon>GCLPropertyGridCategoryPresenter.cs</DependentUpon>
-    </Compile>
     <Compile Include="PropertyGrid\IDisplayControl.cs" />
     <Compile Include="PropertyGrid\PropertyCategory.cs" />
     <Compile Include="GCLWindowHeader.cs">
@@ -228,6 +229,7 @@
     <Compile Include="GCLWindowHeader.Designer.cs">
       <DependentUpon>GCLWindowHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="PropertyGrid\PropertyGridUtils.cs" />
     <Compile Include="PropertyGrid\PropertyPresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -254,6 +256,7 @@
     <Compile Include="TearableContainer\TearableContainer.Designer.cs">
       <DependentUpon>TearableContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Theming\ControlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Designer\StringCollectionEditorControls.resx">
@@ -304,9 +307,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PropertyGrid\GCLPropertyGrid.resx">
       <DependentUpon>GCLPropertyGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PropertyGrid\GCLPropertyGridCategoryPresenter.resx">
-      <DependentUpon>GCLPropertyGridCategoryPresenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GCLWindowHeader.resx">
       <DependentUpon>GCLWindowHeader.cs</DependentUpon>

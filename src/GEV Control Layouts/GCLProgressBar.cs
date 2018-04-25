@@ -23,6 +23,8 @@ namespace GEV.Layouts
 
         public GCLProgressBar() : base()
         {
+            this.BackColor = GCLColors.Shadow;
+
             this.Value = 10;
             this.SetStyle(ControlStyles.UserPaint, true);
 
@@ -31,7 +33,7 @@ namespace GEV.Layouts
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.Clear(GCLColors.Shadow);
+            e.Graphics.Clear(this.BackColor);
 
             using (Brush b = new SolidBrush(this.ActiveColor))
             {

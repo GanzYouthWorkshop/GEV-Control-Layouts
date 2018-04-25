@@ -63,6 +63,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LightColors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LightColors.Designer.cs">
+      <DependentUpon>LightColors.cs</DependentUpon>
+    </Compile>
     <Compile Include="MiniCadComponent\Connector.cs" />
     <Compile Include="MiniCadComponent\FunctionalBox.cs" />
     <Compile Include="Program.cs" />
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightColors.resx">
+      <DependentUpon>LightColors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,7 +113,7 @@
       <Project>{677bbe0e-f8c8-4af3-a398-ed0ce7c22e69}</Project>
       <Name>GEV Control Layouts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GEV MonteCarlo Editor\GEV Control Layouts Plus.csproj">
+    <ProjectReference Include="..\GEV Control Layouts Plus\GEV Control Layouts Plus.csproj">
       <Project>{d93e1488-f699-411a-852f-858bc268f87c}</Project>
       <Name>GEV Control Layouts Plus</Name>
     </ProjectReference>

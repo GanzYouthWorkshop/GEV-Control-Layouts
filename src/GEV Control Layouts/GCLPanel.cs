@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GEV.Layouts.Theming;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace GEV.Layouts
 {
     public class GCLPanel : Panel
     {
+        public Color BorderColor { get; set; } = GCLColors.Border;
+
         public GCLPanel() : base()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
@@ -24,7 +27,7 @@ namespace GEV.Layouts
         {
             e.Graphics.Clear(this.BackColor);
 
-            using (Pen p = new Pen(GCLColors.Border))
+            using (Pen p = new Pen(this.BorderColor))
             {
                 e.Graphics.DrawRectangle(p, new Rectangle(0, 0, this.Width - 1, this.Height - 1));
             }

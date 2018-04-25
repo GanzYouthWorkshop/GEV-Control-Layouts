@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GEV.Layouts.Theming;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -12,8 +13,12 @@ namespace GEV.Layouts
 {
     public class GCLTabControl : TabControl
     {
+        public bool UseFormTheming { get; set; } = true;
+
         public Color MenuColor { get; set; } = GCLColors.PanelBackground;
         public Color ActiveColor { get; set; } = GCLColors.AccentColor1;
+        public Color SelectedTextColor { get; set; } = GCLColors.PrimaryText;
+        public Color TextColor { get; set; } = GCLColors.SecondaryText;
 
         public bool TabHandlerVisible
         {
@@ -81,8 +86,8 @@ namespace GEV.Layouts
         protected override void OnPaint(PaintEventArgs e)
         {
             using (Brush selected = new SolidBrush(this.ActiveColor))
-            using (Brush selectedText = new SolidBrush(GCLColors.PrimaryText))
-            using (Brush text = new SolidBrush(GCLColors.SecondaryText))
+            using (Brush selectedText = new SolidBrush(this.SelectedTextColor))
+            using (Brush text = new SolidBrush(this.TextColor))
             {
                 e.Graphics.Clear(this.MenuColor);
 

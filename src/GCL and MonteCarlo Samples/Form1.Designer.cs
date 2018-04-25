@@ -63,6 +63,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gclPanel5 = new GEV.Layouts.GCLPanel();
+            this.gclButton3 = new GEV.Layouts.GCLButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.gclComboBox1 = new GEV.Layouts.GCLComboBox();
             this.gclNumericUpDown1 = new GEV.Layouts.GCLNumericUpDown();
@@ -146,14 +147,17 @@
             this.gclTabControl1.Multiline = true;
             this.gclTabControl1.Name = "gclTabControl1";
             this.gclTabControl1.SelectedIndex = 0;
+            this.gclTabControl1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclTabControl1.Size = new System.Drawing.Size(1339, 914);
             this.gclTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.gclTabControl1.TabHandlerVisible = true;
             this.gclTabControl1.TabIndex = 11;
+            this.gclTabControl1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
+            this.gclTabControl1.UseFormTheming = false;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(147, -3);
             this.tabPage1.Name = "tabPage1";
@@ -195,12 +199,12 @@
             // gclPanel3
             // 
             this.gclPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gclPanel3.BackColor = System.Drawing.Color.White;
+            this.gclPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.gclPanel3.Controls.Add(this.lblSystemStatus);
             this.gclPanel3.Controls.Add(this.panel4);
             this.gclPanel3.Controls.Add(this.panel5);
             this.gclPanel3.Controls.Add(this.label7);
-            this.gclPanel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.gclPanel3.Location = new System.Drawing.Point(5, 5);
             this.gclPanel3.Margin = new System.Windows.Forms.Padding(5);
             this.gclPanel3.Name = "gclPanel3";
@@ -292,7 +296,8 @@
             // gclPanel6
             // 
             this.gclPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gclPanel6.BackColor = System.Drawing.Color.White;
+            this.gclPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.gclPanel6.Controls.Add(this.label6);
             this.gclPanel6.Location = new System.Drawing.Point(5, 183);
             this.gclPanel6.Margin = new System.Windows.Forms.Padding(5);
@@ -303,10 +308,8 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label6.Location = new System.Drawing.Point(10, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(303, 44);
@@ -317,13 +320,13 @@
             // gclPanel4
             // 
             this.gclPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gclPanel4.BackColor = System.Drawing.Color.White;
+            this.gclPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.gclPanel4.Controls.Add(this.label5);
             this.gclPanel4.Controls.Add(this.label4);
             this.gclPanel4.Controls.Add(this.gclPieChart1);
             this.gclPanel4.Controls.Add(this.panel3);
             this.gclPanel4.Controls.Add(this.label2);
-            this.gclPanel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.gclPanel4.Location = new System.Drawing.Point(5, 257);
             this.gclPanel4.Margin = new System.Windows.Forms.Padding(5);
             this.gclPanel4.Name = "gclPanel4";
@@ -382,7 +385,8 @@
             // gclPanel7
             // 
             this.gclPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gclPanel7.BackColor = System.Drawing.Color.White;
+            this.gclPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.gclPanel7.Controls.Add(this.gclMiniDataLog1);
             this.gclPanel7.Controls.Add(this.panel6);
             this.gclPanel7.Controls.Add(this.label10);
@@ -432,13 +436,13 @@
             // gclPanel1
             // 
             this.gclPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gclPanel1.BackColor = System.Drawing.Color.White;
+            this.gclPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.gclPanel1.Controls.Add(this.gclLineMonitor3);
             this.gclPanel1.Controls.Add(this.gclLineMonitor2);
             this.gclPanel1.Controls.Add(this.gclLineMonitor1);
             this.gclPanel1.Controls.Add(this.panel1);
             this.gclPanel1.Controls.Add(this.label1);
-            this.gclPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.gclPanel1.Location = new System.Drawing.Point(5, 627);
             this.gclPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.gclPanel1.Name = "gclPanel1";
@@ -455,6 +459,7 @@
             this.gclLineMonitor3.Margin = new System.Windows.Forms.Padding(2);
             this.gclLineMonitor3.MaxValue = 100;
             this.gclLineMonitor3.Name = "gclLineMonitor3";
+            this.gclLineMonitor3.ProgressBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.gclLineMonitor3.Size = new System.Drawing.Size(303, 73);
             this.gclLineMonitor3.TabIndex = 9;
             this.gclLineMonitor3.Title = "Hálózat";
@@ -469,6 +474,7 @@
             this.gclLineMonitor2.Margin = new System.Windows.Forms.Padding(2);
             this.gclLineMonitor2.MaxValue = 100;
             this.gclLineMonitor2.Name = "gclLineMonitor2";
+            this.gclLineMonitor2.ProgressBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.gclLineMonitor2.Size = new System.Drawing.Size(303, 73);
             this.gclLineMonitor2.TabIndex = 8;
             this.gclLineMonitor2.Title = "RAM";
@@ -483,6 +489,7 @@
             this.gclLineMonitor1.Margin = new System.Windows.Forms.Padding(2);
             this.gclLineMonitor1.MaxValue = 100;
             this.gclLineMonitor1.Name = "gclLineMonitor1";
+            this.gclLineMonitor1.ProgressBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.gclLineMonitor1.Size = new System.Drawing.Size(303, 73);
             this.gclLineMonitor1.TabIndex = 7;
             this.gclLineMonitor1.Title = "CPU";
@@ -511,7 +518,9 @@
             // 
             // gclPanel5
             // 
-            this.gclPanel5.BackColor = System.Drawing.Color.White;
+            this.gclPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.gclPanel5.Controls.Add(this.gclButton3);
             this.gclPanel5.Controls.Add(this.panel7);
             this.gclPanel5.Controls.Add(this.gclNumericUpDown1);
             this.gclPanel5.Controls.Add(this.gclCheckBox1);
@@ -522,13 +531,27 @@
             this.gclPanel5.Controls.Add(this.gclRadioButton1);
             this.gclPanel5.Controls.Add(this.gclButton1);
             this.gclPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gclPanel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.gclPanel5.Location = new System.Drawing.Point(5, 5);
             this.gclPanel5.Margin = new System.Windows.Forms.Padding(5);
             this.gclPanel5.Name = "gclPanel5";
             this.gclPanel5.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel5.Size = new System.Drawing.Size(832, 890);
             this.gclPanel5.TabIndex = 13;
+            // 
+            // gclButton3
+            // 
+            this.gclButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gclButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(214)))), ((int)(((byte)(120)))));
+            this.gclButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gclButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gclButton3.Location = new System.Drawing.Point(570, 376);
+            this.gclButton3.Name = "gclButton3";
+            this.gclButton3.Size = new System.Drawing.Size(110, 33);
+            this.gclButton3.TabIndex = 9;
+            this.gclButton3.Text = "gclButton3";
+            this.gclButton3.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -590,6 +613,8 @@
             // gclCheckBox1
             // 
             this.gclCheckBox1.AutoSize = true;
+            this.gclCheckBox1.BoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
+            this.gclCheckBox1.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
             this.gclCheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gclCheckBox1.Location = new System.Drawing.Point(340, 280);
             this.gclCheckBox1.Name = "gclCheckBox1";
@@ -601,7 +626,7 @@
             // gclTextbox1
             // 
             this.gclTextbox1.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
-            this.gclTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
             this.gclTextbox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclTextbox1.Location = new System.Drawing.Point(340, 243);
             this.gclTextbox1.Margin = new System.Windows.Forms.Padding(2);
@@ -658,7 +683,7 @@
             // 
             this.gclRadioButton2.Appearance = System.Windows.Forms.Appearance.Button;
             this.gclRadioButton2.AutoSize = true;
-            this.gclRadioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclRadioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
             this.gclRadioButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclRadioButton2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(87)))), ((int)(((byte)(152)))));
             this.gclRadioButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
@@ -677,7 +702,7 @@
             // 
             this.gclRadioButton1.Appearance = System.Windows.Forms.Appearance.Button;
             this.gclRadioButton1.AutoSize = true;
-            this.gclRadioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclRadioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
             this.gclRadioButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclRadioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(87)))), ((int)(((byte)(152)))));
             this.gclRadioButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
@@ -694,7 +719,7 @@
             // 
             // gclButton1
             // 
-            this.gclButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
             this.gclButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
             this.gclButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
@@ -721,7 +746,8 @@
             // 
             // gclPanel2
             // 
-            this.gclPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel2.BackColor = System.Drawing.Color.White;
+            this.gclPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.gclPanel2.Controls.Add(this.gclGauge3);
             this.gclPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclPanel2.Location = new System.Drawing.Point(10, 10);
@@ -768,7 +794,8 @@
             // 
             // gclPanel8
             // 
-            this.gclPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel8.BackColor = System.Drawing.Color.White;
+            this.gclPanel8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.gclPanel8.Controls.Add(this.monteCarloEditor1);
             this.gclPanel8.Controls.Add(this.gclPropertyGrid1);
             this.gclPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -812,7 +839,8 @@
             // 
             // gclPanel9
             // 
-            this.gclPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel9.BackColor = System.Drawing.Color.White;
+            this.gclPanel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.gclPanel9.Controls.Add(this.miniCADEditor1);
             this.gclPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclPanel9.Location = new System.Drawing.Point(10, 10);
@@ -901,7 +929,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -952,6 +980,7 @@
             this.ClientSize = new System.Drawing.Size(1341, 956);
             this.Controls.Add(this.gclTabControl1);
             this.Controls.Add(this.gclWindowHeader1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.HideStartMenuOnMaximize = true;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1046,6 +1075,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private GEV.Layouts.GCLButton gclButton2;
+        private GEV.Layouts.GCLButton gclButton3;
     }
 }
 

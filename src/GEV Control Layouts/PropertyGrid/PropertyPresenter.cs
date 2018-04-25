@@ -16,6 +16,10 @@ namespace GEV.Layouts.PropertyGrid
     [ToolboxItem(false)]
     internal partial class PropertyPresenter : UserControl
     {
+        public Color ActiveColor { get; set; }
+        public override Color BackColor { get; set; }
+        public Color BorderColor { get; set; }
+
         public event EventHandler PropertySelected;
         public event EventHandler<int> GridChanging;
 
@@ -64,7 +68,7 @@ namespace GEV.Layouts.PropertyGrid
 
         public void BuildGUI()
         {
-            this.lblName.Text = this.m_Property.Name;
+            this.lblName.Text = PropertyGridUtils.GetLocalizedName(this.Property);
 
             if (this.DataSource != null)
             {
@@ -151,14 +155,14 @@ namespace GEV.Layouts.PropertyGrid
 
             if (this.IsSelected)
             {
-                e.Graphics.Clear(GCLColors.AccentColor1);
+                e.Graphics.Clear(this.ActiveColor);
             }
             else
             {
-                e.Graphics.Clear(GCLColors.Shadow);
+                e.Graphics.Clear(this.BorderColor);
             }
 
-            using (Brush b = new SolidBrush(GCLColors.SoftBorder))
+            using (Brush b = new SolidBrush(this.BackColor))
             {
                 e.Graphics.FillRectangle(b, new Rectangle(0, this.Bounds.Height - 1, this.Bounds.Width, this.Bounds.Height));
             }

@@ -71,10 +71,22 @@ namespace GEV.Layouts
             }
         }
 
+        private Color m_ProgressBarBackColor;
+        public Color ProgressBarBackColor
+        {
+            get { return this.m_ProgressBarBackColor; }
+            set
+            {
+                this.m_ProgressBarBackColor = value;
+                this.gclProgressBar1.BackColor = value;
+            }
+        }
+
         public GCLLineMonitor()
         {
             InitializeComponent();
             this.ActiveColor = GCLColors.AccentColor1;
+            this.ProgressBarBackColor = GCLColors.Shadow;
         }
 
         private void SetText()

@@ -10,6 +10,10 @@ namespace GEV.Layouts
 {
     public class GCLCheckBox : CheckBox
     {
+        public Color BoxColor { get; set; } = GCLColors.SoftBorder;
+        public Color CheckedColor { get; set; } = GCLColors.AccentColor2Highlight;
+
+
         public GCLCheckBox()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
@@ -21,8 +25,9 @@ namespace GEV.Layouts
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            using (Brush border = new SolidBrush(GCLColors.SoftBorder))
-            using (Brush active = new SolidBrush(GCLColors.AccentColor2Highlight))
+
+            using (Brush border = new SolidBrush(this.BoxColor))
+            using (Brush active = new SolidBrush(this.CheckedColor))
             using (Brush text = new SolidBrush(this.ForeColor))
             using (Pen textPen = new Pen(border))
             {

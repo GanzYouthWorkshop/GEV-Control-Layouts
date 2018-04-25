@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace GEV.Layouts
 {
-    public static class GCLColors
+    public class GCLColors
     {
         public static Color FormBackground { get; } = Color.FromArgb(57, 65, 68);
         public static Color PanelBackground { get; } = Color.FromArgb(74, 84, 86);
         public static Color HeaderBackground { get; } = Color.FromArgb(32, 36, 37);
+        public static Color MenuBackground { get; } = Color.FromArgb(40, 40, 40);
 
         public static Color Border { get; } = Color.FromArgb(47, 55, 55);
         public static Color SoftBorder { get; } = Color.FromArgb(57, 62, 65);
