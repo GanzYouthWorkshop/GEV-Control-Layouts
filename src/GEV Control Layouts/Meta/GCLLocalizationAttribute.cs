@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace GEV.Layouts.Meta
 {
+    [AttributeUsage(AttributeTargets.All, Inherited = true, AllowMultiple = true)]
     public abstract class GCLLocalizationAttribute : Attribute
     {
-        protected string LocalizedValue { get; set; }
+        internal string LocalizedValue { get; }
 
-        public string Locale { get; set; }
+        public string Locale { get; }
         public string Language
         {
             get { return this.Locale.Split('-')[0]; }

@@ -816,13 +816,18 @@
             // 
             // gclPropertyGrid1
             // 
+            this.gclPropertyGrid1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
             this.gclPropertyGrid1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.gclPropertyGrid1.DataSource = null;
             this.gclPropertyGrid1.Dock = System.Windows.Forms.DockStyle.Right;
             this.gclPropertyGrid1.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gclPropertyGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclPropertyGrid1.Location = new System.Drawing.Point(783, 10);
             this.gclPropertyGrid1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gclPropertyGrid1.Name = "gclPropertyGrid1";
+            this.gclPropertyGrid1.PropertyBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
+            this.gclPropertyGrid1.PropertyDisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
+            this.gclPropertyGrid1.PropertyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclPropertyGrid1.Size = new System.Drawing.Size(382, 880);
             this.gclPropertyGrid1.TabIndex = 0;
             // 

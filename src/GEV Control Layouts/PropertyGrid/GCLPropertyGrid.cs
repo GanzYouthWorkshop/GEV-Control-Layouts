@@ -45,20 +45,29 @@ namespace GEV.Layouts.PropertyGrid
         public GCLPropertyGrid()
         {
             InitializeComponent();
+            this.lblProperty.Text = "";
+            this.lblDescription.Text = "";
         }
 
         protected void BuildGUI()
         {
             PropertyInfo[] properties = this.m_DataSource.GetType().GetProperties(BindingFlags.Instance | BindingFlags.GetProperty | BindingFlags.SetProperty | BindingFlags.Public);
 
+            MethodInfo[] methods = this.m_DataSource.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public);
+
             var nameProperty = properties.FirstOrDefault(p => p.Name == "Name");
             if(nameProperty != null)
             {
                 this.lblName.Text = nameProperty.GetValue(this.DataSource).ToString();
             }
-            this.lblType.Text = this.DataSource.GetType().ToString();
+            this.lblType.Text = PropertyGridUtils.GetLocalizedName(this.m_DataSource.GetType());
 
             var propertyData = properties.GroupBy(prop => prop.GetCustomAttribute<CategoryAttribute>(true))
+                                         .Select(group => new { Category = group.First().GetCustomAttribute<CategoryAttribute>(true), Items = group.ToList() })
+                                         .ToList();
+
+            var methodData = methods.Where(method => PropertyGridUtils.IsCommandMethod(method))
+                                         .GroupBy(method => method.GetCustomAttribute<CategoryAttribute>(true))
                                          .Select(group => new { Category = group.First().GetCustomAttribute<CategoryAttribute>(true), Items = group.ToList() })
                                          .ToList();
 
@@ -67,11 +76,20 @@ namespace GEV.Layouts.PropertyGrid
             {
                 string cat = pd.Category != null ? pd.Category.Category : "Egyéb";
 
+                var methodsInCategory = methodData.FirstOrDefault(item => (item.Category == null && pd.Category == null) || item.Category.Category == pd.Category.Category);
+
+                List<MemberInfo> allMembers = new List<MemberInfo>();
+                allMembers.AddRange(pd.Items);
+                if(methodsInCategory != null)
+                {
+                    allMembers.AddRange(methodsInCategory.Items);
+                }
+
                 this.m_InternalPropertyData.Add(new PropertyCategory()
                 {
                     Name = cat,
                     Collapsed = false,
-                    Properties = pd.Items
+                    Properties = allMembers
                 });
             }
 
@@ -93,7 +111,7 @@ namespace GEV.Layouts.PropertyGrid
                     BackColor = this.PropertyBackColor
                 };
                 this.pnlCategoryPresenters.Controls.Add(cp);
-                cp.PropertySelected += Cp_PropertySelected;
+                cp.ElementSelected += Cp_ElementSelected;
 
             }
 
@@ -103,21 +121,21 @@ namespace GEV.Layouts.PropertyGrid
             }
         }
 
-        private void Cp_PropertySelected(object sender, EventArgs e)
+        private void Cp_ElementSelected(object sender, EventArgs e)
         {
-            if(sender is PropertyPresenter)
+            if(sender is ElementPresenter)
             {
-                PropertyPresenter pp = sender as PropertyPresenter;
-                pp.IsSelected = true;
+                ElementPresenter ep = sender as ElementPresenter;
+                ep.IsSelected = true;
 
-                this.lblProperty.Text = PropertyGridUtils.GetLocalizedName(pp.Property);
-                this.lblDescription.Text = PropertyGridUtils.GetLocalizedDescription(pp.Property);
+                this.lblProperty.Text = PropertyGridUtils.GetLocalizedName(ep.ReflectionInfo);
+                this.lblDescription.Text = PropertyGridUtils.GetLocalizedDescription(ep.ReflectionInfo);
 
                 foreach (Control c in this.pnlCategoryPresenters.Controls)
                 {
                     if (c is CategoryPresenter)
                     {
-                        (c as CategoryPresenter).ResetSelection(pp);
+                        (c as CategoryPresenter).ResetSelection(ep);
                     }
                 }
             }

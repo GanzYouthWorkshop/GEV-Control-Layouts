@@ -460,7 +460,6 @@ namespace GEV.Layouts
 
         protected override void OnPaint(PaintEventArgs e)
         {
-
             Color borderColor = (this.pressed || this.IsDroppedDown) ? GCLColors.AccentColor1 : GCLColors.SoftBorder;
             Color buttonColor = (this.hovered || this.pressed) ? GCLColors.AccentColor1 : GCLColors.SoftBorder;
             using (Brush border = new SolidBrush(borderColor))

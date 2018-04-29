@@ -28,25 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gclWindowHeader1 = new GEV.Layouts.GCLWindowHeader();
             this.gclWindowGrab1 = new GEV.Layouts.GCLWindowGrab();
             this.gclTabControl1 = new GEV.Layouts.GCLTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gclPanel3 = new GEV.Layouts.GCLPanel();
-            this.gclPieChart1 = new GEV.Layouts.GCLPieChart();
-            this.gclSystemResourcesMonitor1 = new GEV.Layouts.GCLSystemResourcesMonitor();
-            this.gclLineMonitor1 = new GEV.Layouts.GCLLineMonitor();
-            this.gclProgressBar1 = new GEV.Layouts.GCLProgressBar();
-            this.gclPanel2 = new GEV.Layouts.GCLPanel();
             this.gclPropertyGrid1 = new GEV.Layouts.PropertyGrid.GCLPropertyGrid();
+            this.gclPanel2 = new GEV.Layouts.GCLPanel();
+            this.gclProgressBar1 = new GEV.Layouts.GCLProgressBar();
+            this.gclPieChart1 = new GEV.Layouts.GCLPieChart();
+            this.gclLineMonitor1 = new GEV.Layouts.GCLLineMonitor();
+            this.gclSystemResourcesMonitor1 = new GEV.Layouts.GCLSystemResourcesMonitor();
             this.gclPanel1 = new GEV.Layouts.GCLPanel();
+            this.gclComboBox1 = new GEV.Layouts.GCLComboBox();
             this.gclRadioButton1 = new GEV.Layouts.GCLRadioButton();
             this.gclNumericUpDown1 = new GEV.Layouts.GCLNumericUpDown();
             this.gclTextbox1 = new GEV.Layouts.GCLTextbox();
             this.gclToggleButton1 = new GEV.Layouts.GCLToggleButton();
             this.gclCheckBox1 = new GEV.Layouts.GCLCheckBox();
             this.gclButton1 = new GEV.Layouts.GCLButton();
+            this.gclThemeProvider1 = new GEV.Layouts.Theming.GCLThemeProvider(this.components);
+            this.gclNumericUpDown2 = new GEV.Layouts.GCLNumericUpDown();
             this.gclTabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.gclPanel3.SuspendLayout();
@@ -126,39 +130,66 @@
             // 
             this.gclPanel3.BackColor = System.Drawing.Color.White;
             this.gclPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
-            this.gclPanel3.Controls.Add(this.gclPieChart1);
-            this.gclPanel3.Controls.Add(this.gclSystemResourcesMonitor1);
-            this.gclPanel3.Controls.Add(this.gclLineMonitor1);
-            this.gclPanel3.Controls.Add(this.gclProgressBar1);
+            this.gclPanel3.Controls.Add(this.gclPropertyGrid1);
             this.gclPanel3.Location = new System.Drawing.Point(508, 8);
             this.gclPanel3.Name = "gclPanel3";
             this.gclPanel3.Padding = new System.Windows.Forms.Padding(10);
-            this.gclPanel3.Size = new System.Drawing.Size(702, 509);
+            this.gclPanel3.Size = new System.Drawing.Size(702, 592);
             this.gclPanel3.TabIndex = 2;
+            // 
+            // gclPropertyGrid1
+            // 
+            this.gclPropertyGrid1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclPropertyGrid1.DataSource = null;
+            this.gclPropertyGrid1.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gclPropertyGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclPropertyGrid1.Location = new System.Drawing.Point(10, 13);
+            this.gclPropertyGrid1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.gclPropertyGrid1.Name = "gclPropertyGrid1";
+            this.gclPropertyGrid1.PropertyBackColor = System.Drawing.Color.White;
+            this.gclPropertyGrid1.PropertyDisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
+            this.gclPropertyGrid1.PropertyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gclPropertyGrid1.Size = new System.Drawing.Size(682, 565);
+            this.gclPropertyGrid1.TabIndex = 0;
+            // 
+            // gclPanel2
+            // 
+            this.gclPanel2.BackColor = System.Drawing.Color.White;
+            this.gclPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclPanel2.Controls.Add(this.gclProgressBar1);
+            this.gclPanel2.Controls.Add(this.gclPieChart1);
+            this.gclPanel2.Controls.Add(this.gclLineMonitor1);
+            this.gclPanel2.Controls.Add(this.gclSystemResourcesMonitor1);
+            this.gclPanel2.Location = new System.Drawing.Point(6, 193);
+            this.gclPanel2.Name = "gclPanel2";
+            this.gclPanel2.Padding = new System.Windows.Forms.Padding(10);
+            this.gclPanel2.Size = new System.Drawing.Size(496, 407);
+            this.gclPanel2.TabIndex = 1;
+            // 
+            // gclProgressBar1
+            // 
+            this.gclProgressBar1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclProgressBar1.Location = new System.Drawing.Point(38, 34);
+            this.gclProgressBar1.MaxValue = 100;
+            this.gclProgressBar1.Name = "gclProgressBar1";
+            this.gclProgressBar1.Size = new System.Drawing.Size(200, 17);
+            this.gclProgressBar1.TabIndex = 0;
+            this.gclProgressBar1.Value = 10;
             // 
             // gclPieChart1
             // 
-            this.gclPieChart1.Location = new System.Drawing.Point(30, 307);
+            this.gclPieChart1.Location = new System.Drawing.Point(391, 34);
             this.gclPieChart1.Name = "gclPieChart1";
             this.gclPieChart1.Size = new System.Drawing.Size(83, 78);
             this.gclPieChart1.TabIndex = 3;
             this.gclPieChart1.Text = "gclPieChart1";
             // 
-            // gclSystemResourcesMonitor1
-            // 
-            this.gclSystemResourcesMonitor1.Location = new System.Drawing.Point(13, 99);
-            this.gclSystemResourcesMonitor1.Margin = new System.Windows.Forms.Padding(0);
-            this.gclSystemResourcesMonitor1.Name = "gclSystemResourcesMonitor1";
-            this.gclSystemResourcesMonitor1.NetworkConnectionIP = null;
-            this.gclSystemResourcesMonitor1.ProgressBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.gclSystemResourcesMonitor1.Size = new System.Drawing.Size(431, 193);
-            this.gclSystemResourcesMonitor1.TabIndex = 2;
-            // 
             // gclLineMonitor1
             // 
             this.gclLineMonitor1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
             this.gclLineMonitor1.Format = "{0}";
-            this.gclLineMonitor1.Location = new System.Drawing.Point(12, 35);
+            this.gclLineMonitor1.Location = new System.Drawing.Point(19, 76);
             this.gclLineMonitor1.Margin = new System.Windows.Forms.Padding(2);
             this.gclLineMonitor1.MaxValue = 100;
             this.gclLineMonitor1.Name = "gclLineMonitor1";
@@ -168,47 +199,22 @@
             this.gclLineMonitor1.Title = null;
             this.gclLineMonitor1.Value = 10;
             // 
-            // gclProgressBar1
+            // gclSystemResourcesMonitor1
             // 
-            this.gclProgressBar1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
-            this.gclProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.gclProgressBar1.Location = new System.Drawing.Point(13, 13);
-            this.gclProgressBar1.MaxValue = 100;
-            this.gclProgressBar1.Name = "gclProgressBar1";
-            this.gclProgressBar1.Size = new System.Drawing.Size(200, 17);
-            this.gclProgressBar1.TabIndex = 0;
-            this.gclProgressBar1.Value = 10;
-            // 
-            // gclPanel2
-            // 
-            this.gclPanel2.BackColor = System.Drawing.Color.White;
-            this.gclPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
-            this.gclPanel2.Controls.Add(this.gclPropertyGrid1);
-            this.gclPanel2.Location = new System.Drawing.Point(6, 193);
-            this.gclPanel2.Name = "gclPanel2";
-            this.gclPanel2.Padding = new System.Windows.Forms.Padding(10);
-            this.gclPanel2.Size = new System.Drawing.Size(496, 324);
-            this.gclPanel2.TabIndex = 1;
-            // 
-            // gclPropertyGrid1
-            // 
-            this.gclPropertyGrid1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
-            this.gclPropertyGrid1.DataSource = null;
-            this.gclPropertyGrid1.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gclPropertyGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.gclPropertyGrid1.Location = new System.Drawing.Point(13, 14);
-            this.gclPropertyGrid1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.gclPropertyGrid1.Name = "gclPropertyGrid1";
-            this.gclPropertyGrid1.PropertyBackColor = System.Drawing.Color.White;
-            this.gclPropertyGrid1.PropertyDisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
-            this.gclPropertyGrid1.PropertyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.gclPropertyGrid1.Size = new System.Drawing.Size(336, 296);
-            this.gclPropertyGrid1.TabIndex = 0;
+            this.gclSystemResourcesMonitor1.Location = new System.Drawing.Point(28, 168);
+            this.gclSystemResourcesMonitor1.Margin = new System.Windows.Forms.Padding(0);
+            this.gclSystemResourcesMonitor1.Name = "gclSystemResourcesMonitor1";
+            this.gclSystemResourcesMonitor1.NetworkConnectionIP = null;
+            this.gclSystemResourcesMonitor1.ProgressBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclSystemResourcesMonitor1.Size = new System.Drawing.Size(273, 193);
+            this.gclSystemResourcesMonitor1.TabIndex = 2;
             // 
             // gclPanel1
             // 
             this.gclPanel1.BackColor = System.Drawing.Color.White;
             this.gclPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclPanel1.Controls.Add(this.gclNumericUpDown2);
+            this.gclPanel1.Controls.Add(this.gclComboBox1);
             this.gclPanel1.Controls.Add(this.gclRadioButton1);
             this.gclPanel1.Controls.Add(this.gclNumericUpDown1);
             this.gclPanel1.Controls.Add(this.gclTextbox1);
@@ -220,6 +226,23 @@
             this.gclPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel1.Size = new System.Drawing.Size(496, 179);
             this.gclPanel1.TabIndex = 0;
+            // 
+            // gclComboBox1
+            // 
+            this.gclComboBox1.DrawMode = System.Windows.Forms.DrawMode.Normal;
+            this.gclComboBox1.DropDownHeight = 0;
+            this.gclComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gclComboBox1.DropDownWidth = 0;
+            this.gclComboBox1.IsDroppedDown = false;
+            this.gclComboBox1.Location = new System.Drawing.Point(352, 123);
+            this.gclComboBox1.MaxDropDownItems = 0;
+            this.gclComboBox1.Name = "gclComboBox1";
+            this.gclComboBox1.SelectedIndex = -1;
+            this.gclComboBox1.SelectedItem = null;
+            this.gclComboBox1.Size = new System.Drawing.Size(122, 26);
+            this.gclComboBox1.Soreted = false;
+            this.gclComboBox1.TabIndex = 6;
+            this.gclComboBox1.Text = "gclComboBox1";
             // 
             // gclRadioButton1
             // 
@@ -260,7 +283,7 @@
             0,
             0});
             this.gclNumericUpDown1.Name = "gclNumericUpDown1";
-            this.gclNumericUpDown1.Size = new System.Drawing.Size(188, 22);
+            this.gclNumericUpDown1.Size = new System.Drawing.Size(188, 24);
             this.gclNumericUpDown1.TabIndex = 4;
             this.gclNumericUpDown1.Value = new decimal(new int[] {
             0,
@@ -316,19 +339,72 @@
             // 
             // gclButton1
             // 
-            this.gclButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
-            this.gclButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
             this.gclButton1.FlatAppearance.BorderSize = 0;
             this.gclButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
             this.gclButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(200)))), ((int)(((byte)(125)))));
             this.gclButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gclButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gclButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.gclButton1.Location = new System.Drawing.Point(13, 13);
             this.gclButton1.Name = "gclButton1";
             this.gclButton1.Size = new System.Drawing.Size(113, 40);
             this.gclButton1.TabIndex = 0;
             this.gclButton1.Text = "gclButton1";
+            this.gclButton1.UseThemeColors = true;
             this.gclButton1.UseVisualStyleBackColor = false;
+            this.gclButton1.Click += new System.EventHandler(this.gclButton1_Click);
+            // 
+            // gclThemeProvider1
+            // 
+            this.gclThemeProvider1.AccentColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclThemeProvider1.AccentColor1Highlight = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(200)))), ((int)(((byte)(125)))));
+            this.gclThemeProvider1.AccentColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
+            this.gclThemeProvider1.AccentColor2Highlight = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
+            this.gclThemeProvider1.AccentColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(87)))), ((int)(((byte)(152)))));
+            this.gclThemeProvider1.AlertYellow = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
+            this.gclThemeProvider1.BasicTheme = GEV.Layouts.Theming.BasicThemes.Dark;
+            this.gclThemeProvider1.Border = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclThemeProvider1.Button = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclThemeProvider1.ErrorRed = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.gclThemeProvider1.FormBackground = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclThemeProvider1.HeaderBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(37)))));
+            this.gclThemeProvider1.MenuBackground = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.gclThemeProvider1.PanelBackground = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.gclThemeProvider1.PrimaryText = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.gclThemeProvider1.SecondaryText = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.gclThemeProvider1.Shadow = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclThemeProvider1.SoftBorder = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclThemeProvider1.SuccessGreen = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            // 
+            // gclNumericUpDown2
+            // 
+            this.gclNumericUpDown2.DecimalPlaces = 0;
+            this.gclNumericUpDown2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.gclNumericUpDown2.Location = new System.Drawing.Point(64, 83);
+            this.gclNumericUpDown2.Margin = new System.Windows.Forms.Padding(2);
+            this.gclNumericUpDown2.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.gclNumericUpDown2.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.gclNumericUpDown2.Name = "gclNumericUpDown2";
+            this.gclNumericUpDown2.Size = new System.Drawing.Size(188, 22);
+            this.gclNumericUpDown2.TabIndex = 7;
+            this.gclNumericUpDown2.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // LightColors
             // 
@@ -372,5 +448,8 @@
         private GEV.Layouts.GCLProgressBar gclProgressBar1;
         private GEV.Layouts.PropertyGrid.GCLPropertyGrid gclPropertyGrid1;
         private GEV.Layouts.GCLPieChart gclPieChart1;
+        private GEV.Layouts.Theming.GCLThemeProvider gclThemeProvider1;
+        private GEV.Layouts.GCLComboBox gclComboBox1;
+        private GEV.Layouts.GCLNumericUpDown gclNumericUpDown2;
     }
 }

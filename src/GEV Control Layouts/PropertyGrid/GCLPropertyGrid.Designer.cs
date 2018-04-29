@@ -61,10 +61,11 @@
             // 
             this.lblProperty.AutoSize = true;
             this.lblProperty.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblProperty.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProperty.Location = new System.Drawing.Point(0, 432);
             this.lblProperty.Margin = new System.Windows.Forms.Padding(0);
             this.lblProperty.Name = "lblProperty";
-            this.lblProperty.Size = new System.Drawing.Size(111, 23);
+            this.lblProperty.Size = new System.Drawing.Size(121, 23);
             this.lblProperty.TabIndex = 2;
             this.lblProperty.Text = "[PROPNAME]";
             // 

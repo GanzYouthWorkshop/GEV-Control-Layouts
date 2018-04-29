@@ -59,15 +59,5 @@ namespace WindowsFormsApplication3.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Gear_4_5s_120px {
-            get {
-                object obj = ResourceManager.GetObject("Gear-4.5s-120px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

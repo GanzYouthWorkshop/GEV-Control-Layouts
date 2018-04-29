@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -147,6 +148,7 @@
     <Compile Include="GCLToolTip.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="IGCLControl.cs" />
     <Compile Include="MenuStrip\GCLMenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -167,10 +169,12 @@
     <Compile Include="GCLWindowGrab.Designer.cs">
       <DependentUpon>GCLWindowGrab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meta\GCLCommandDescriptionAttribute.cs" />
     <Compile Include="Meta\GCLDescriptionAttribute.cs" />
     <Compile Include="Meta\GCLLanguages.cs" />
     <Compile Include="Meta\GCLLocalizationAttribute.cs" />
     <Compile Include="Meta\GCLNameAttribute.cs" />
+    <Compile Include="Meta\GCLCommandAttribute.cs" />
     <Compile Include="Meta\GCLUnitAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -184,6 +188,13 @@
     <Compile Include="PropertyGrid\CategoryPresenter.Designer.cs">
       <DependentUpon>CategoryPresenter.cs</DependentUpon>
     </Compile>
+    <Compile Include="PropertyGrid\CommandMethodPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\CommandMethodPresenter.Designer.cs">
+      <DependentUpon>CommandMethodPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\CommandResult.cs" />
     <Compile Include="PropertyGrid\DisplayControls\CollectionDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +241,12 @@
       <DependentUpon>GCLWindowHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="PropertyGrid\PropertyGridUtils.cs" />
+    <Compile Include="PropertyGrid\ElementPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\ElementPresenter.Designer.cs">
+      <DependentUpon>ElementPresenter.cs</DependentUpon>
+    </Compile>
     <Compile Include="PropertyGrid\PropertyPresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,13 +267,14 @@
     <Compile Include="Sciter\TestHtmlControl.Designer.cs">
       <DependentUpon>TestHtmlControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TearableContainer\TearableContainer.cs">
+    <Compile Include="Theming\BasicThemes.cs" />
+    <Compile Include="Theming\ControlExtensions.cs" />
+    <Compile Include="Theming\GCLThemeProvider.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TearableContainer\TearableContainer.Designer.cs">
-      <DependentUpon>TearableContainer.cs</DependentUpon>
+    <Compile Include="Theming\GCLThemeProvider.Designer.cs">
+      <DependentUpon>GCLThemeProvider.cs</DependentUpon>
     </Compile>
-    <Compile Include="Theming\ControlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Designer\StringCollectionEditorControls.resx">
@@ -284,11 +302,14 @@
       <DependentUpon>GCLWindowGrab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PropertyGrid\CategoryPresenter.resx">
       <DependentUpon>CategoryPresenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\CommandMethodPresenter.resx">
+      <DependentUpon>CommandMethodPresenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PropertyGrid\DisplayControls\CollectionDisplay.resx">
       <DependentUpon>CollectionDisplay.cs</DependentUpon>
@@ -311,12 +332,16 @@
     <EmbeddedResource Include="GCLWindowHeader.resx">
       <DependentUpon>GCLWindowHeader.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PropertyGrid\ElementPresenter.resx">
+      <DependentUpon>ElementPresenter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PropertyGrid\PropertyPresenter.resx">
       <DependentUpon>PropertyPresenter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

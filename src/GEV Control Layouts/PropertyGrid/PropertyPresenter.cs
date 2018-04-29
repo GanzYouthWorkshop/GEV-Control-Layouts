@@ -14,51 +14,22 @@ using GEV.Layouts.PropertyGrid.DisplayControls;
 namespace GEV.Layouts.PropertyGrid
 {
     [ToolboxItem(false)]
-    internal partial class PropertyPresenter : UserControl
+    internal partial class PropertyPresenter : ElementPresenter
     {
-        public Color ActiveColor { get; set; }
-        public override Color BackColor { get; set; }
-        public Color BorderColor { get; set; }
-
-        public event EventHandler PropertySelected;
-        public event EventHandler<int> GridChanging;
-
         public PropertyInfo Property
         {
             get
             {
-                return this.m_Property;
+                return (PropertyInfo)this.ReflectionInfo;
             }
 
             set
             {
-                this.m_Property = value;
-                this.BuildGUI();
+                this.ReflectionInfo = value;
             }
         }
-        private PropertyInfo m_Property;
 
         private IDisplayControl m_DisplayControl;
-
-        public object DataSource { get; set; }
-
-        public bool IsSelected
-        {
-            get
-            {
-                return this.m_Selected;
-            }
-            set
-            {
-                if(this.m_Selected == true && value == false)
-                {
-                    this.ForceValidate();
-                }
-                this.m_Selected = value;
-                this.Invalidate();
-            }
-        }
-        private bool m_Selected;
 
         public PropertyPresenter()
         {
@@ -66,18 +37,18 @@ namespace GEV.Layouts.PropertyGrid
             this.SetStyle(ControlStyles.UserPaint, true);
         }
 
-        public void BuildGUI()
+        public override void BuildGUI()
         {
             this.lblName.Text = PropertyGridUtils.GetLocalizedName(this.Property);
 
             if (this.DataSource != null)
             {
-                object prop = this.m_Property.GetValue(this.DataSource);
+                object prop = this.Property.GetValue(this.DataSource);
                 if (prop != null)
                 {
                     bool customDisplayUsed = false;
 
-                    var customDisplay = this.m_Property.GetCustomAttributes<GCLDisplayAttribute>(true);
+                    var customDisplay = this.Property.GetCustomAttributes<GCLDisplayAttribute>(true);
                     if(customDisplay.Count() > 0)
                     {
                         GCLDisplayAttribute display = customDisplay.First();
@@ -120,67 +91,22 @@ namespace GEV.Layouts.PropertyGrid
                         Control c = this.m_DisplayControl as Control;
                         c.Dock = DockStyle.Fill;
 
-                        this.m_DisplayControl.Setup(this.DataSource, this.m_Property, prop);
-                        this.m_DisplayControl.Selected += PropertyDisplay_Click;
+                        this.m_DisplayControl.Setup(this.DataSource, this.Property, prop);
+                        this.m_DisplayControl.Selected += this.PerformElementSelected;
 
                         this.container.Panel2.Controls.Add(c);
 
-                        c.Click += PropertyDisplay_Click;
+                        c.Click += this.PerformElementSelected;
                     }
                 }
             }
         }
 
-        public void ForceValidate()
+        public override void ForceValidate()
         {
             if(m_DisplayControl != null)
             {
                 this.m_DisplayControl.ForceValidate();
-            }
-        }
-
-        public void SetGrid(int i)
-        {
-            this.container.SplitterDistance = i;
-        }
-
-        private void PropertyDisplay_Click(object sender, EventArgs e)
-        {
-            this.PropertySelected?.Invoke(this, e);
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-
-            if (this.IsSelected)
-            {
-                e.Graphics.Clear(this.ActiveColor);
-            }
-            else
-            {
-                e.Graphics.Clear(this.BorderColor);
-            }
-
-            using (Brush b = new SolidBrush(this.BackColor))
-            {
-                e.Graphics.FillRectangle(b, new Rectangle(0, this.Bounds.Height - 1, this.Bounds.Width, this.Bounds.Height));
-            }
-        }
-
-        private void OnSplitterMoving(object sender, SplitterCancelEventArgs e)
-        {
-            this.GridChanging?.Invoke(this, e.SplitX);
-        }
-
-        private void splitContainer1_Paint(object sender, PaintEventArgs e)
-        {
-            using (Brush b = new SolidBrush(GCLColors.SoftBorder))
-            using (Pen p = new Pen(b, 2))
-            {
-                int x = this.container.SplitterRectangle.X;
-                int h = this.container.SplitterRectangle.Height;
-                e.Graphics.DrawLine(p, x, 0, x, h);
             }
         }
     }

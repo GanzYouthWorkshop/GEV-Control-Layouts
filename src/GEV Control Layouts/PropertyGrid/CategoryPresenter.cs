@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace GEV.Layouts.PropertyGrid
 {
@@ -16,7 +17,7 @@ namespace GEV.Layouts.PropertyGrid
         public object DataSource { get; set; }
         public PropertyCategory Category { get; set; }
 
-        public event EventHandler PropertySelected;
+        public event EventHandler ElementSelected;
         public event EventHandler<int> GridChanging;
 
         public Color GridColor { get; set; }
@@ -39,26 +40,49 @@ namespace GEV.Layouts.PropertyGrid
 
             for (int i = 0; i < this.Category.Properties.Count; i++)
             {
-                string strvalue = "null";
-                object value = this.Category.Properties[i].GetValue(this.DataSource);
-                if (value != null)
+                if(this.Category.Properties[i] is PropertyInfo)
                 {
-                    strvalue = value.ToString();
+                    PropertyInfo info = (PropertyInfo)this.Category.Properties[i];
+
+                    string strvalue = "null";
+                    object value = info.GetValue(this.DataSource);
+                    if (value != null)
+                    {
+                        strvalue = value.ToString();
+                    }
+
+                    PropertyPresenter tmp = new PropertyPresenter()
+                    {
+                        DataSource = this.DataSource,
+                        Property = info,
+                        Dock = DockStyle.Top,
+
+                        ActiveColor = this.ActiveColor,
+                        BackColor = this.BackColor
+                        //Property háttér, border, text?
+                    };
+                    tmp.ElementSelected += OnElementSelected;
+                    tmp.GridChanging += OnGridChanging;
+                    this.pnlPropertyPresenters.Controls.Add(tmp);
                 }
-
-                PropertyPresenter tmp = new PropertyPresenter()
+                else if(this.Category.Properties[i] is MethodInfo)
                 {
-                    DataSource = this.DataSource,
-                    Property = this.Category.Properties[i],
-                    Dock = DockStyle.Top,
+                    MethodInfo info = (MethodInfo)this.Category.Properties[i];
 
-                    ActiveColor = this.ActiveColor,
-                    BackColor = this.BackColor
-                    //Property háttér, border, text?
-                };
-                tmp.PropertySelected += OnPropertySelected;
-                tmp.GridChanging += OnGridChanging;
-                this.pnlPropertyPresenters.Controls.Add(tmp);
+                    CommandMethodPresenter tmp = new CommandMethodPresenter()
+                    {
+                        DataSource = this.DataSource,
+                        Method = info,
+                        Dock = DockStyle.Top,
+
+                        ActiveColor = this.ActiveColor,
+                        BackColor = this.BackColor
+                        //Property háttér, border, text?
+                    };
+                    tmp.ElementSelected += OnElementSelected;
+                    tmp.GridChanging += OnGridChanging;
+                    this.pnlPropertyPresenters.Controls.Add(tmp);
+                }
             }
         }
 
@@ -68,9 +92,9 @@ namespace GEV.Layouts.PropertyGrid
             this.GridChanging?.Invoke(sender, e);
         }
 
-        private void OnPropertySelected(object sender, EventArgs e)
+        private void OnElementSelected(object sender, EventArgs e)
         {
-            this.PropertySelected?.Invoke(sender, e);
+            this.ElementSelected?.Invoke(sender, e);
         }
 
         private void gclToggleButton1_CheckedChanged(object sender, EventArgs e)
@@ -85,21 +109,21 @@ namespace GEV.Layouts.PropertyGrid
             }
         }
 
-        public void ResetSelection(PropertyPresenter presenter)
+        public void ResetSelection(ElementPresenter presenter)
         {
             foreach(Control c in this.pnlPropertyPresenters.Controls)
             {
-                PropertyPresenter pp = (c as PropertyPresenter);
-                if (pp != presenter && pp.IsSelected)
+                ElementPresenter ep = (c as ElementPresenter);
+                if (ep != presenter && ep.IsSelected)
                 {
-                    pp.IsSelected = false;
+                    ep.IsSelected = false;
                 }
             }
         }
 
         public void ChangeGrid(object origin, int i)
         {
-            foreach (PropertyPresenter c in this.pnlPropertyPresenters.Controls)
+            foreach (ElementPresenter c in this.pnlPropertyPresenters.Controls)
             {
                 if(c != origin)
                 {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using GEV.Layouts.Meta;
 
 namespace GEV.Layouts.PropertyGrid.DisplayControls
 {
@@ -36,7 +37,7 @@ namespace GEV.Layouts.PropertyGrid.DisplayControls
             if (value != null)
             {
                 Color c = info.SetMethod != null ? Color.Empty : GCLColors.SecondaryText;
-                this.lblName.Text = value.ToString();
+                this.lblName.Text = this.GetDisplayValue(value);
                 this.lblName.ForeColor = c;
             }
 
@@ -168,8 +169,21 @@ namespace GEV.Layouts.PropertyGrid.DisplayControls
                 this.m_TextBox.Hide();
 
                 object value = this.m_Property.GetValue(this.m_DataSource);
-                this.lblName.Text = value.ToString();
+                this.lblName.Text = this.GetDisplayValue(value);
             }
+        }
+
+        private string GetDisplayValue(object value)
+        {
+            string result = value.ToString();
+
+            GCLUnitAttribute attr = this.m_Property.GetCustomAttribute<GCLUnitAttribute>();
+            if(attr != null)
+            {
+                result = result + " " + attr.Unit;
+            }
+
+            return result;
         }
     }
 }

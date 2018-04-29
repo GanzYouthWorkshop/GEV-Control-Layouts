@@ -38,5 +38,7 @@ namespace GEV.Layouts
         {
             this.MaximizedBounds = r;
         }
+
+        public static Color TestColor { get; set; }
     }
 }

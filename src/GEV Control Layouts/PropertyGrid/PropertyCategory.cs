@@ -11,7 +11,7 @@ namespace GEV.Layouts.PropertyGrid
     {
         public string Name { get; set; }
         public bool Collapsed { get; set; }
-        public List<PropertyInfo> Properties { get; set; }
+        public List<MemberInfo> Properties { get; set; }
     }
 
 }

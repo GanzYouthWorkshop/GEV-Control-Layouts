@@ -17,7 +17,12 @@ namespace WindowsFormsApplication3
         {
             InitializeComponent();
 
-            this.gclPropertyGrid1.DataSource = this;
+            this.gclPropertyGrid1.DataSource = new SimpleDataStructure();
+        }
+
+        private void gclButton1_Click(object sender, EventArgs e)
+        {
+            Color c = GCLColors.AlertYellow;
         }
     }
 }

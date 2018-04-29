@@ -8,8 +8,11 @@ namespace GEV.Layouts.Meta
 {
     public class GCLUnitAttribute : Attribute
     {
-        public string Unit { get; set; }
+        public string Unit { get; }
 
-
+        public GCLUnitAttribute(string unit)
+        {
+            this.Unit = unit;
+        }
     }
 }

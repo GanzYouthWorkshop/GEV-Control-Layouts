@@ -1,6 +1,6 @@
-﻿namespace GEV.Layouts
+﻿namespace GEV.Layouts.Theming
 {
-    partial class TearableContainer
+    partial class GCLThemeProvider
     {
         /// <summary>
         /// Required designer variable.
