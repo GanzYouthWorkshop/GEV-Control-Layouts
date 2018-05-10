@@ -10,52 +10,17 @@ using System.Windows.Forms;
 
 namespace GEV.Layouts
 {
-    public partial class GCLTextbox : UserControl
+    public partial class GCLTextbox : UserControl, IGCLControl
     {
-        [Browsable(true)]
-        public Color BorderColor
-        {
-            get
-            {
-                return this.m_BorderColor;
-            }
+        public new event EventHandler TextChanged;
+        public new event EventHandler Enter;
 
-            set
-            {
-                this.m_BorderColor = value;
-                base.BackColor = value;
-            }
-        }
-        private Color m_BorderColor;
+        private bool m_Selected = false;
 
-        [Browsable(true)]
-        public Color ActiveBorderColor
-        {
-            get
-            {
-                return this.m_ActiveBorderColor;
-            }
-
-            set
-            {
-                this.m_ActiveBorderColor = value;
-            }
-        }
-        private Color m_ActiveBorderColor;
-
-        [Browsable(true)]
-        public new Color BackColor
-        {
-            get
-            {
-                return this.m_InnerTextBox.BackColor;
-            }
-
-            set
-            {
-                this.m_InnerTextBox.BackColor = value;
-            }
-        }
+        public Color BorderColor { get; set; }
+        public Color ActiveBorderColor { get; set; }
+        public new Color BackColor { get; set; }
+        public bool UseThemeColors { get; set; } = true;
 
         [Browsable(true)]
         public override string Text
@@ -97,9 +62,6 @@ namespace GEV.Layouts
             }
         }
 
-        public new event EventHandler TextChanged;
-        public new event EventHandler Enter;
-
         public HorizontalAlignment TextAlign
         {
             get
@@ -113,6 +75,7 @@ namespace GEV.Layouts
                 this.m_InnerTextBox.TextAlign = value;
             }
         }
+
 
         public GCLTextbox()
         {
@@ -129,12 +92,14 @@ namespace GEV.Layouts
 
         private void TextBox1_LostFocus(object sender, EventArgs e)
         {
-            base.BackColor = this.BorderColor;
+            m_Selected = false;
+            this.Invalidate();
         }
 
         private void TextBox1_GotFocus(object sender, EventArgs e)
         {
-            base.BackColor = this.ActiveBorderColor;
+            m_Selected = true;
+            this.Invalidate();
         }
 
         public void SelectAll()
@@ -150,6 +115,26 @@ namespace GEV.Layouts
         private void textBox1_Enter(object sender, EventArgs e)
         {
             this.Enter?.Invoke(this, e);         
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            Color back = this.UseThemeColors ? GCLColors.Shadow : this.BackColor;
+            Color border;
+            if(this.UseThemeColors)
+            {
+                border = this.m_Selected ? GCLColors.AccentColor1 : GCLColors.SoftBorder;
+            }
+            else
+            {
+                border = this.m_Selected ? this.ActiveBorderColor : this.BorderColor;
+            }
+            Color fore = this.UseThemeColors ? GCLColors.PrimaryText : this.ForeColor;
+
+            base.BackColor = border;
+            this.m_InnerTextBox.BackColor = back;
+            this.m_InnerTextBox.ForeColor = fore;
+            base.OnPaint(e);
         }
     }
 }

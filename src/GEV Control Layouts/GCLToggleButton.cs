@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace GEV.Layouts
 {
-    public partial class GCLToggleButton : CheckBox
+    public partial class GCLToggleButton : CheckBox, IGCLControl, IGCLButtonlike
     {
+        public bool UseThemeColors { get; set; } = true;
+        public bool IsHovered { get; private set; } = false;
+        public bool IsPressed { get; private set; } = false;
+
         public GCLToggleButton()
         {
             InitializeComponent();
@@ -26,6 +30,38 @@ namespace GEV.Layouts
 
             this.BackColor = GCLColors.Button;
             this.ForeColor = GCLColors.PrimaryText;
+
+            this.MouseEnter += OnMouseEnter;
+            this.MouseLeave += OnMouseLeave;
+            this.MouseDown += OnMouseDown;
+            this.MouseUp += OnMouseUp;
         }
+
+        protected override void OnPaint(PaintEventArgs pevent)
+        {
+            Utils.GCLUtils.DrawButtonlike(this, pevent);
+        }
+
+        private void OnMouseUp(object sender, MouseEventArgs e)
+        {
+            this.IsPressed = false;
+            this.Invalidate();
+        }
+
+        private void OnMouseDown(object sender, MouseEventArgs e)
+        {
+            this.IsPressed = true;
+        }
+
+        private void OnMouseLeave(object sender, EventArgs e)
+        {
+            this.IsHovered = false;
+        }
+
+        private void OnMouseEnter(object sender, EventArgs e)
+        {
+            this.IsHovered = true;
+        }
+
     }
 }

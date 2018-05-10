@@ -47,11 +47,13 @@
             // 
             this.pnlColor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.pnlColor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.pnlColor.Location = new System.Drawing.Point(3, 5);
             this.pnlColor.Name = "pnlColor";
             this.pnlColor.Padding = new System.Windows.Forms.Padding(10);
             this.pnlColor.Size = new System.Drawing.Size(19, 19);
             this.pnlColor.TabIndex = 1;
+            this.pnlColor.UseThemeColors = false;
             this.pnlColor.Click += new System.EventHandler(this.OnSelect);
             // 
             // lblName

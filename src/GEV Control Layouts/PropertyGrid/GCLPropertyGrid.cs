@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Drawing.Text;
 using System.Collections;
+using GEV.Layouts.Utils;
 
 namespace GEV.Layouts.PropertyGrid
 {

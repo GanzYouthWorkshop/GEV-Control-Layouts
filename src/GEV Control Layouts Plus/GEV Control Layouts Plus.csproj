@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GEV.Layouts.Extended</RootNamespace>
-    <AssemblyName>GEV MonteCarlo Editor</AssemblyName>
+    <AssemblyName>gclplus</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;!EX_SCRIPT;VP_DEBUG_OFF;ALWAYS_CELL_CLIP;WINFORM;FORMULA;OUTLINE;DRAWING;COMMENT;PRINT;RICHTEXT;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -40,8 +40,238 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cairo\Actions.cs" />
+    <Compile Include="Cairo\CellTypes.cs" />
+    <Compile Include="Cairo\Chart\AreaLine.cs" />
+    <Compile Include="Cairo\Chart\Axis.cs" />
+    <Compile Include="Cairo\Chart\Bar.cs" />
+    <Compile Include="Cairo\Chart\Chart.cs" />
+    <Compile Include="Cairo\Chart\Column.cs" />
+    <Compile Include="Cairo\Chart\DataSource.cs" />
+    <Compile Include="Cairo\Chart\Interface.cs" />
+    <Compile Include="Cairo\Chart\Legend.cs" />
+    <Compile Include="Cairo\Chart\Line.cs" />
+    <Compile Include="Cairo\Chart\Pie.cs" />
+    <Compile Include="Cairo\Chart\PlotView.cs" />
+    <Compile Include="Cairo\Chart\Style.cs" />
+    <Compile Include="Cairo\Chart\Title.cs" />
+    <Compile Include="Cairo\Chart\Utility.cs" />
+    <Compile Include="Cairo\ClipboardMonitor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cairo\Common\ActionManager.cs" />
+    <Compile Include="Cairo\Common\GraphicsToolkit.cs" />
+    <Compile Include="Cairo\Common\Logger.cs" />
+    <Compile Include="Cairo\Common\ResourcePoolManager.cs" />
+    <Compile Include="Cairo\Common\TextFormatHelper.cs" />
+    <Compile Include="Cairo\Common\Toolkit.cs" />
+    <Compile Include="Cairo\Common\Win32.cs" />
+    <Compile Include="Cairo\Control\ControlShare.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cairo\Control\Interfaces.cs" />
+    <Compile Include="Cairo\Control\ISheetTabControl.cs" />
+    <Compile Include="Cairo\Core\AutoFillSerial\AutoFillSection.cs" />
+    <Compile Include="Cairo\Core\AutoFillSerial\AutoFillSectionEntryFactory.cs" />
+    <Compile Include="Cairo\Core\AutoFillSerial\AutoFillSequence.cs" />
+    <Compile Include="Cairo\Core\AutoFillSerial\IAutoFillSectionEntry.cs" />
+    <Compile Include="Cairo\Core\AutoFillSerial\NullAutoFillSectionEntry.cs" />
+    <Compile Include="Cairo\Core\AutoFillSerial\NumericalAutoFillSectionEntry.cs" />
+    <Compile Include="Cairo\Core\AutoFillSerial\TextAutoFillSectionEntry.cs" />
+    <Compile Include="Cairo\Core\Border.cs" />
+    <Compile Include="Cairo\Core\Cell.cs" />
+    <Compile Include="Cairo\Core\Cell\Merge.cs" />
+    <Compile Include="Cairo\Core\Cell\Text.cs" />
+    <Compile Include="Cairo\Core\Clipboard.cs" />
+    <Compile Include="Cairo\Core\Comment.cs" />
+    <Compile Include="Cairo\Core\CSV.cs" />
+    <Compile Include="Cairo\Core\Data.cs" />
+    <Compile Include="Cairo\Core\DataBind.cs" />
+    <Compile Include="Cairo\Core\DataFormat.cs" />
+    <Compile Include="Cairo\Core\Drawing.cs" />
+    <Compile Include="Cairo\Core\FilterSort.cs" />
+    <Compile Include="Cairo\Core\Formula.cs" />
+    <Compile Include="Cairo\Core\Header.cs" />
+    <Compile Include="Cairo\Core\Outline.cs" />
+    <Compile Include="Cairo\Core\PartialGrid.cs" />
+    <Compile Include="Cairo\Core\Position.cs" />
+    <Compile Include="Cairo\Core\Print.cs" />
+    <Compile Include="Cairo\Core\Range.cs" />
+    <Compile Include="Cairo\Core\Range\HighlightRange.cs" />
+    <Compile Include="Cairo\Core\Range\Merge.cs" />
+    <Compile Include="Cairo\Core\Range\NamedRange.cs" />
+    <Compile Include="Cairo\Core\Range\ReferenceRange.cs" />
+    <Compile Include="Cairo\Core\Style.cs" />
+    <Compile Include="Cairo\Core\ViewControl.cs" />
+    <Compile Include="Cairo\Core\Workbook\Appearance.cs" />
+    <Compile Include="Cairo\Core\Workbook\Languages.cs" />
+    <Compile Include="Cairo\Core\Workbook\Workbook.cs" />
+    <Compile Include="Cairo\Core\Workbook\WorkbookInterface.cs" />
+    <Compile Include="Cairo\Core\Workbook\WorksheetCollection.cs" />
+    <Compile Include="Cairo\Core\Worksheet\Edit.cs" />
+    <Compile Include="Cairo\Core\Worksheet\Enums.cs" />
+    <Compile Include="Cairo\Core\Worksheet\InitReset.cs" />
+    <Compile Include="Cairo\Core\Worksheet\PositionCalc.cs" />
+    <Compile Include="Cairo\Core\Worksheet\Selection.cs" />
+    <Compile Include="Cairo\Core\Worksheet\Settings.cs" />
+    <Compile Include="Cairo\Core\Worksheet\Utility.cs" />
+    <Compile Include="Cairo\Core\Worksheet\WorksheetInterface.cs" />
+    <Compile Include="Cairo\Data\AutoFilter.cs" />
+    <Compile Include="Cairo\Data\DataSource.cs" />
+    <Compile Include="Cairo\Data\DataStruct.cs" />
+    <Compile Include="Cairo\Drawing\Canvas.cs" />
+    <Compile Include="Cairo\Drawing\Component.cs" />
+    <Compile Include="Cairo\Drawing\DrawingContext.cs" />
+    <Compile Include="Cairo\Drawing\DrawingObjects.cs" />
+    <Compile Include="Cairo\Drawing\Events.cs" />
+    <Compile Include="Cairo\Drawing\IDrawing.cs" />
+    <Compile Include="Cairo\Drawing\IFloating.cs" />
+    <Compile Include="Cairo\Drawing\Image.cs" />
+    <Compile Include="Cairo\Drawing\Layout.cs" />
+    <Compile Include="Cairo\Drawing\Shapes\BasicShapes.cs" />
+    <Compile Include="Cairo\Drawing\Shapes\DiamondShape.cs" />
+    <Compile Include="Cairo\Drawing\Shapes\Line.cs" />
+    <Compile Include="Cairo\Drawing\Shapes\ProShapes.cs" />
+    <Compile Include="Cairo\Drawing\Shapes\ShapeObject.cs" />
+    <Compile Include="Cairo\Drawing\Shapes\SmartShaps\BlockArcShape.cs" />
+    <Compile Include="Cairo\Drawing\Style.cs" />
+    <Compile Include="Cairo\Drawing\Text.cs" />
+    <Compile Include="Cairo\EventArgs.cs" />
+    <Compile Include="Cairo\Exceptions.cs" />
+    <Compile Include="Cairo\ExtendTrigger.cs" />
+    <Compile Include="Cairo\Formula\Evaluator.cs" />
+    <Compile Include="Cairo\Formula\FormulaExtension.cs" />
+    <Compile Include="Cairo\Formula\FunctionNames.cs" />
+    <Compile Include="Cairo\Formula\Functions.cs" />
+    <Compile Include="Cairo\Formula\Parser.cs" />
+    <Compile Include="Cairo\Formula\Refactor.cs" />
+    <Compile Include="Cairo\GenericExtends.cs" />
+    <Compile Include="Cairo\Graphics\Color.cs" />
+    <Compile Include="Cairo\Graphics\Font.cs" />
+    <Compile Include="Cairo\Graphics\HatchStyles.cs" />
+    <Compile Include="Cairo\Graphics\IBrush.cs" />
+    <Compile Include="Cairo\Graphics\IGraphics.cs" />
+    <Compile Include="Cairo\Graphics\LineStyle.cs" />
+    <Compile Include="Cairo\Graphics\Matrix.cs" />
+    <Compile Include="Cairo\Graphics\Point.cs" />
+    <Compile Include="Cairo\Graphics\Rectangle.cs" />
+    <Compile Include="Cairo\Graphics\Size.cs" />
+    <Compile Include="Cairo\Interaction\CursorStyle.cs" />
+    <Compile Include="Cairo\Interaction\KeyCode.cs" />
+    <Compile Include="Cairo\Interaction\MouseButtons.cs" />
+    <Compile Include="Cairo\Interaction\ToggleStatus.cs" />
+    <Compile Include="Cairo\Interaction\Visual.cs" />
+    <Compile Include="Cairo\IO\CSVFormat.cs" />
+    <Compile Include="Cairo\IO\ExcelReader.cs" />
+    <Compile Include="Cairo\IO\ExcelSchame.cs" />
+    <Compile Include="Cairo\IO\ExcelWriter.cs" />
+    <Compile Include="Cairo\IO\FileFormat.cs" />
+    <Compile Include="Cairo\IO\HTMLExporter.cs" />
+    <Compile Include="Cairo\IO\OpenXMLUtility.cs" />
+    <Compile Include="Cairo\IO\RGFFormat.cs" />
+    <Compile Include="Cairo\IO\XMLFileFormat.cs" />
+    <Compile Include="Cairo\Print\GDIPrint.cs" />
+    <Compile Include="Cairo\Print\PaperSize.cs" />
+    <Compile Include="Cairo\Print\PDFPrint.cs" />
+    <Compile Include="Cairo\Print\PrintInterface.cs" />
+    <Compile Include="Cairo\Print\PrintSession.cs" />
+    <Compile Include="Cairo\Print\PrintSettings.cs" />
+    <Compile Include="Cairo\Print\WPFPrinter.cs" />
+    <Compile Include="Cairo\Properties\Resources.Designer.cs" />
+    <Compile Include="Cairo\Rendering\BorderPainter.cs" />
+    <Compile Include="Cairo\Rendering\DrawingContext.cs" />
+    <Compile Include="Cairo\Rendering\PDF.cs" />
+    <Compile Include="Cairo\Rendering\RenderingInterface.cs" />
+    <Compile Include="Cairo\Script\RSFunctions.cs" />
+    <Compile Include="Cairo\Script\RSObjects.cs" />
+    <Compile Include="Cairo\Script\ScriptExtend.cs" />
+    <Compile Include="Cairo\Test\RichTextTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cairo\Test\RichTextTestForm.Designer.cs">
+      <DependentUpon>RichTextTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cairo\Utility\ColorUtility.cs" />
+    <Compile Include="Cairo\Utility\FileUtility.cs" />
+    <Compile Include="Cairo\Utility\LangUtility.cs" />
+    <Compile Include="Cairo\Utility\MeasureToolkit.cs" />
+    <Compile Include="Cairo\Utility\PrinterUtility.cs" />
+    <Compile Include="Cairo\Utility\RGUtility.cs" />
+    <Compile Include="Cairo\Utility\StyleUtility.cs" />
+    <Compile Include="Cairo\Utility\TestHelper.cs" />
+    <Compile Include="Cairo\Utility\XMLHelper.cs" />
+    <Compile Include="Cairo\Utility\ZipFileArchive.cs" />
+    <Compile Include="Cairo\Views\CellsViewport.cs" />
+    <Compile Include="Cairo\Views\CommentView.cs" />
+    <Compile Include="Cairo\Views\DrawingView.cs" />
+    <Compile Include="Cairo\Views\HeaderViews.cs" />
+    <Compile Include="Cairo\Views\Layer.cs" />
+    <Compile Include="Cairo\Views\NormalViewportController.cs" />
+    <Compile Include="Cairo\Views\OutlineViews.cs" />
+    <Compile Include="Cairo\Views\Viewport.cs" />
+    <Compile Include="Cairo\WinForm\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cairo\WinForm\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cairo\WinForm\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cairo\WinForm\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cairo\WinForm\Designer\EditorServiceContext.cs" />
+    <Compile Include="Cairo\WinForm\Designer\IntegrateDesigner.cs" />
+    <Compile Include="Cairo\WinForm\Designer\WorkbookEditor.cs" />
+    <Compile Include="Cairo\WinForm\Designer\WorkbookEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cairo\WinForm\Designer\WorkbookEditorForm.Designer.cs">
+      <DependentUpon>WorkbookEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cairo\WinForm\FilterGUI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cairo\WinForm\FormulaParserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cairo\WinForm\FormulaParserForm.designer.cs">
+      <DependentUpon>FormulaParserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cairo\WinForm\Graphics.cs" />
+    <Compile Include="Cairo\WinForm\Platform.cs" />
+    <Compile Include="Cairo\WinForm\RenameSheetDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cairo\WinForm\RenameSheetDialog.Designer.cs">
+      <DependentUpon>RenameSheetDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cairo\WinForm\SheetTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cairo\WinForm\WinFormControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cairo\Worksheet.cs" />
+    <Compile Include="Cairo\Zip\CRC32.cs" />
+    <Compile Include="Cairo\Zip\Deflate.cs" />
+    <Compile Include="Cairo\Zip\Events.cs" />
+    <Compile Include="Cairo\Zip\Exceptions.cs" />
+    <Compile Include="Cairo\Zip\Inflate.cs" />
+    <Compile Include="Cairo\Zip\InfTree.cs" />
+    <Compile Include="Cairo\Zip\OffsetStream.cs" />
+    <Compile Include="Cairo\Zip\Shared.cs" />
+    <Compile Include="Cairo\Zip\Zip.cs" />
+    <Compile Include="Cairo\Zip\ZipEntry.cs" />
+    <Compile Include="Cairo\Zip\ZipFile.cs" />
+    <Compile Include="Cairo\Zip\ZipInputStream.cs" />
+    <Compile Include="Cairo\Zip\ZipOutputStream.cs" />
+    <Compile Include="Cairo\Zip\ZipSegmentedStream.cs" />
+    <Compile Include="Cairo\Zip\Zlib.cs" />
     <Compile Include="MiniCAD\Components\ContainerComponent.cs" />
     <Compile Include="MiniCAD\Components\IComponent.cs" />
     <Compile Include="MiniCAD\Components\IDrawable.cs" />
@@ -143,11 +373,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs" />
+    <Compile Include="Properties\Settings2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="ScrollBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cairo\Properties\Resources.resx" />
+    <EmbeddedResource Include="Cairo\Test\RichTextTestForm.resx">
+      <DependentUpon>RichTextTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cairo\WinForm\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cairo\WinForm\DebugForm.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cairo\WinForm\Designer\WorkbookEditorForm.resx">
+      <DependentUpon>WorkbookEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cairo\WinForm\FormulaParserForm.resx">
+      <DependentUpon>FormulaParserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cairo\WinForm\RenameSheetDialog.resx">
+      <DependentUpon>RenameSheetDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MiniCAD\MiniCADEditor.resx">
       <DependentUpon>MiniCADEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,11 +432,35 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cairo\ReoGrid.csproj" />
+    <Content Include="Cairo\Resources\all_design.png" />
+    <Content Include="Cairo\Resources\all_design_32.png" />
+    <Content Include="Cairo\Resources\cell_merge_bak.png" />
+    <Content Include="Cairo\Resources\cross.cur" />
+    <Content Include="Cairo\Resources\EULA_EN.txt" />
+    <Content Include="Cairo\Resources\full_col_select.cur" />
+    <Content Include="Cairo\Resources\full_row_select.cur" />
+    <Content Include="Cairo\Resources\grid_select.cur" />
+    <Content Include="Cairo\Resources\none_border.png" />
+    <Content Include="Cairo\Resources\pick_range.cur" />
+    <Content Include="Cairo\Resources\theme1.xml" />
     <Content Include="MonteCarlo\Implementation\FastColoredTextBox.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Cairo\App.config" />
+    <None Include="Cairo\Resources\base_lib.reo" />
+    <None Include="Cairo\Resources\blank.xlsx" />
+    <None Include="Cairo\Resources\eye_16xLG.png.dat" />
+    <None Include="Cairo\Resources\icon_list.png.dat" />
+    <None Include="Cairo\Resources\NewBuildDefinition_8952.png.dat" />
+    <None Include="Cairo\Resources\NewBuildDefinition_8952_inactive.png.dat" />
+    <None Include="Cairo\Resources\seek.dat" />
     <None Include="MonteCarlo\Implementation\FCTB_key.snk" />
     <None Include="MonteCarlo\Implementation\SyntaxHighlighter.cs.old" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings2.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GEV Control Layouts\GEV Control Layouts.csproj">

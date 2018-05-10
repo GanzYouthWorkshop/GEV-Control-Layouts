@@ -8,11 +8,12 @@ using System.Windows.Forms;
 
 namespace GEV.Layouts
 {
-    public class GCLCheckBox : CheckBox
+    public class GCLCheckBox : CheckBox, IGCLControl
     {
+        public bool UseThemeColors { get; set; } = true;
+
         public Color BoxColor { get; set; } = GCLColors.SoftBorder;
         public Color CheckedColor { get; set; } = GCLColors.AccentColor2Highlight;
-
 
         public GCLCheckBox()
         {
@@ -24,21 +25,25 @@ namespace GEV.Layouts
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
+            Color box = this.UseThemeColors ? GCLColors.Button : this.BoxColor;
+            Color active = this.UseThemeColors ? GCLColors.AccentColor1 : this.CheckedColor;
+            Color text = this.UseThemeColors ? GCLColors.PrimaryText : this.ForeColor;
 
-            using (Brush border = new SolidBrush(this.BoxColor))
-            using (Brush active = new SolidBrush(this.CheckedColor))
-            using (Brush text = new SolidBrush(this.ForeColor))
-            using (Pen textPen = new Pen(border))
+            e.Graphics.Clear(this.BackColor);
+            using (Brush borderBrush = new SolidBrush(box))
+            using (Brush activeBrush = new SolidBrush(active))
+            using (Brush textBrush = new SolidBrush(text))
             {
                 RectangleF R = new RectangleF(e.Graphics.ClipBounds.X + this.Padding.Left, e.Graphics.ClipBounds.Y + this.Padding.Top + 3, 16F, 16F);
-                e.Graphics.FillRectangle(border, R);
+                e.Graphics.FillRectangle(borderBrush, R);
                 if (this.Checked)
                 {
-                    e.Graphics.FillRectangle(active, new RectangleF(R.X + 3, R.Y + 3, 10, 10));
+                    e.Graphics.FillRectangle(activeBrush, new RectangleF(R.X + 3, R.Y + 3, 10, 10));
                 }
 
-                //e.Graphics.DrawRectangle(textPen, R.X, R.Y, R.Width - 1, R.Height - 1);
+                RectangleF rt = new RectangleF(e.Graphics.ClipBounds.X + 18, e.Graphics.ClipBounds.Y, e.Graphics.ClipBounds.Width - 18, e.Graphics.ClipBounds.Height);
+
+                e.Graphics.DrawString(this.Text, this.Font, textBrush, rt, new StringFormat() { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Near });
             }
         }
     }

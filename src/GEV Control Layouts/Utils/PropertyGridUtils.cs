@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GEV.Layouts.PropertyGrid
+namespace GEV.Layouts.Utils
 {
     internal class PropertyGridUtils
     {
