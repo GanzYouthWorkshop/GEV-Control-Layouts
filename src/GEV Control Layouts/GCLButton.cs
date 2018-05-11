@@ -10,9 +10,14 @@ using System.Drawing;
 
 namespace GEV.Layouts
 {
-    public partial class GCLButton : Button, IGCLControl
+    public partial class GCLButton : Button, IGCLControl, IGCLButtonlike
     {
         public bool UseThemeColors { get; set; } = true;
+        public bool IsHovered { get; private set; } = false;
+        public bool IsPressed { get; private set; } = false;
+
+        [Browsable(false)]
+        public  bool Checked { get; set; } = false;
 
         public GCLButton()
         {
@@ -28,32 +33,37 @@ namespace GEV.Layouts
             
             this.BackColor = GCLColors.Button;
             this.ForeColor = GCLColors.PrimaryText;
+
+            this.MouseEnter += OnMouseEnter;
+            this.MouseLeave += OnMouseLeave;
+            this.MouseDown += OnMouseDown;
+            this.MouseUp += OnMouseUp;
+        }
+
+        private void OnMouseUp(object sender, MouseEventArgs e)
+        {
+            this.IsPressed = false;
+            this.Invalidate();
+        }
+
+        private void OnMouseDown(object sender, MouseEventArgs e)
+        {
+            this.IsPressed = true;
+        }
+
+        private void OnMouseLeave(object sender, EventArgs e)
+        {
+            this.IsHovered = false;
+        }
+
+        private void OnMouseEnter(object sender, EventArgs e)
+        {
+            this.IsHovered = true;
         }
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            //Color c1 = this.FlatAppearance.BorderColor;
-            //Color c2 = this.FlatAppearance.MouseOverBackColor;
-            //Color c3 = this.FlatAppearance.MouseDownBackColor;
-            //Color c4 = this.BackColor;
-            //Color c5 = this.ForeColor;
-
-            //if (this.UseThemeColors)
-            //{
-            //    this.FlatAppearance.BorderColor = GCLColors.SoftBorder;
-            //    this.FlatAppearance.MouseOverBackColor = GCLColors.AccentColor1Highlight;
-            //    this.FlatAppearance.MouseDownBackColor = GCLColors.AccentColor1;
-            //    this.BackColor = GCLColors.Button;
-            //    this.ForeColor = GCLColors.PrimaryText;
-            //}
-
-            base.OnPaint(pevent);
-
-            //this.FlatAppearance.BorderColor = c1;
-            //this.FlatAppearance.MouseOverBackColor = c2;
-            //this.FlatAppearance.MouseDownBackColor = c3;
-            //this.BackColor = c4;
-            //this.ForeColor = c5;
+            Utils.GCLUtils.DrawButtonlike(this, pevent);
         }
     }
 }

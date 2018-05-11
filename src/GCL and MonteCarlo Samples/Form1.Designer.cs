@@ -211,6 +211,7 @@
             this.gclPanel3.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel3.Size = new System.Drawing.Size(323, 168);
             this.gclPanel3.TabIndex = 12;
+            this.gclPanel3.UseThemeColors = true;
             // 
             // lblSystemStatus
             // 
@@ -305,6 +306,7 @@
             this.gclPanel6.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel6.Size = new System.Drawing.Size(323, 64);
             this.gclPanel6.TabIndex = 13;
+            this.gclPanel6.UseThemeColors = true;
             // 
             // label6
             // 
@@ -333,6 +335,7 @@
             this.gclPanel4.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel4.Size = new System.Drawing.Size(323, 175);
             this.gclPanel4.TabIndex = 13;
+            this.gclPanel4.UseThemeColors = true;
             // 
             // label5
             // 
@@ -396,6 +399,7 @@
             this.gclPanel7.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel7.Size = new System.Drawing.Size(323, 175);
             this.gclPanel7.TabIndex = 14;
+            this.gclPanel7.UseThemeColors = true;
             // 
             // gclMiniDataLog1
             // 
@@ -449,6 +453,7 @@
             this.gclPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel1.Size = new System.Drawing.Size(323, 267);
             this.gclPanel1.TabIndex = 11;
+            this.gclPanel1.UseThemeColors = true;
             // 
             // gclLineMonitor3
             // 
@@ -537,10 +542,12 @@
             this.gclPanel5.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel5.Size = new System.Drawing.Size(832, 890);
             this.gclPanel5.TabIndex = 13;
+            this.gclPanel5.UseThemeColors = true;
             // 
             // gclButton3
             // 
             this.gclButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclButton3.Checked = false;
             this.gclButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
             this.gclButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(214)))), ((int)(((byte)(120)))));
@@ -551,6 +558,7 @@
             this.gclButton3.Size = new System.Drawing.Size(110, 33);
             this.gclButton3.TabIndex = 9;
             this.gclButton3.Text = "gclButton3";
+            this.gclButton3.UseThemeColors = true;
             this.gclButton3.UseVisualStyleBackColor = false;
             // 
             // panel7
@@ -621,6 +629,7 @@
             this.gclCheckBox1.Size = new System.Drawing.Size(86, 23);
             this.gclCheckBox1.TabIndex = 5;
             this.gclCheckBox1.Text = "Checkbox";
+            this.gclCheckBox1.UseThemeColors = true;
             this.gclCheckBox1.UseVisualStyleBackColor = true;
             // 
             // gclTextbox1
@@ -677,6 +686,7 @@
             this.gclToggleButton1.Size = new System.Drawing.Size(127, 33);
             this.gclToggleButton1.TabIndex = 3;
             this.gclToggleButton1.Text = "gclToggleButton1";
+            this.gclToggleButton1.UseThemeColors = true;
             this.gclToggleButton1.UseVisualStyleBackColor = false;
             // 
             // gclRadioButton2
@@ -720,6 +730,7 @@
             // gclButton1
             // 
             this.gclButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
+            this.gclButton1.Checked = false;
             this.gclButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
             this.gclButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
@@ -730,6 +741,7 @@
             this.gclButton1.Size = new System.Drawing.Size(110, 33);
             this.gclButton1.TabIndex = 0;
             this.gclButton1.Text = "gclButton1";
+            this.gclButton1.UseThemeColors = true;
             this.gclButton1.UseVisualStyleBackColor = false;
             this.gclButton1.Click += new System.EventHandler(this.gclButton1_Click);
             // 
@@ -755,6 +767,7 @@
             this.gclPanel2.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel2.Size = new System.Drawing.Size(1175, 900);
             this.gclPanel2.TabIndex = 10;
+            this.gclPanel2.UseThemeColors = true;
             // 
             // gclGauge3
             // 
@@ -804,6 +817,7 @@
             this.gclPanel8.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel8.Size = new System.Drawing.Size(1175, 900);
             this.gclPanel8.TabIndex = 11;
+            this.gclPanel8.UseThemeColors = true;
             // 
             // monteCarloEditor1
             // 
@@ -853,6 +867,7 @@
             this.gclPanel9.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel9.Size = new System.Drawing.Size(1175, 900);
             this.gclPanel9.TabIndex = 12;
+            this.gclPanel9.UseThemeColors = true;
             // 
             // miniCADEditor1
             // 
@@ -881,6 +896,7 @@
             // gclButton2
             // 
             this.gclButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
+            this.gclButton2.Checked = false;
             this.gclButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
             this.gclButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
@@ -891,6 +907,7 @@
             this.gclButton2.Size = new System.Drawing.Size(75, 23);
             this.gclButton2.TabIndex = 3;
             this.gclButton2.Text = "gclButton2";
+            this.gclButton2.UseThemeColors = true;
             this.gclButton2.UseVisualStyleBackColor = false;
             this.gclButton2.Click += new System.EventHandler(this.gclButton2_Click);
             // 

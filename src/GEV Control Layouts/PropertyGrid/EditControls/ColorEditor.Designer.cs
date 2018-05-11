@@ -78,6 +78,7 @@
             // 
             this.gclButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gclButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
+            this.gclButton1.Checked = false;
             this.gclButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.gclButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
@@ -90,12 +91,14 @@
             this.gclButton1.Size = new System.Drawing.Size(88, 33);
             this.gclButton1.TabIndex = 2;
             this.gclButton1.Text = "OK";
+            this.gclButton1.UseThemeColors = true;
             this.gclButton1.UseVisualStyleBackColor = false;
             // 
             // gclButton2
             // 
             this.gclButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gclButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
+            this.gclButton2.Checked = false;
             this.gclButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.gclButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
@@ -108,6 +111,7 @@
             this.gclButton2.Size = new System.Drawing.Size(88, 33);
             this.gclButton2.TabIndex = 3;
             this.gclButton2.Text = "Cancel";
+            this.gclButton2.UseThemeColors = true;
             this.gclButton2.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel1
@@ -137,171 +141,205 @@
             // pnlGCLColor1
             // 
             this.pnlGCLColor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
+            this.pnlGCLColor1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.pnlGCLColor1.Location = new System.Drawing.Point(3, 3);
             this.pnlGCLColor1.Name = "pnlGCLColor1";
             this.pnlGCLColor1.Padding = new System.Windows.Forms.Padding(10);
             this.pnlGCLColor1.Size = new System.Drawing.Size(32, 32);
             this.pnlGCLColor1.TabIndex = 0;
+            this.pnlGCLColor1.UseThemeColors = false;
             this.pnlGCLColor1.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel1
             // 
             this.gclPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.gclPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel1.Location = new System.Drawing.Point(41, 3);
             this.gclPanel1.Name = "gclPanel1";
             this.gclPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel1.Size = new System.Drawing.Size(32, 32);
             this.gclPanel1.TabIndex = 1;
+            this.gclPanel1.UseThemeColors = false;
             this.gclPanel1.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel2
             // 
             this.gclPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(37)))));
+            this.gclPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel2.Location = new System.Drawing.Point(79, 3);
             this.gclPanel2.Name = "gclPanel2";
             this.gclPanel2.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel2.Size = new System.Drawing.Size(32, 32);
             this.gclPanel2.TabIndex = 2;
+            this.gclPanel2.UseThemeColors = false;
             this.gclPanel2.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel3
             // 
             this.gclPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.gclPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel3.Location = new System.Drawing.Point(117, 3);
             this.gclPanel3.Name = "gclPanel3";
             this.gclPanel3.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel3.Size = new System.Drawing.Size(32, 32);
             this.gclPanel3.TabIndex = 3;
+            this.gclPanel3.UseThemeColors = false;
             this.gclPanel3.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel4
             // 
             this.gclPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
+            this.gclPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel4.Location = new System.Drawing.Point(3, 41);
             this.gclPanel4.Name = "gclPanel4";
             this.gclPanel4.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel4.Size = new System.Drawing.Size(32, 32);
             this.gclPanel4.TabIndex = 4;
+            this.gclPanel4.UseThemeColors = false;
             this.gclPanel4.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel5
             // 
             this.gclPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
+            this.gclPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel5.Location = new System.Drawing.Point(41, 41);
             this.gclPanel5.Name = "gclPanel5";
             this.gclPanel5.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel5.Size = new System.Drawing.Size(32, 32);
             this.gclPanel5.TabIndex = 5;
+            this.gclPanel5.UseThemeColors = false;
             this.gclPanel5.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel6
             // 
             this.gclPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
+            this.gclPanel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel6.Location = new System.Drawing.Point(79, 41);
             this.gclPanel6.Name = "gclPanel6";
             this.gclPanel6.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel6.Size = new System.Drawing.Size(32, 32);
             this.gclPanel6.TabIndex = 6;
+            this.gclPanel6.UseThemeColors = false;
             this.gclPanel6.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel7
             // 
             this.gclPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
+            this.gclPanel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel7.Location = new System.Drawing.Point(117, 41);
             this.gclPanel7.Name = "gclPanel7";
             this.gclPanel7.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel7.Size = new System.Drawing.Size(32, 32);
             this.gclPanel7.TabIndex = 7;
+            this.gclPanel7.UseThemeColors = false;
             this.gclPanel7.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel8
             // 
             this.gclPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
+            this.gclPanel8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel8.Location = new System.Drawing.Point(3, 79);
             this.gclPanel8.Name = "gclPanel8";
             this.gclPanel8.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel8.Size = new System.Drawing.Size(32, 32);
             this.gclPanel8.TabIndex = 8;
+            this.gclPanel8.UseThemeColors = false;
             this.gclPanel8.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel9
             // 
             this.gclPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(87)))), ((int)(((byte)(152)))));
+            this.gclPanel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel9.Location = new System.Drawing.Point(41, 79);
             this.gclPanel9.Name = "gclPanel9";
             this.gclPanel9.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel9.Size = new System.Drawing.Size(32, 32);
             this.gclPanel9.TabIndex = 9;
+            this.gclPanel9.UseThemeColors = false;
             this.gclPanel9.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel10
             // 
             this.gclPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
+            this.gclPanel10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel10.Location = new System.Drawing.Point(79, 79);
             this.gclPanel10.Name = "gclPanel10";
             this.gclPanel10.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel10.Size = new System.Drawing.Size(32, 32);
             this.gclPanel10.TabIndex = 10;
+            this.gclPanel10.UseThemeColors = false;
             this.gclPanel10.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel11
             // 
             this.gclPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(37)))));
+            this.gclPanel11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel11.Location = new System.Drawing.Point(117, 79);
             this.gclPanel11.Name = "gclPanel11";
             this.gclPanel11.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel11.Size = new System.Drawing.Size(32, 32);
             this.gclPanel11.TabIndex = 11;
+            this.gclPanel11.UseThemeColors = false;
             this.gclPanel11.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel12
             // 
             this.gclPanel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gclPanel12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel12.Location = new System.Drawing.Point(3, 117);
             this.gclPanel12.Name = "gclPanel12";
             this.gclPanel12.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel12.Size = new System.Drawing.Size(32, 32);
             this.gclPanel12.TabIndex = 12;
+            this.gclPanel12.UseThemeColors = false;
             this.gclPanel12.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel13
             // 
             this.gclPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
+            this.gclPanel13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel13.Location = new System.Drawing.Point(41, 117);
             this.gclPanel13.Name = "gclPanel13";
             this.gclPanel13.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel13.Size = new System.Drawing.Size(32, 32);
             this.gclPanel13.TabIndex = 13;
+            this.gclPanel13.UseThemeColors = false;
             this.gclPanel13.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel14
             // 
             this.gclPanel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.gclPanel14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel14.Location = new System.Drawing.Point(79, 117);
             this.gclPanel14.Name = "gclPanel14";
             this.gclPanel14.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel14.Size = new System.Drawing.Size(32, 32);
             this.gclPanel14.TabIndex = 14;
+            this.gclPanel14.UseThemeColors = false;
             this.gclPanel14.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel15
             // 
             this.gclPanel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.gclPanel15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel15.Location = new System.Drawing.Point(117, 117);
             this.gclPanel15.Name = "gclPanel15";
             this.gclPanel15.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel15.Size = new System.Drawing.Size(32, 32);
             this.gclPanel15.TabIndex = 15;
+            this.gclPanel15.UseThemeColors = false;
             this.gclPanel15.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // gclPanel16
             // 
             this.gclPanel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
+            this.gclPanel16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.gclPanel16.Location = new System.Drawing.Point(3, 155);
             this.gclPanel16.Name = "gclPanel16";
             this.gclPanel16.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel16.Size = new System.Drawing.Size(32, 32);
             this.gclPanel16.TabIndex = 16;
+            this.gclPanel16.UseThemeColors = false;
             this.gclPanel16.Click += new System.EventHandler(this.OnPredefinedColorClick);
             // 
             // ColorEditor

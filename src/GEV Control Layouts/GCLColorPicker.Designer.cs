@@ -80,8 +80,14 @@
             // 
             // nudBlue
             // 
-            this.nudBlue.Increment = 1;
+            this.nudBlue.DecimalPlaces = 0;
+            this.nudBlue.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudBlue.Location = new System.Drawing.Point(222, 134);
+            this.nudBlue.Margin = new System.Windows.Forms.Padding(2);
             this.nudBlue.Maximum = new decimal(new int[] {
             255,
             0,
@@ -104,8 +110,14 @@
             // 
             // nudGreen
             // 
-            this.nudGreen.Increment = 1;
+            this.nudGreen.DecimalPlaces = 0;
+            this.nudGreen.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudGreen.Location = new System.Drawing.Point(222, 106);
+            this.nudGreen.Margin = new System.Windows.Forms.Padding(2);
             this.nudGreen.Maximum = new decimal(new int[] {
             255,
             0,
@@ -128,8 +140,14 @@
             // 
             // nudRed
             // 
-            this.nudRed.Increment = 1;
+            this.nudRed.DecimalPlaces = 0;
+            this.nudRed.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudRed.Location = new System.Drawing.Point(222, 78);
+            this.nudRed.Margin = new System.Windows.Forms.Padding(2);
             this.nudRed.Maximum = new decimal(new int[] {
             255,
             0,
@@ -153,11 +171,13 @@
             // gclPanel1
             // 
             this.gclPanel1.BackColor = System.Drawing.Color.White;
+            this.gclPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.gclPanel1.Location = new System.Drawing.Point(194, 7);
             this.gclPanel1.Name = "gclPanel1";
             this.gclPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.gclPanel1.Size = new System.Drawing.Size(108, 63);
             this.gclPanel1.TabIndex = 1;
+            this.gclPanel1.UseThemeColors = false;
             // 
             // GCLColorPicker
             // 

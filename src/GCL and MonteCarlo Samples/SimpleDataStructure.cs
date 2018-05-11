@@ -2,6 +2,7 @@
 using GEV.Layouts.PropertyGrid;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +14,21 @@ namespace WindowsFormsApplication3
     [GCLName("Simple data structure", GCLLanguages.English)]
     public class SimpleDataStructure
     {
+        [Category("Alapok")]
         public string Name { get; } = "Valami";
 
+        [Category("Méretek")]
+        [GCLUnit("px")]
         public int Height { get; set; } = 13;
 
+        [Category("Méretek")]
         [GCLName("Szélesség", GCLLanguages.Hungarian)]
         [GCLName("Breite", GCLLanguages.German)]
         [GCLName("Width", GCLLanguages.English)]
         [GCLUnit("px")]
         public int Width { get; set; } = 200;
 
+        [Category("Teszt")]
         [GCLCommand(true)]
         [GCLName("Hiba", GCLLanguages.Hungarian)]
         [GCLDescription("Ez direkt hibát fog okozni.", GCLLanguages.Hungarian)]
@@ -38,6 +44,7 @@ namespace WindowsFormsApplication3
             };
         }
 
+        [Category("Méretek")]
         [GCLCommand(true)]
         [GCLName("Mentés", GCLLanguages.Hungarian)]
         [GCLDescription("Menti az összes beállítást.", GCLLanguages.Hungarian)]
