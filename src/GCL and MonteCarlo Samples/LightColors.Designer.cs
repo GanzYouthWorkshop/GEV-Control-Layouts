@@ -58,14 +58,20 @@
             this.gclButton1 = new GEV.Layouts.GCLButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.cairoSpreadsheet1 = new GEV.Layouts.Extended.Cairo.CairoSpreadsheet();
-            this.gclThemeProvider1 = new GEV.Layouts.Theming.GCLThemeProvider(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.gclDockingContainer2 = new GEV.Layouts.Docking.GCLDockingContainer(this.components);
-            this.gclDockablePanel3 = new GEV.Layouts.Docking.GCLDockablePanel();
             this.gclDockablePanel4 = new GEV.Layouts.Docking.GCLDockablePanel();
             this.monteCarloEditor1 = new GEV.Layouts.Extended.MonteCarlo.MonteCarloEditor();
+            this.gclDockablePanel3 = new GEV.Layouts.Docking.GCLDockablePanel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.miniCADEditor1 = new GEV.Layouts.Extended.MiniCAD.MiniCADEditor();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.gclPanel5 = new GEV.Layouts.GCLPanel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.gclPanel6 = new GEV.Layouts.GCLPanel();
+            this.gclPanel4 = new GEV.Layouts.GCLPanel();
+            this.gclThemeProvider1 = new GEV.Layouts.Theming.GCLThemeProvider(this.components);
             this.gclTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gclDockingContainer1.SuspendLayout();
@@ -80,6 +86,7 @@
             this.gclDockingContainer2.SuspendLayout();
             this.gclDockablePanel4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // gclWindowHeader1
@@ -115,6 +122,7 @@
             this.gclTabControl1.Controls.Add(this.tabPage3);
             this.gclTabControl1.Controls.Add(this.tabPage4);
             this.gclTabControl1.Controls.Add(this.tabPage5);
+            this.gclTabControl1.Controls.Add(this.tabPage6);
             this.gclTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclTabControl1.ItemSize = new System.Drawing.Size(155, 55);
             this.gclTabControl1.Location = new System.Drawing.Point(1, 41);
@@ -166,7 +174,8 @@
             this.gclPropertyGrid2.Location = new System.Drawing.Point(200, 0);
             this.gclPropertyGrid2.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.gclPropertyGrid2.Name = "gclPropertyGrid2";
-            this.gclPropertyGrid2.PropertyBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclPropertyGrid2.PropertyBackColor = System.Drawing.Color.White;
+            this.gclPropertyGrid2.PropertyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
             this.gclPropertyGrid2.PropertyDisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.gclPropertyGrid2.PropertyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.gclPropertyGrid2.Size = new System.Drawing.Size(816, 602);
@@ -289,6 +298,7 @@
             this.gclPropertyGrid1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.gclPropertyGrid1.Name = "gclPropertyGrid1";
             this.gclPropertyGrid1.PropertyBackColor = System.Drawing.Color.White;
+            this.gclPropertyGrid1.PropertyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclPropertyGrid1.PropertyDisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
             this.gclPropertyGrid1.PropertyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclPropertyGrid1.Size = new System.Drawing.Size(682, 565);
@@ -412,7 +422,7 @@
             this.gclComboBox1.Name = "gclComboBox1";
             this.gclComboBox1.SelectedIndex = -1;
             this.gclComboBox1.SelectedItem = null;
-            this.gclComboBox1.Size = new System.Drawing.Size(122, 26);
+            this.gclComboBox1.Size = new System.Drawing.Size(122, 22);
             this.gclComboBox1.Soreted = false;
             this.gclComboBox1.TabIndex = 6;
             this.gclComboBox1.Text = "gclComboBox1";
@@ -430,7 +440,7 @@
             this.gclRadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclRadioButton1.Location = new System.Drawing.Point(195, 123);
             this.gclRadioButton1.Name = "gclRadioButton1";
-            this.gclRadioButton1.Size = new System.Drawing.Size(122, 31);
+            this.gclRadioButton1.Size = new System.Drawing.Size(106, 25);
             this.gclRadioButton1.TabIndex = 5;
             this.gclRadioButton1.Text = "gclRadioButton1";
             this.gclRadioButton1.UseVisualStyleBackColor = false;
@@ -467,7 +477,7 @@
             // gclTextbox1
             // 
             this.gclTextbox1.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
-            this.gclTextbox1.BackColor = System.Drawing.Color.White;
+            this.gclTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.gclTextbox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
             this.gclTextbox1.Location = new System.Drawing.Point(276, 22);
             this.gclTextbox1.Margin = new System.Windows.Forms.Padding(2);
@@ -477,6 +487,7 @@
             this.gclTextbox1.TabIndex = 3;
             this.gclTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.gclTextbox1.UseSystemPasswordChar = false;
+            this.gclTextbox1.UseThemeColors = true;
             // 
             // gclToggleButton1
             // 
@@ -492,7 +503,7 @@
             this.gclToggleButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclToggleButton1.Location = new System.Drawing.Point(38, 125);
             this.gclToggleButton1.Name = "gclToggleButton1";
-            this.gclToggleButton1.Size = new System.Drawing.Size(126, 29);
+            this.gclToggleButton1.Size = new System.Drawing.Size(109, 23);
             this.gclToggleButton1.TabIndex = 2;
             this.gclToggleButton1.Text = "gclToggleButton1";
             this.gclToggleButton1.UseThemeColors = true;
@@ -506,7 +517,7 @@
             this.gclCheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gclCheckBox1.Location = new System.Drawing.Point(141, 22);
             this.gclCheckBox1.Name = "gclCheckBox1";
-            this.gclCheckBox1.Size = new System.Drawing.Size(111, 23);
+            this.gclCheckBox1.Size = new System.Drawing.Size(94, 17);
             this.gclCheckBox1.TabIndex = 1;
             this.gclCheckBox1.Text = "gclCheckBox1";
             this.gclCheckBox1.UseThemeColors = true;
@@ -562,28 +573,6 @@
             this.cairoSpreadsheet1.TabIndex = 0;
             this.cairoSpreadsheet1.Text = "cairoSpreadsheet1";
             // 
-            // gclThemeProvider1
-            // 
-            this.gclThemeProvider1.AccentColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
-            this.gclThemeProvider1.AccentColor1Highlight = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(200)))), ((int)(((byte)(125)))));
-            this.gclThemeProvider1.AccentColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
-            this.gclThemeProvider1.AccentColor2Highlight = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
-            this.gclThemeProvider1.AccentColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(87)))), ((int)(((byte)(152)))));
-            this.gclThemeProvider1.AlertYellow = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
-            this.gclThemeProvider1.BasicTheme = GEV.Layouts.Theming.BasicThemes.Dark;
-            this.gclThemeProvider1.Border = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
-            this.gclThemeProvider1.Button = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
-            this.gclThemeProvider1.ErrorRed = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.gclThemeProvider1.FormBackground = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.gclThemeProvider1.HeaderBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(37)))));
-            this.gclThemeProvider1.MenuBackground = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.gclThemeProvider1.PanelBackground = System.Drawing.Color.White;
-            this.gclThemeProvider1.PrimaryText = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.gclThemeProvider1.SecondaryText = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.gclThemeProvider1.Shadow = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.gclThemeProvider1.SoftBorder = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.gclThemeProvider1.SuccessGreen = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.gclDockingContainer2);
@@ -608,19 +597,6 @@
             this.gclDockingContainer2.TabIndex = 0;
             this.gclDockingContainer2.UseThemeColors = true;
             // 
-            // gclDockablePanel3
-            // 
-            this.gclDockablePanel3.BackColor = System.Drawing.Color.White;
-            this.gclDockablePanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
-            this.gclDockablePanel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gclDockablePanel3.Location = new System.Drawing.Point(1016, 0);
-            this.gclDockablePanel3.Name = "gclDockablePanel3";
-            this.gclDockablePanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.gclDockablePanel3.Size = new System.Drawing.Size(200, 602);
-            this.gclDockablePanel3.TabIndex = 0;
-            this.gclDockablePanel3.Title = "Properties";
-            this.gclDockablePanel3.UseThemeColors = true;
-            // 
             // gclDockablePanel4
             // 
             this.gclDockablePanel4.BackColor = System.Drawing.Color.White;
@@ -638,11 +614,24 @@
             // monteCarloEditor1
             // 
             this.monteCarloEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monteCarloEditor1.Location = new System.Drawing.Point(1, 22);
+            this.monteCarloEditor1.Location = new System.Drawing.Point(1, 1);
             this.monteCarloEditor1.Margin = new System.Windows.Forms.Padding(4);
             this.monteCarloEditor1.Name = "monteCarloEditor1";
-            this.monteCarloEditor1.Size = new System.Drawing.Size(1014, 579);
+            this.monteCarloEditor1.Size = new System.Drawing.Size(1014, 600);
             this.monteCarloEditor1.TabIndex = 1;
+            // 
+            // gclDockablePanel3
+            // 
+            this.gclDockablePanel3.BackColor = System.Drawing.Color.White;
+            this.gclDockablePanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclDockablePanel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gclDockablePanel3.Location = new System.Drawing.Point(1016, 0);
+            this.gclDockablePanel3.Name = "gclDockablePanel3";
+            this.gclDockablePanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.gclDockablePanel3.Size = new System.Drawing.Size(200, 602);
+            this.gclDockablePanel3.TabIndex = 0;
+            this.gclDockablePanel3.Title = "Properties";
+            this.gclDockablePanel3.UseThemeColors = true;
             // 
             // tabPage5
             // 
@@ -660,13 +649,104 @@
             this.miniCADEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.miniCADEditor1.Document = null;
             this.miniCADEditor1.Location = new System.Drawing.Point(3, 3);
+            this.miniCADEditor1.Margin = new System.Windows.Forms.Padding(2);
             this.miniCADEditor1.Name = "miniCADEditor1";
             this.miniCADEditor1.Size = new System.Drawing.Size(1216, 602);
             this.miniCADEditor1.TabIndex = 0;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.splitter2);
+            this.tabPage6.Controls.Add(this.gclPanel5);
+            this.tabPage6.Controls.Add(this.splitter1);
+            this.tabPage6.Controls.Add(this.gclPanel6);
+            this.tabPage6.Controls.Add(this.gclPanel4);
+            this.tabPage6.Location = new System.Drawing.Point(155, -3);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1222, 608);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // splitter2
+            // 
+            this.splitter2.Location = new System.Drawing.Point(707, 3);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(3, 602);
+            this.splitter2.TabIndex = 4;
+            this.splitter2.TabStop = false;
+            // 
+            // gclPanel5
+            // 
+            this.gclPanel5.BackColor = System.Drawing.Color.White;
+            this.gclPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclPanel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gclPanel5.Location = new System.Drawing.Point(206, 3);
+            this.gclPanel5.Name = "gclPanel5";
+            this.gclPanel5.Padding = new System.Windows.Forms.Padding(10);
+            this.gclPanel5.Size = new System.Drawing.Size(501, 602);
+            this.gclPanel5.TabIndex = 1;
+            this.gclPanel5.UseThemeColors = true;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(203, 3);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 602);
+            this.splitter1.TabIndex = 3;
+            this.splitter1.TabStop = false;
+            // 
+            // gclPanel6
+            // 
+            this.gclPanel6.BackColor = System.Drawing.Color.White;
+            this.gclPanel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gclPanel6.Location = new System.Drawing.Point(203, 3);
+            this.gclPanel6.Name = "gclPanel6";
+            this.gclPanel6.Padding = new System.Windows.Forms.Padding(10);
+            this.gclPanel6.Size = new System.Drawing.Size(1016, 602);
+            this.gclPanel6.TabIndex = 2;
+            this.gclPanel6.UseThemeColors = true;
+            // 
+            // gclPanel4
+            // 
+            this.gclPanel4.BackColor = System.Drawing.Color.White;
+            this.gclPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclPanel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gclPanel4.Location = new System.Drawing.Point(3, 3);
+            this.gclPanel4.Name = "gclPanel4";
+            this.gclPanel4.Padding = new System.Windows.Forms.Padding(10);
+            this.gclPanel4.Size = new System.Drawing.Size(200, 602);
+            this.gclPanel4.TabIndex = 0;
+            this.gclPanel4.UseThemeColors = true;
+            this.gclPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.gclPanel4_Paint);
+            // 
+            // gclThemeProvider1
+            // 
+            this.gclThemeProvider1.AccentColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
+            this.gclThemeProvider1.AccentColor1Highlight = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(200)))), ((int)(((byte)(125)))));
+            this.gclThemeProvider1.AccentColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
+            this.gclThemeProvider1.AccentColor2Highlight = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
+            this.gclThemeProvider1.AccentColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(87)))), ((int)(((byte)(152)))));
+            this.gclThemeProvider1.AlertYellow = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
+            this.gclThemeProvider1.BasicTheme = GEV.Layouts.Theming.BasicThemes.Dark;
+            this.gclThemeProvider1.Border = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclThemeProvider1.Button = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.gclThemeProvider1.ErrorRed = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.gclThemeProvider1.FormBackground = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclThemeProvider1.HeaderBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(37)))));
+            this.gclThemeProvider1.MenuBackground = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.gclThemeProvider1.PanelBackground = System.Drawing.Color.White;
+            this.gclThemeProvider1.PrimaryText = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.gclThemeProvider1.SecondaryText = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.gclThemeProvider1.Shadow = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclThemeProvider1.SoftBorder = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.gclThemeProvider1.SuccessGreen = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            // 
             // LightColors
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 676);
             this.Controls.Add(this.gclTabControl1);
@@ -690,6 +770,7 @@
             this.gclDockingContainer2.ResumeLayout(false);
             this.gclDockablePanel4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -733,5 +814,11 @@
         private GEV.Layouts.Docking.GCLDockablePanel gclDockablePanel3;
         private System.Windows.Forms.TabPage tabPage5;
         private GEV.Layouts.Extended.MiniCAD.MiniCADEditor miniCADEditor1;
+        private System.Windows.Forms.TabPage tabPage6;
+        private GEV.Layouts.GCLPanel gclPanel6;
+        private GEV.Layouts.GCLPanel gclPanel5;
+        private GEV.Layouts.GCLPanel gclPanel4;
+        private System.Windows.Forms.Splitter splitter2;
+        private System.Windows.Forms.Splitter splitter1;
     }
 }

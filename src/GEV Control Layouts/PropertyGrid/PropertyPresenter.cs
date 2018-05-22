@@ -36,6 +36,7 @@ namespace GEV.Layouts.PropertyGrid
         {
             InitializeComponent();
             this.SetStyle(ControlStyles.UserPaint, true);
+
         }
 
         public override void BuildGUI()

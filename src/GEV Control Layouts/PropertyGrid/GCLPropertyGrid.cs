@@ -42,6 +42,7 @@ namespace GEV.Layouts.PropertyGrid
         public Color PropertyBackColor { get; set; } = GCLColors.Shadow;
         public Color PropertyTextColor { get; set; } = GCLColors.PrimaryText;
         public Color PropertyDisabledTextColor { get; set; } = GCLColors.SecondaryText;
+        public Color PropertyBorderColor { get; set; } = GCLColors.SoftBorder;
 
         public GCLPropertyGrid()
         {
@@ -109,7 +110,8 @@ namespace GEV.Layouts.PropertyGrid
 
                     GridColor = this.GridColor,
                     ActiveColor = this.ActiveColor,
-                    BackColor = this.PropertyBackColor
+                    BackColor = this.PropertyBackColor,
+                    PropertyBorderColor = this.PropertyBorderColor
                 };
                 this.pnlCategoryPresenters.Controls.Add(cp);
                 cp.ElementSelected += Cp_ElementSelected;

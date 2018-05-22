@@ -53,7 +53,7 @@
             this.lblType.Location = new System.Drawing.Point(0, 47);
             this.lblType.Margin = new System.Windows.Forms.Padding(0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(57, 23);
+            this.lblType.Size = new System.Drawing.Size(47, 19);
             this.lblType.TabIndex = 1;
             this.lblType.Text = "[TYPE]";
             // 
@@ -62,10 +62,10 @@
             this.lblProperty.AutoSize = true;
             this.lblProperty.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblProperty.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProperty.Location = new System.Drawing.Point(0, 432);
+            this.lblProperty.Location = new System.Drawing.Point(0, 436);
             this.lblProperty.Margin = new System.Windows.Forms.Padding(0);
             this.lblProperty.Name = "lblProperty";
-            this.lblProperty.Size = new System.Drawing.Size(121, 23);
+            this.lblProperty.Size = new System.Drawing.Size(101, 19);
             this.lblProperty.TabIndex = 2;
             this.lblProperty.Text = "[PROPNAME]";
             // 
@@ -83,15 +83,15 @@
             // 
             this.pnlCategoryPresenters.AutoScroll = true;
             this.pnlCategoryPresenters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCategoryPresenters.Location = new System.Drawing.Point(0, 70);
+            this.pnlCategoryPresenters.Location = new System.Drawing.Point(0, 66);
             this.pnlCategoryPresenters.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCategoryPresenters.Name = "pnlCategoryPresenters";
-            this.pnlCategoryPresenters.Size = new System.Drawing.Size(582, 362);
+            this.pnlCategoryPresenters.Size = new System.Drawing.Size(582, 370);
             this.pnlCategoryPresenters.TabIndex = 4;
             // 
             // GCLPropertyGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlCategoryPresenters);
             this.Controls.Add(this.lblProperty);

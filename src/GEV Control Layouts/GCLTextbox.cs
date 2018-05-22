@@ -14,6 +14,8 @@ namespace GEV.Layouts
     {
         public new event EventHandler TextChanged;
         public new event EventHandler Enter;
+        public new event EventHandler LostFocus;
+        public new event KeyPressEventHandler KeyPress;
 
         private bool m_Selected = false;
 
@@ -88,12 +90,19 @@ namespace GEV.Layouts
 
             this.m_InnerTextBox.GotFocus += TextBox1_GotFocus;
             this.m_InnerTextBox.LostFocus += TextBox1_LostFocus;
+            this.m_InnerTextBox.KeyPress += M_InnerTextBox_KeyPress;
+        }
+
+        private void M_InnerTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.KeyPress?.Invoke(this, e);
         }
 
         private void TextBox1_LostFocus(object sender, EventArgs e)
         {
             m_Selected = false;
             this.Invalidate();
+            this.LostFocus?.Invoke(this, e);
         }
 
         private void TextBox1_GotFocus(object sender, EventArgs e)
@@ -135,6 +144,13 @@ namespace GEV.Layouts
             this.m_InnerTextBox.BackColor = back;
             this.m_InnerTextBox.ForeColor = fore;
             base.OnPaint(e);
+        }
+
+        public new bool Focus()
+        {
+            m_Selected = true;
+            bool result = this.m_InnerTextBox.Focus();
+            return result;
         }
     }
 }
