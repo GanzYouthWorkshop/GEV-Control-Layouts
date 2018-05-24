@@ -11,9 +11,12 @@ using System.Windows.Forms;
 
 namespace GEV.Layouts
 {
-    public partial class GCLForm : Form
+    public partial class GCLForm : Form, IGCLControl
     {
+        public bool UseThemeColors { get; set; } = true;
         public bool HideStartMenuOnMaximize { get; set; } = false;
+
+        public Color BorderColor { get; set; } = GCLColors.Border;
 
         public GCLForm()
         {
@@ -25,10 +28,11 @@ namespace GEV.Layouts
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            base.OnPaintBackground(e);
+            Color back = this.UseThemeColors ? GCLColors.FormBackground : this.BackColor;
+            Color border = this.UseThemeColors ? GCLColors.Border : this.BorderColor;
 
-            using (Brush b = new SolidBrush(GCLColors.Border))
-            using (Pen p = new Pen(b))
+            e.Graphics.Clear(back);
+            using (Pen p = new Pen(border))
             {
                 e.Graphics.DrawRectangle(p, new Rectangle(0, 0, this.Width - 1, this.Height - 1));
             }
@@ -38,7 +42,5 @@ namespace GEV.Layouts
         {
             this.MaximizedBounds = r;
         }
-
-        public static Color TestColor { get; set; }
     }
 }

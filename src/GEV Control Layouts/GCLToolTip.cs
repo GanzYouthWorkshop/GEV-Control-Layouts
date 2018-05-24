@@ -43,8 +43,7 @@ namespace GEV.Layouts
                 e.Graphics.Clear(border);
                 Rectangle r = new Rectangle(e.Bounds.X + 1, e.Bounds.Y + 1, e.Bounds.Width - 2, e.Bounds.Height - 2);
                 e.Graphics.FillRectangle(b, e.Bounds);
-                e.DrawText();
-
+                e.Graphics.DrawString(e.ToolTipText, SystemFonts.DefaultFont, text, e.Bounds);
             }
         }
     }

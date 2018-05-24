@@ -32,7 +32,6 @@ namespace WindowsFormsApplication3
         [GCLCommand(true)]
         [GCLName("Hiba", GCLLanguages.Hungarian)]
         [GCLDescription("Ez direkt hibát fog okozni.", GCLLanguages.Hungarian)]
-        [GCLCommandDescription("FUCK ME UP", GCLLanguages.Hungarian)]
         public CommandResult Fuckup()
         {
             return new CommandResult()
@@ -48,7 +47,7 @@ namespace WindowsFormsApplication3
         [GCLCommand(true)]
         [GCLName("Mentés", GCLLanguages.Hungarian)]
         [GCLDescription("Menti az összes beállítást.", GCLLanguages.Hungarian)]
-        [GCLCommandDescription("Futtatás", GCLLanguages.Hungarian)]
+        [GCLCommandDescription("Futtatás", GCLLanguages.Default)]
         public string SaveAllChanges()
         {
             return "Mentve!";

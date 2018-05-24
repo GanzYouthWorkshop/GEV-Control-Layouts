@@ -80,5 +80,10 @@ namespace GEV.Layouts.Extended.MiniCAD
             var c = canvas;
             this.label1.Text = String.Format("Cursor: [{0:0.000}; {1:0.000}] | Viewport: [{2:0.000}; {3:0.000}] | Zoom: {4:0%}", c.CursorPosition.X, c.CursorPosition.Y, c.ViewportPosition.X, c.ViewportPosition.Y, c.Zoom);
         }
+
+        private void canvas_MouseEnter(object sender, EventArgs e)
+        {
+            this.canvas.Focus();
+        }
     }
 }

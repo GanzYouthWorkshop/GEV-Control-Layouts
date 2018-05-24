@@ -23,6 +23,7 @@ namespace GEV.Layouts.PropertyGrid
         public Color GridColor { get; set; }
         public Color ButtonColor { get; set; }
         public Color ActiveColor { get; set; }
+        public Color PropertyBorderColor { get; set; }
 
         public CategoryPresenter()
         {
@@ -58,7 +59,8 @@ namespace GEV.Layouts.PropertyGrid
                         Dock = DockStyle.Top,
 
                         ActiveColor = this.ActiveColor,
-                        BackColor = this.BackColor
+                        BackColor = this.BackColor,
+                        BorderColor = this.PropertyBorderColor,
                         //Property háttér, border, text?
                     };
                     tmp.ElementSelected += OnElementSelected;
@@ -76,8 +78,10 @@ namespace GEV.Layouts.PropertyGrid
                         Dock = DockStyle.Top,
 
                         ActiveColor = this.ActiveColor,
-                        BackColor = this.BackColor
+                        BackColor = this.BackColor,
+                        BorderColor = this.PropertyBorderColor,
                         //Property háttér, border, text?
+
                     };
                     tmp.ElementSelected += OnElementSelected;
                     tmp.GridChanging += OnGridChanging;

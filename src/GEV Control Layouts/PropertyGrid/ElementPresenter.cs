@@ -62,6 +62,8 @@ namespace GEV.Layouts.PropertyGrid
         {
             InitializeComponent();
             this.SetStyle(ControlStyles.UserPaint, true);
+
+            this.BackColor = this.BorderColor;
         }
 
         public virtual void BuildGUI() { }

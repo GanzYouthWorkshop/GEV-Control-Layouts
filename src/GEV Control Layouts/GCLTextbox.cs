@@ -17,6 +17,7 @@ namespace GEV.Layouts
         public new event KeyPressEventHandler KeyPress;
         public new event KeyEventHandler KeyDown;
         public new event KeyEventHandler KeyUp;
+        public new event EventHandler LostFocus;
 
         private bool m_Selected = false;
 
@@ -115,6 +116,7 @@ namespace GEV.Layouts
         {
             m_Selected = false;
             this.Invalidate();
+            this.LostFocus?.Invoke(this, e);
         }
 
         private void TextBox1_GotFocus(object sender, EventArgs e)
@@ -156,6 +158,13 @@ namespace GEV.Layouts
             this.m_InnerTextBox.BackColor = back;
             this.m_InnerTextBox.ForeColor = fore;
             base.OnPaint(e);
+        }
+
+        public new bool Focus()
+        {
+            m_Selected = true;
+            bool result = this.m_InnerTextBox.Focus();
+            return result;
         }
     }
 }

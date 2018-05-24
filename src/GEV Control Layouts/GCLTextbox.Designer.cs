@@ -39,21 +39,21 @@
             this.m_InnerTextBox.Location = new System.Drawing.Point(2, 2);
             this.m_InnerTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.m_InnerTextBox.Name = "m_InnerTextBox";
-            this.m_InnerTextBox.Size = new System.Drawing.Size(136, 15);
+            this.m_InnerTextBox.Size = new System.Drawing.Size(108, 13);
             this.m_InnerTextBox.TabIndex = 0;
             this.m_InnerTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.m_InnerTextBox.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // GCLTextbox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.Controls.Add(this.m_InnerTextBox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GCLTextbox";
             this.Padding = new System.Windows.Forms.Padding(2);
-            this.Size = new System.Drawing.Size(140, 22);
+            this.Size = new System.Drawing.Size(112, 18);
             this.ResumeLayout(false);
             this.PerformLayout();
 

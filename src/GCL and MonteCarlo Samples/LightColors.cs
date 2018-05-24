@@ -31,5 +31,10 @@ namespace WindowsFormsApplication3
         {
             Color c = GCLColors.AlertYellow;
         }
+
+        private void gclPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
