@@ -295,7 +295,7 @@ namespace GEV.Layouts.Extended.Cairo.Formula
 				nodes.Add(node);
 				i++;
 
-				if (!lexer.SkipToken(",")) break;
+				if (!lexer.SkipToken(";")) break;
 			}
 
 			while (nodes.Count > 0 && nodes[nodes.Count - 1] == null)
@@ -521,7 +521,7 @@ namespace GEV.Layouts.Extended.Cairo.Formula
 			+ "|(?<token>-)|(?<number>\\-?\\d*\\"
 			+ System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "?\\d+)"
 			+ "|(?<true>(?i)TRUE)|(?<false>(?i)FALSE)|(?<identifier>\\w+)"
-			+ "|(?<token>\\=\\=|\\<\\>|\\<\\=|\\>\\=|\\<\\>|\\=|\\!|[\\=\\.\\,\\+\\-\\*\\/\\%\\<\\>\\(\\)\\&\\^]))",
+			+ "|(?<token>\\=\\=|\\<\\>|\\<\\=|\\>\\=|\\<\\>|\\=|\\!|[\\=\\.\\;\\+\\-\\*\\/\\%\\<\\>\\(\\)\\&\\^]))",
 			RegexOptions.Compiled);
 
 		public string Input { get; set; }

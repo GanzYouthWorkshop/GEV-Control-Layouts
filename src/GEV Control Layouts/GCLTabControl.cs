@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace GEV.Layouts
 {
-    public class GCLTabControl : TabControl
+    public class GCLTabControl : TabControl, IGCLControl
     {
         public bool UseFormTheming { get; set; } = true;
 
@@ -72,6 +72,9 @@ namespace GEV.Layouts
                 }
             }
         }
+
+        public bool UseThemeColors { get; set; } = true;
+
         private bool m_TabHandlerVisible = true;
 
         public GCLTabControl()
@@ -136,11 +139,16 @@ namespace GEV.Layouts
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Brush selected = new SolidBrush(this.ActiveColor))
-            using (Brush selectedText = new SolidBrush(this.SelectedTextColor))
-            using (Brush text = new SolidBrush(this.TextColor))
+            Color menuColor = this.UseFormTheming ? GCLColors.MenuBackground : this.MenuColor;
+            Color selectedColor = this.UseFormTheming ? GCLColors.AccentColor1 : this.ActiveColor;
+            Color selectedTextColor = this.UseFormTheming ? GCLColors.PrimaryText : this.SelectedTextColor;
+            Color textColor = this.UseFormTheming ? GCLColors.SecondaryText : this.TextColor;
+
+            using (Brush selected = new SolidBrush(selectedColor))
+            using (Brush selectedText = new SolidBrush(selectedTextColor))
+            using (Brush text = new SolidBrush(textColor))
             {
-                e.Graphics.Clear(this.MenuColor);
+                e.Graphics.Clear(menuColor);
 
                 for (int i = 0; i < this.TabCount; i++)
                 {

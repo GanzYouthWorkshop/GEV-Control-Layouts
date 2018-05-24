@@ -60,6 +60,19 @@ namespace GEV.Layouts
 
         #region Properties
 
+        public string[] SimpleItems
+        {
+            get { return this.m_SimpleItems; }
+            set { this.m_SimpleItems = value; this.DataSource = this.m_SimpleItems; }
+        }
+        private string[] m_SimpleItems;
+
+        public int ItemHeight
+        {
+            get { return this.m_listBox.ItemHeight; }
+            set { this.m_listBox.ItemHeight = value; }
+        }
+
         public int DropDownHeight { get; set; }
         public int DropDownWidth { get; set; }
         public int MaxDropDownItems { get; set; }
@@ -460,6 +473,7 @@ namespace GEV.Layouts
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            m_listBox.BackColor = GCLColors.Shadow;
             Color borderColor = (this.pressed || this.IsDroppedDown) ? GCLColors.AccentColor1 : GCLColors.SoftBorder;
             Color buttonColor = (this.hovered || this.pressed) ? GCLColors.AccentColor1 : GCLColors.SoftBorder;
             using (Brush border = new SolidBrush(borderColor))
@@ -548,6 +562,7 @@ namespace GEV.Layouts
             {
                 m_listBox.SelectedItem = value;
                 this.SelectedIndex = m_listBox.SelectedIndex;
+                this.Invalidate();
             }
         }
 

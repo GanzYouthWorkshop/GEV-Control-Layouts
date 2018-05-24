@@ -22,7 +22,6 @@ using System.Reflection;
 using System.Linq;
 
 #if WINFORM
-using System.Windows.Forms;
 using RGFloat = System.Single;
 using RGImage = System.Drawing.Image;
 #else
@@ -36,6 +35,7 @@ using GEV.Layouts.Extended.Cairo.Graphics;
 using GEV.Layouts.Extended.Cairo.Rendering;
 using GEV.Layouts.Extended.Cairo.Interaction;
 using GEV.Layouts.Extended.Cairo.Main;
+using System.Windows.Forms;
 
 namespace GEV.Layouts.Extended.Cairo.CellTypes
 {
@@ -625,40 +625,9 @@ namespace GEV.Layouts.Extended.Cairo.CellTypes
 		/// <param name="state">Button state.</param>
 		protected virtual void DrawButton(CellDrawingContext dc)
 		{
-#if WINFORM
 			ControlPaint.DrawButton(dc.Graphics.PlatformGraphics, (System.Drawing.Rectangle)Bounds,
 				this.IsPressed ? ButtonState.Pushed :
 				(this.Cell.IsReadOnly ? ButtonState.Inactive : ButtonState.Normal));
-#elif WPF
-
-			var g = dc.Graphics;
-
-			//g.TranslateTransform(20f, 00f);
-
-			var r = this.Bounds;
-			g.DrawRectangle(r, SolidColor.Dark(StaticResources.SystemColor_ControlDark));
-
-			//var r2 = new Rectangle(r.X, r.Y, r.Width - 1, r.Height - 1);
-			var r3 = new Rectangle(r.X + 1, r.Y + 1, r.Width - 2, r.Height - 2);
-			g.FillRectangle(r3, StaticResources.SystemColor_Control);
-
-			if (this.IsPressed)
-			{
-				//	g.DrawRectangle(r, StaticResources.SystemColor_ControlDark);
-
-				//	r.X++; r.Y++; r.Width--; r.Height--;
-				//	g.DrawRectangle(r, SolidColor.Dark(StaticResources.SystemColor_ControlDark));
-				var r2 = new Rectangle(r.X + 1, r.Y + 1, r.Width - 2, r.Height - 2);
-				g.DrawRectangle(r2, SolidColor.Dark(StaticResources.SystemColor_ControlDark));
-			}
-			else
-			{
-				//var r2 = new Rectangle(r.X + 1, r.Y + 1, r.Width - 1, r.Height - 1);
-				//g.DrawRectangle(r2, StaticResources.SystemColor_ControlDark);
-			}
-
-
-#endif // WPF
 		}
 
 		#endregion Draw
@@ -787,22 +756,10 @@ namespace GEV.Layouts.Extended.Cairo.CellTypes
 	public class ProgressCell : CellBody
 	{
 		/// <summary>
-		/// Get or set the top color.
-		/// </summary>
-		public SolidColor TopColor { get; set; }
-
-		/// <summary>
-		/// Get or set the bottom color.
-		/// </summary>
-		public SolidColor BottomColor { get; set; }
-
-		/// <summary>
 		/// Create progress cell body.
 		/// </summary>
 		public ProgressCell()
 		{
-			TopColor = SolidColor.LightSkyBlue;
-			BottomColor = SolidColor.SkyBlue;
 		}
 
 		/// <summary>
@@ -821,7 +778,7 @@ namespace GEV.Layouts.Extended.Cairo.CellTypes
 
 				if (rect.Width > 0 && rect.Height > 0)
 				{
-					dc.Graphics.FillRectangleLinear(TopColor, BottomColor, 90f, rect);
+					dc.Graphics.FillRectangleLinear(dc.Cell.Style.TextColor, dc.Cell.Style.BackColor, 90f, rect);
 				}
 			}
 		}
@@ -1751,8 +1708,6 @@ namespace GEV.Layouts.Extended.Cairo.CellTypes
 	}
 	#endregion // ImageCellViewMode
 	#endregion // Image
-
-#if WINFORM
 
 	#region Dropdown List
 
@@ -2895,17 +2850,108 @@ namespace GEV.Layouts.Extended.Cairo.CellTypes
 			return textbox.Handle;
 		}
 	}
-	#endregion // NumberInputCell
+    #endregion // NumberInputCell
 
-#endif // WINFORM
-	#endregion // Built-in Cell Types
+    public class SliderCell : CellBody, IControlCell
+    {
+        // hold the instance of grid control
+        public Worksheet Worksheet { get; set; }
+
+        public override void OnSetup(Cell cell)
+        {
+            this.Worksheet = cell.Worksheet;
+        }
+
+        public bool IsHover { get; set; }
+
+        public SolidColor Color1 { get; set; } = GCLColors.AccentColor1;
+        public SolidColor Color2 { get; set; } = GCLColors.AccentColor1Highlight;
+        public SolidColor Color3 { get; set; }
+        public SolidColor Color4 { get; set; }
+
+        public override void OnPaint(CellDrawingContext dc)
+        {
+            // try getting the cell value
+            float value = 0;
+            float.TryParse(dc.Cell.DisplayText, out value);
+
+            // retrieve graphics object
+            var g = dc.Graphics;
+
+            int halfHeight = (int)Math.Round(Bounds.Height / 2f);
+            int sliderHeight = (int)Math.Min(Bounds.Height - 4, 20);
+
+            // draw slide bar
+            g.FillRectangle(4, halfHeight - 3, Bounds.Width - 8, 6, SolidColor.Gainsboro);
+
+            int x = 2 + (int)Math.Round(value * (Bounds.Width - 12));
+
+            // thumb rectangle
+            Rectangle rect = new Rectangle(x, halfHeight - sliderHeight / 2, 8, sliderHeight);
+
+            // draw slide thumb
+            g.FillRectangle(rect, IsHover ? this.Color2 : this.Color1);
+        }
+
+        public override bool OnMouseDown(CellMouseEventArgs e)
+        {
+            UpdateValueByCursorX(e.CellPosition, e.RelativePosition.X);
+
+            // return true to notify control that the mouse-down operation has been hanlded.
+            // all operations after this will be aborted.
+            return true;
+        }
+
+        public override bool OnMouseMove(CellMouseEventArgs e)
+        {
+            // requires the left button
+            if (e.Buttons == Interaction.MouseButtons.Left)
+            {
+                UpdateValueByCursorX(e.CellPosition, e.RelativePosition.X);
+            }
+
+            return false;
+        }
+
+        private void UpdateValueByCursorX(CellPosition cellPos, float x)
+        {
+            // calcutate value by cursor position
+            float value = x / (Bounds.Width - 2f);
+
+            if (value < 0) value = 0;
+            if (value > 1) value = 1;
+
+            Worksheet.SetCellData(cellPos, value);
+        }
+
+        public override bool OnMouseEnter(CellMouseEventArgs e)
+        {
+            IsHover = true;
+            return true;
+        }
+
+        public override bool OnMouseLeave(CellMouseEventArgs e)
+        {
+            IsHover = false;
+            return true;
+        }
+
+        public override bool OnStartEdit()
+        {
+            // disable editing on this cell
+            return false;
+        }
+    }
+
+
+#endregion // Built-in Cell Types
 
 #if WINFORM
 
-	/// <summary>
-	/// Represetns a date picker cell on worksheet.
-	/// </summary>
-	[Serializable]
+/// <summary>
+/// Represetns a date picker cell on worksheet.
+/// </summary>
+[Serializable]
 	public class DatePickerCell : DropdownCell
 	{
 		private MonthCalendar calendar = null;

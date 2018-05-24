@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
             // GCLForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(65)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(746, 541);
+            this.ClientSize = new System.Drawing.Size(932, 676);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GCLForm";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Text = "GCLForm";
@@ -47,5 +49,6 @@
         }
 
         #endregion
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }

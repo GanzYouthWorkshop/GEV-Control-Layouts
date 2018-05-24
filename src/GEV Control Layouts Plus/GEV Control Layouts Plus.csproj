@@ -159,6 +159,7 @@
     <Compile Include="Cairo\Graphics\Point.cs" />
     <Compile Include="Cairo\Graphics\Rectangle.cs" />
     <Compile Include="Cairo\Graphics\Size.cs" />
+    <Compile Include="Cairo\IControlCell.cs" />
     <Compile Include="Cairo\Interaction\CursorStyle.cs" />
     <Compile Include="Cairo\Interaction\KeyCode.cs" />
     <Compile Include="Cairo\Interaction\MouseButtons.cs" />

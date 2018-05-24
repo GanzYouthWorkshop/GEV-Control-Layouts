@@ -19,6 +19,14 @@ namespace GEV.Layouts
         bool Visible { get; set; }
         string Text { get; set; }
         bool Checked { get; set; }
+        Image Image { get; set; }
+        ImageList ImageList { get; set; }
+        int ImageIndex { get; set; }
+        string ImageKey { get; set; }
+        ContentAlignment ImageAlign { get; set; }
+        Padding Padding { get; set; }
+        ContentAlignment TextAlign { get; set; }
+
 
         bool IsHovered { get; }
         bool IsPressed { get; }
