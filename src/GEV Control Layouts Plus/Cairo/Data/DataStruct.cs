@@ -635,7 +635,8 @@ namespace GEV.Layouts.Extended.Cairo.Data
 			Iterate(0, 0, maxRow + 1, maxCol + 1, true, iterator);
 		}
 
-		public void Iterate(int row, int col, int rows, int cols, bool ignoreNull, Func<int, int, T, int> iterator)
+
+        public void Iterate(int row, int col, int rows, int cols, bool ignoreNull, Func<int, int, T, int> iterator)
 		{
 			int endrow = row + rows;
 			int endcol = col + cols;
