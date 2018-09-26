@@ -86,7 +86,7 @@
             this.gclProgressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclProgressBar1.Location = new System.Drawing.Point(10, 34);
             this.gclProgressBar1.Margin = new System.Windows.Forms.Padding(2);
-            this.gclProgressBar1.MaxValue = 100;
+            this.gclProgressBar1.Maximum = 100;
             this.gclProgressBar1.Name = "gclProgressBar1";
             this.gclProgressBar1.Size = new System.Drawing.Size(218, 15);
             this.gclProgressBar1.TabIndex = 3;
