@@ -1281,7 +1281,25 @@ namespace GEV.Layouts.Extended.Cairo
 			});
 		}
 
-		private int maxColumnHeader = -1;
+        public void IterateCells(Func<int, int, Cell, bool> iterator)
+        {
+            cells.Iterate((r, c, cell) =>
+            {
+                int cspan = (cell == null) ? 1 : cell.Colspan;
+
+                if (cspan <= 0) return 1;
+
+                if (!iterator(r, c, cell))
+                {
+                    return 0;
+                }
+
+                return (cspan <= 0) ? 1 : cspan;
+            });
+        }
+
+
+        private int maxColumnHeader = -1;
 		private int maxRowHeader = -1;
 
 		/// <summary>

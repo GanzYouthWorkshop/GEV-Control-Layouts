@@ -274,6 +274,9 @@
     <Compile Include="GCLWindowHeader.Designer.cs">
       <DependentUpon>GCLWindowHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="GCLTextRotateSelect.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utils\GCLUtils.cs" />
     <Compile Include="Utils\PropertyGridUtils.cs" />
     <Compile Include="PropertyGrid\ElementPresenter.cs">
