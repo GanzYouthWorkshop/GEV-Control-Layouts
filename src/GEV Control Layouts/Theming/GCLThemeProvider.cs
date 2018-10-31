@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GEV.Layouts.Theming
 {
@@ -23,7 +24,70 @@ namespace GEV.Layouts.Theming
             InitializeComponent();
         }
 
-        public BasicThemes BasicTheme { get; set; }
+        public BasicThemes BasicTheme
+        {
+            get { return this.m_BasicTheme; }
+            set
+            {
+                this.m_BasicTheme = value;
+                if(value == BasicThemes.Dark)
+                {
+                    GCLColors.FormBackground = Color.FromArgb(57, 65, 68);
+                    GCLColors.PanelBackground = Color.FromArgb(74, 84, 86);
+                    GCLColors.HeaderBackground = Color.FromArgb(32, 36, 37);
+                    GCLColors.MenuBackground = Color.FromArgb(40, 40, 40);
+
+                    GCLColors.Border = Color.FromArgb(47, 55, 55);
+                    GCLColors.SoftBorder = Color.FromArgb(57, 62, 65);
+                    GCLColors.Shadow = Color.FromArgb(63, 71, 74);
+                    GCLColors.Button = Color.FromArgb(71, 76, 79);
+
+                    GCLColors.AccentColor1 = Color.FromArgb(24, 134, 171);
+                    GCLColors.AccentColor1Highlight = Color.FromArgb(27, 158, 202);
+                    GCLColors.AccentColor2 = Color.FromArgb(119, 87, 152);
+                    GCLColors.AccentColor2Highlight = Color.FromArgb(138, 106, 170);
+                    GCLColors.AccentColor3 = Color.FromArgb(32, 36, 37);
+
+                    GCLColors.PrimaryText = Color.FromArgb(240, 240, 240);
+                    GCLColors.SecondaryText = Color.FromArgb(167, 167, 171);
+
+                    GCLColors.SuccessGreen = Color.FromArgb(76, 175, 80);
+                    GCLColors.ErrorRed = Color.FromArgb(224, 67, 54);
+                    GCLColors.AlertYellow = Color.FromArgb(255, 193, 0);
+                }
+                else
+                {
+                    GCLColors.FormBackground = Color.Gainsboro;
+                    GCLColors.PanelBackground = Color.White;
+                    GCLColors.HeaderBackground = Color.FromArgb(32, 36, 37);
+                    GCLColors.MenuBackground = Color.FromArgb(40, 40, 40);
+
+                    GCLColors.Border = Color.FromArgb(47, 55, 55);
+                    GCLColors.SoftBorder = Color.Gainsboro;
+                    GCLColors.Shadow = Color.White;
+                    GCLColors.Button = Color.FromArgb(200, 200, 200);
+
+                    GCLColors.AccentColor1 = Color.FromArgb(24, 134, 171);
+                    GCLColors.AccentColor1Highlight = Color.FromArgb(27, 158, 202);
+                    GCLColors.AccentColor2 = Color.FromArgb(119, 87, 152);
+                    GCLColors.AccentColor2Highlight = Color.FromArgb(138, 106, 170);
+                    GCLColors.AccentColor3 = Color.FromArgb(32, 36, 37);
+
+                    GCLColors.PrimaryText = Color.FromArgb(34, 34, 34);
+                    GCLColors.SecondaryText = Color.FromArgb(120, 120, 120);
+
+                    GCLColors.SuccessGreen = Color.FromArgb(76, 175, 80);
+                    GCLColors.ErrorRed = Color.FromArgb(224, 67, 54);
+                    GCLColors.AlertYellow = Color.FromArgb(255, 193, 0);
+                }
+
+                if(this.Container is Form)
+                {
+                    (this.Container as Form).Invalidate();
+                }
+            }
+        }
+        private BasicThemes m_BasicTheme = BasicThemes.Dark;
 
         public Color FormBackground { get { return GCLColors.FormBackground; } set { GCLColors.FormBackground = value; } }
         public Color PanelBackground { get { return GCLColors.PanelBackground; } set { GCLColors.PanelBackground = value; } }

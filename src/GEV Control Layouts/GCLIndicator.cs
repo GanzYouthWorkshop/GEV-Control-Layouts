@@ -8,10 +8,21 @@ using System.Windows.Forms;
 
 namespace GEV.Layouts
 {
-    public class GCLIndicator : Panel
+    public class GCLIndicator : Label
     {
-        public Color InactiveColor { get; set; } = GCLColors.SuccessGreen;
-        public Color ActiveColor { get; set; } = GCLColors.ErrorRed;
+        public Color InactiveColor
+        {
+            get { return this.m_InactiveColor; }
+            set { this.m_InactiveColor = value; this.Redraw(); }
+        }
+        private Color m_InactiveColor = GCLColors.ErrorRed;
+
+        public Color ActiveColor
+        {
+            get { return this.m_ActiveColor; }
+            set { this.m_ActiveColor = value; this.Redraw(); }
+        }
+        private Color m_ActiveColor = GCLColors.SuccessGreen;
 
         public object ActiveValue { get; set; } = true;
 
@@ -23,14 +34,10 @@ namespace GEV.Layouts
             }
             set
             {
-                this.m_CurrentValue = value;
-                if(this.m_CurrentValue.Equals(this.ActiveValue))
+                if(!value.Equals(this.m_CurrentValue))
                 {
-                    this.BackColor = this.ActiveColor;
-                }
-                else
-                {
-                    this.BackColor = this.InactiveColor;
+                    this.m_CurrentValue = value;
+                    this.Redraw();
                 }
             }
         }
@@ -38,8 +45,23 @@ namespace GEV.Layouts
 
         public GCLIndicator()
         {
+            this.Size = new Size(40, 40);
+            this.AutoSize = false;
             this.BackColor = this.ActiveColor;
             this.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void Redraw()
+        {
+            if (this.m_CurrentValue.Equals(this.ActiveValue))
+            {
+                this.BackColor = this.ActiveColor;
+            }
+            else
+            {
+                this.BackColor = this.InactiveColor;
+            }
+            this.Invalidate();
         }
     }
 }
