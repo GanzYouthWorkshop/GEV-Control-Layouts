@@ -32,7 +32,7 @@ namespace GEV.Layouts
             set
             {
                 this.m_MaxValue = value;
-                this.gclProgressBar1.MaxValue = value;
+                this.gclProgressBar1.Maximum = value;
                 this.gclProgressBar1.Invalidate();
                 this.SetText();
             }

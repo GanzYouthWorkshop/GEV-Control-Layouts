@@ -126,6 +126,9 @@
     <Compile Include="GCLGroupBox.Designer.cs">
       <DependentUpon>GCLGroupBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="GCLGroupPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GCLIconAnimator.cs">
       <SubType>Component</SubType>
     </Compile>

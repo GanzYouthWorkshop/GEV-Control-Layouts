@@ -17,7 +17,7 @@ namespace GEV.Layouts
             set { this.m_Value = value; this.Invalidate(); }
         }
 
-        public int MaxValue { get; set; } = 100;
+        public int Maximum { get; set; } = 100;
 
         public Color ActiveColor { get; set; } = GCLColors.AccentColor1;
 
@@ -40,7 +40,7 @@ namespace GEV.Layouts
                 int width = 0;
                 if (this.Value != 0)
                 {
-                    width = (int)(this.Width * ((float)this.Value / (float)this.MaxValue));
+                    width = (int)(this.Width * ((float)this.Value / (float)this.Maximum));
                 }
                 
                 e.Graphics.FillRectangle(b, new Rectangle(0, 0, width, this.Height));
