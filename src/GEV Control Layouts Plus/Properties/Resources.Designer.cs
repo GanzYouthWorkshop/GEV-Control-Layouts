@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GEV.Layouts.Extended.MonteCarlo.Implementation.Properties {
+namespace GEV.Layouts.Extended.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GEV.Layouts.Extended.MonteCarlo.Implementation.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GEV.Layouts.Extended.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

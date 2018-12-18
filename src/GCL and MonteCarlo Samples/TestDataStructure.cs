@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GEV.Layouts.Vanilla.VanillaCheckedDataGrid;
 
 namespace WindowsFormsApplication3
 {
-    class TestDataStructure
+    class TestDataStructure : ICheckable
     {
+        [Browsable(false)]
+        public bool Checked { get; set; }
+
         [Category("Alapok")]
         public int One { get; set; }
         [Category("Alapok")]
@@ -20,5 +24,6 @@ namespace WindowsFormsApplication3
 
         [GCLDisplay(typeof(ButtonDisplay))]
         public Color Five { get; set; }
+
     }
 }

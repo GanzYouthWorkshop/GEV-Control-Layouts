@@ -76,7 +76,7 @@
             this.gclButton1 = new GEV.Layouts.GCLButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gclPanel2 = new GEV.Layouts.GCLPanel();
-            this.gclGauge3 = new GEV.Layouts.GCLGauge();
+            this.theStuff1 = new GEV.Layouts.Extended.TheStuff.TheStuff();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.gclPanel8 = new GEV.Layouts.GCLPanel();
             this.monteCarloEditor1 = new GEV.Layouts.Extended.MonteCarlo.MonteCarloEditor();
@@ -141,7 +141,7 @@
             this.gclTabControl1.Controls.Add(this.tabPage7);
             this.gclTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclTabControl1.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gclTabControl1.ItemSize = new System.Drawing.Size(55, 150);
+            this.gclTabControl1.ItemSize = new System.Drawing.Size(150, 55);
             this.gclTabControl1.Location = new System.Drawing.Point(1, 41);
             this.gclTabControl1.MenuColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.gclTabControl1.Multiline = true;
@@ -154,15 +154,16 @@
             this.gclTabControl1.TabIndex = 11;
             this.gclTabControl1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
             this.gclTabControl1.UseFormTheming = false;
+            this.gclTabControl1.UseThemeColors = true;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(147, -3);
+            this.tabPage1.Location = new System.Drawing.Point(150, -3);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(10);
-            this.tabPage1.Size = new System.Drawing.Size(1195, 920);
+            this.tabPage1.Size = new System.Drawing.Size(1192, 920);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = " Áttekintés";
             // 
@@ -178,7 +179,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1175, 900);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1172, 900);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // flowLayoutPanel1
@@ -190,7 +191,7 @@
             this.flowLayoutPanel1.Controls.Add(this.gclPanel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(842, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(839, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(333, 900);
@@ -216,7 +217,7 @@
             // lblSystemStatus
             // 
             this.lblSystemStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSystemStatus.Location = new System.Drawing.Point(10, 121);
+            this.lblSystemStatus.Location = new System.Drawing.Point(10, 115);
             this.lblSystemStatus.Name = "lblSystemStatus";
             this.lblSystemStatus.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.lblSystemStatus.Size = new System.Drawing.Size(303, 38);
@@ -228,7 +229,7 @@
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(10, 41);
+            this.panel4.Location = new System.Drawing.Point(10, 35);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(303, 80);
@@ -277,7 +278,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(10, 39);
+            this.panel5.Location = new System.Drawing.Point(10, 33);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(303, 2);
@@ -290,7 +291,7 @@
             this.label7.Location = new System.Drawing.Point(10, 10);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label7.Size = new System.Drawing.Size(107, 29);
+            this.label7.Size = new System.Drawing.Size(90, 23);
             this.label7.TabIndex = 14;
             this.label7.Text = "Rendszerstátusz";
             // 
@@ -343,7 +344,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(153, 110);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 23);
+            this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 16;
             this.label5.Text = "Selejt:     6500 db";
             // 
@@ -353,7 +354,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(153, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 23);
+            this.label4.Size = new System.Drawing.Size(119, 19);
             this.label4.TabIndex = 15;
             this.label4.Text = "OK:     117000 db";
             // 
@@ -369,7 +370,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(10, 39);
+            this.panel3.Location = new System.Drawing.Point(10, 33);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(303, 2);
             this.panel3.TabIndex = 13;
@@ -381,7 +382,7 @@
             this.label2.Location = new System.Drawing.Point(10, 10);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label2.Size = new System.Drawing.Size(123, 29);
+            this.label2.Size = new System.Drawing.Size(102, 23);
             this.label2.TabIndex = 12;
             this.label2.Text = "Gyártási statisztika";
             // 
@@ -420,7 +421,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(10, 39);
+            this.panel6.Location = new System.Drawing.Point(10, 33);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(303, 2);
             this.panel6.TabIndex = 13;
@@ -433,7 +434,7 @@
             this.label10.Location = new System.Drawing.Point(10, 10);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label10.Size = new System.Drawing.Size(128, 29);
+            this.label10.Size = new System.Drawing.Size(109, 23);
             this.label10.TabIndex = 12;
             this.label10.Text = "Ellenőrzés sebesség";
             // 
@@ -460,7 +461,7 @@
             this.gclLineMonitor3.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(37)))));
             this.gclLineMonitor3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gclLineMonitor3.Format = "{0}% / {1}%";
-            this.gclLineMonitor3.Location = new System.Drawing.Point(10, 187);
+            this.gclLineMonitor3.Location = new System.Drawing.Point(10, 181);
             this.gclLineMonitor3.Margin = new System.Windows.Forms.Padding(2);
             this.gclLineMonitor3.MaxValue = 100;
             this.gclLineMonitor3.Name = "gclLineMonitor3";
@@ -475,7 +476,7 @@
             this.gclLineMonitor2.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(87)))), ((int)(((byte)(152)))));
             this.gclLineMonitor2.Dock = System.Windows.Forms.DockStyle.Top;
             this.gclLineMonitor2.Format = "{0}% / {1}%";
-            this.gclLineMonitor2.Location = new System.Drawing.Point(10, 114);
+            this.gclLineMonitor2.Location = new System.Drawing.Point(10, 108);
             this.gclLineMonitor2.Margin = new System.Windows.Forms.Padding(2);
             this.gclLineMonitor2.MaxValue = 100;
             this.gclLineMonitor2.Name = "gclLineMonitor2";
@@ -490,7 +491,7 @@
             this.gclLineMonitor1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
             this.gclLineMonitor1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gclLineMonitor1.Format = "{0}% / {1}%";
-            this.gclLineMonitor1.Location = new System.Drawing.Point(10, 41);
+            this.gclLineMonitor1.Location = new System.Drawing.Point(10, 35);
             this.gclLineMonitor1.Margin = new System.Windows.Forms.Padding(2);
             this.gclLineMonitor1.MaxValue = 100;
             this.gclLineMonitor1.Name = "gclLineMonitor1";
@@ -504,7 +505,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(10, 39);
+            this.panel1.Location = new System.Drawing.Point(10, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(303, 2);
             this.panel1.TabIndex = 11;
@@ -517,7 +518,7 @@
             this.label1.Location = new System.Drawing.Point(10, 10);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label1.Size = new System.Drawing.Size(122, 29);
+            this.label1.Size = new System.Drawing.Size(104, 23);
             this.label1.TabIndex = 10;
             this.label1.Text = "Rendszerőforrások";
             // 
@@ -540,7 +541,7 @@
             this.gclPanel5.Margin = new System.Windows.Forms.Padding(5);
             this.gclPanel5.Name = "gclPanel5";
             this.gclPanel5.Padding = new System.Windows.Forms.Padding(10);
-            this.gclPanel5.Size = new System.Drawing.Size(832, 890);
+            this.gclPanel5.Size = new System.Drawing.Size(829, 890);
             this.gclPanel5.TabIndex = 13;
             this.gclPanel5.UseThemeColors = true;
             // 
@@ -579,12 +580,14 @@
             this.gclComboBox1.DropDownWidth = 0;
             this.gclComboBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gclComboBox1.IsDroppedDown = false;
+            this.gclComboBox1.ItemHeight = 13;
             this.gclComboBox1.Location = new System.Drawing.Point(0, 0);
             this.gclComboBox1.MaxDropDownItems = 10;
             this.gclComboBox1.Name = "gclComboBox1";
             this.gclComboBox1.SelectedIndex = -1;
             this.gclComboBox1.SelectedItem = null;
-            this.gclComboBox1.Size = new System.Drawing.Size(376, 52);
+            this.gclComboBox1.SimpleItems = null;
+            this.gclComboBox1.Size = new System.Drawing.Size(376, 44);
             this.gclComboBox1.Soreted = false;
             this.gclComboBox1.TabIndex = 7;
             this.gclComboBox1.Text = "gclComboBox1";
@@ -626,7 +629,7 @@
             this.gclCheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gclCheckBox1.Location = new System.Drawing.Point(340, 280);
             this.gclCheckBox1.Name = "gclCheckBox1";
-            this.gclCheckBox1.Size = new System.Drawing.Size(86, 23);
+            this.gclCheckBox1.Size = new System.Drawing.Size(73, 17);
             this.gclCheckBox1.TabIndex = 5;
             this.gclCheckBox1.Text = "Checkbox";
             this.gclCheckBox1.UseThemeColors = true;
@@ -635,7 +638,6 @@
             // gclTextbox1
             // 
             this.gclTextbox1.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
-            this.gclTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
             this.gclTextbox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclTextbox1.Location = new System.Drawing.Point(340, 243);
             this.gclTextbox1.Margin = new System.Windows.Forms.Padding(2);
@@ -645,6 +647,7 @@
             this.gclTextbox1.TabIndex = 4;
             this.gclTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.gclTextbox1.UseSystemPasswordChar = false;
+            this.gclTextbox1.UseThemeColors = true;
             // 
             // gclGauge4
             // 
@@ -702,10 +705,11 @@
             this.gclRadioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclRadioButton2.Location = new System.Drawing.Point(340, 206);
             this.gclRadioButton2.Name = "gclRadioButton2";
-            this.gclRadioButton2.Size = new System.Drawing.Size(122, 31);
+            this.gclRadioButton2.Size = new System.Drawing.Size(106, 25);
             this.gclRadioButton2.TabIndex = 2;
             this.gclRadioButton2.TabStop = true;
             this.gclRadioButton2.Text = "gclRadioButton2";
+            this.gclRadioButton2.UseThemeColors = true;
             this.gclRadioButton2.UseVisualStyleBackColor = false;
             // 
             // gclRadioButton1
@@ -721,10 +725,11 @@
             this.gclRadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclRadioButton1.Location = new System.Drawing.Point(340, 169);
             this.gclRadioButton1.Name = "gclRadioButton1";
-            this.gclRadioButton1.Size = new System.Drawing.Size(122, 31);
+            this.gclRadioButton1.Size = new System.Drawing.Size(106, 25);
             this.gclRadioButton1.TabIndex = 1;
             this.gclRadioButton1.TabStop = true;
             this.gclRadioButton1.Text = "gclRadioButton1";
+            this.gclRadioButton1.UseThemeColors = true;
             this.gclRadioButton1.UseVisualStyleBackColor = false;
             // 
             // gclButton1
@@ -749,10 +754,10 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
             this.tabPage2.Controls.Add(this.gclPanel2);
-            this.tabPage2.Location = new System.Drawing.Point(147, -3);
+            this.tabPage2.Location = new System.Drawing.Point(150, -3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(10);
-            this.tabPage2.Size = new System.Drawing.Size(1195, 920);
+            this.tabPage2.Size = new System.Drawing.Size(1192, 920);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "▝  1. Sor";
             // 
@@ -760,48 +765,31 @@
             // 
             this.gclPanel2.BackColor = System.Drawing.Color.White;
             this.gclPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.gclPanel2.Controls.Add(this.gclGauge3);
+            this.gclPanel2.Controls.Add(this.theStuff1);
             this.gclPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclPanel2.Location = new System.Drawing.Point(10, 10);
             this.gclPanel2.Name = "gclPanel2";
             this.gclPanel2.Padding = new System.Windows.Forms.Padding(10);
-            this.gclPanel2.Size = new System.Drawing.Size(1175, 900);
+            this.gclPanel2.Size = new System.Drawing.Size(1172, 900);
             this.gclPanel2.TabIndex = 10;
             this.gclPanel2.UseThemeColors = true;
             // 
-            // gclGauge3
+            // theStuff1
             // 
-            this.gclGauge3.BorderColor = System.Drawing.Color.Blue;
-            this.gclGauge3.BorderWidth = 5;
-            this.gclGauge3.EndAngle = 330;
-            this.gclGauge3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
-            this.gclGauge3.Location = new System.Drawing.Point(13, 13);
-            this.gclGauge3.MajorGridSpacing = 10D;
-            this.gclGauge3.MaxValue = 100D;
-            this.gclGauge3.MinorGridSpacing = 2D;
-            this.gclGauge3.MinValue = 0D;
-            this.gclGauge3.Name = "gclGauge3";
-            this.gclGauge3.NeedleColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gclGauge3.ShowBorder = true;
-            this.gclGauge3.ShowLabels = true;
-            this.gclGauge3.ShowMajorGrid = true;
-            this.gclGauge3.ShowMinorGrid = false;
-            this.gclGauge3.ShowNeedle = false;
-            this.gclGauge3.ShowSpin = true;
-            this.gclGauge3.Size = new System.Drawing.Size(150, 188);
-            this.gclGauge3.StartAngle = 30;
-            this.gclGauge3.TabIndex = 3;
-            this.gclGauge3.Text = "gclGauge3";
-            this.gclGauge3.Value = 70D;
+            this.theStuff1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.theStuff1.Location = new System.Drawing.Point(13, 13);
+            this.theStuff1.Name = "theStuff1";
+            this.theStuff1.Size = new System.Drawing.Size(1146, 626);
+            this.theStuff1.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
             this.tabPage3.Controls.Add(this.gclPanel8);
-            this.tabPage3.Location = new System.Drawing.Point(147, -3);
+            this.tabPage3.Location = new System.Drawing.Point(150, -3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(10);
-            this.tabPage3.Size = new System.Drawing.Size(1195, 920);
+            this.tabPage3.Size = new System.Drawing.Size(1192, 920);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "▞  2. Sor";
             // 
@@ -815,18 +803,20 @@
             this.gclPanel8.Location = new System.Drawing.Point(10, 10);
             this.gclPanel8.Name = "gclPanel8";
             this.gclPanel8.Padding = new System.Windows.Forms.Padding(10);
-            this.gclPanel8.Size = new System.Drawing.Size(1175, 900);
+            this.gclPanel8.Size = new System.Drawing.Size(1172, 900);
             this.gclPanel8.TabIndex = 11;
             this.gclPanel8.UseThemeColors = true;
             // 
             // monteCarloEditor1
             // 
+            this.monteCarloEditor1.AllowDrop = true;
             this.monteCarloEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.monteCarloEditor1.Location = new System.Drawing.Point(10, 10);
             this.monteCarloEditor1.Margin = new System.Windows.Forms.Padding(4);
             this.monteCarloEditor1.Name = "monteCarloEditor1";
-            this.monteCarloEditor1.Size = new System.Drawing.Size(773, 880);
+            this.monteCarloEditor1.Size = new System.Drawing.Size(770, 880);
             this.monteCarloEditor1.TabIndex = 1;
+            this.monteCarloEditor1.DragDrop += new System.Windows.Forms.DragEventHandler(this.monteCarloEditor1_DragDrop);
             // 
             // gclPropertyGrid1
             // 
@@ -836,10 +826,11 @@
             this.gclPropertyGrid1.Dock = System.Windows.Forms.DockStyle.Right;
             this.gclPropertyGrid1.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gclPropertyGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.gclPropertyGrid1.Location = new System.Drawing.Point(783, 10);
+            this.gclPropertyGrid1.Location = new System.Drawing.Point(780, 10);
             this.gclPropertyGrid1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gclPropertyGrid1.Name = "gclPropertyGrid1";
             this.gclPropertyGrid1.PropertyBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
+            this.gclPropertyGrid1.PropertyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
             this.gclPropertyGrid1.PropertyDisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(171)))));
             this.gclPropertyGrid1.PropertyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclPropertyGrid1.Size = new System.Drawing.Size(382, 880);
@@ -849,10 +840,10 @@
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
             this.tabPage4.Controls.Add(this.gclPanel9);
-            this.tabPage4.Location = new System.Drawing.Point(147, -3);
+            this.tabPage4.Location = new System.Drawing.Point(150, -3);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(10);
-            this.tabPage4.Size = new System.Drawing.Size(1195, 920);
+            this.tabPage4.Size = new System.Drawing.Size(1192, 920);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "▟  3. Sor";
             // 
@@ -865,7 +856,7 @@
             this.gclPanel9.Location = new System.Drawing.Point(10, 10);
             this.gclPanel9.Name = "gclPanel9";
             this.gclPanel9.Padding = new System.Windows.Forms.Padding(10);
-            this.gclPanel9.Size = new System.Drawing.Size(1175, 900);
+            this.gclPanel9.Size = new System.Drawing.Size(1172, 900);
             this.gclPanel9.TabIndex = 12;
             this.gclPanel9.UseThemeColors = true;
             // 
@@ -875,8 +866,9 @@
             this.miniCADEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.miniCADEditor1.Document = null;
             this.miniCADEditor1.Location = new System.Drawing.Point(10, 10);
+            this.miniCADEditor1.Margin = new System.Windows.Forms.Padding(2);
             this.miniCADEditor1.Name = "miniCADEditor1";
-            this.miniCADEditor1.Size = new System.Drawing.Size(1155, 880);
+            this.miniCADEditor1.Size = new System.Drawing.Size(1152, 880);
             this.miniCADEditor1.TabIndex = 0;
             // 
             // tabPage5
@@ -886,10 +878,10 @@
             this.tabPage5.Controls.Add(this.monthCalendar1);
             this.tabPage5.Controls.Add(this.dateTimePicker1);
             this.tabPage5.Controls.Add(this.dataGridView1);
-            this.tabPage5.Location = new System.Drawing.Point(147, -3);
+            this.tabPage5.Location = new System.Drawing.Point(150, -3);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1195, 920);
+            this.tabPage5.Size = new System.Drawing.Size(1192, 920);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "█  4. Sor";
             // 
@@ -931,7 +923,7 @@
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Green;
             this.dateTimePicker1.Location = new System.Drawing.Point(992, 84);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 1;
             // 
             // dataGridView1
@@ -977,26 +969,26 @@
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
-            this.tabPage6.Location = new System.Drawing.Point(147, -3);
+            this.tabPage6.Location = new System.Drawing.Point(150, -3);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1195, 920);
+            this.tabPage6.Size = new System.Drawing.Size(1192, 920);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = " Paraméterezés";
             // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
-            this.tabPage7.Location = new System.Drawing.Point(147, -3);
+            this.tabPage7.Location = new System.Drawing.Point(150, -3);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1195, 920);
+            this.tabPage7.Size = new System.Drawing.Size(1192, 920);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = " Adminisztráció";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(1341, 956);
@@ -1058,7 +1050,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private GEV.Layouts.GCLPanel gclPanel2;
         private GEV.Layouts.GCLGauge gclGauge4;
-        private GEV.Layouts.GCLGauge gclGauge3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
@@ -1098,6 +1089,7 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private GEV.Layouts.GCLButton gclButton2;
         private GEV.Layouts.GCLButton gclButton3;
+        private GEV.Layouts.Extended.TheStuff.TheStuff theStuff1;
     }
 }
 

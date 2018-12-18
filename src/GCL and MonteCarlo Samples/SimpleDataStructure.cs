@@ -45,9 +45,6 @@ namespace WindowsFormsApplication3
 
         [Category("Méretek")]
         [GCLCommand(true)]
-        [GCLName("Mentés", GCLLanguages.Hungarian)]
-        [GCLDescription("Menti az összes beállítást.", GCLLanguages.Hungarian)]
-        [GCLCommandDescription("Futtatás", GCLLanguages.Default)]
         public string SaveAllChanges()
         {
             return "Mentve!";

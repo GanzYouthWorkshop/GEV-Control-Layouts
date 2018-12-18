@@ -67,6 +67,8 @@ namespace WindowsFormsApplication3
             };
 
             this.dataGridView1.DataSource = test;
+
+
         }
 
         private void T2_Tick()
@@ -185,6 +187,11 @@ namespace WindowsFormsApplication3
             p.Top = this.gclButton2.Top;
             topParent.Controls.Add(p);
             p.BringToFront();
+        }
+
+        private void monteCarloEditor1_DragDrop(object sender, DragEventArgs e)
+        {
+
         }
     }
 }

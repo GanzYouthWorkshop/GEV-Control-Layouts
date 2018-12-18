@@ -297,20 +297,20 @@
     <Compile Include="MonteCarlo\HighLighters\CSharpHighLighter.cs" />
     <Compile Include="MonteCarlo\HighLighters\SyntaxHighlighterBase.cs" />
     <Compile Include="MonteCarlo\Implementation\AutocompleteItem.cs" />
-    <Compile Include="MonteCarlo\Implementation\AutocompleteMenu.cs">
+    <Compile Include="MonteCarlo\Implementation\MonteCarloAutocompleteMenu.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MonteCarlo\Implementation\Bookmarks.cs" />
     <Compile Include="MonteCarlo\Implementation\Char.cs" />
     <Compile Include="MonteCarlo\Implementation\CommandManager.cs" />
     <Compile Include="MonteCarlo\Implementation\Commands.cs" />
-    <Compile Include="MonteCarlo\Implementation\DocumentMap.cs">
+    <Compile Include="MonteCarlo\Implementation\MonteCarloDocumentMap.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MonteCarlo\Implementation\EncodingDetector.cs" />
     <Compile Include="MonteCarlo\Implementation\ExportToHTML.cs" />
     <Compile Include="MonteCarlo\Implementation\ExportToRTF.cs" />
-    <Compile Include="MonteCarlo\Implementation\FastColoredTextBox.cs">
+    <Compile Include="MonteCarlo\Implementation\MonteCarloTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MonteCarlo\Implementation\FileTextSource.cs" />
@@ -385,6 +385,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="TheStuff\TheStuff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TheStuff\TheStuff.Designer.cs">
+      <DependentUpon>TheStuff.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cairo\Properties\Resources.resx" />
@@ -409,8 +415,8 @@
     <EmbeddedResource Include="MiniCAD\MiniCADEditor.resx">
       <DependentUpon>MiniCADEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonteCarlo\Implementation\FastColoredTextBox.resx">
-      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="MonteCarlo\Implementation\MonteCarloTextBox.resx">
+      <DependentUpon>MonteCarloTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonteCarlo\Implementation\FindForm.resx">
       <DependentUpon>FindForm.cs</DependentUpon>
@@ -426,10 +432,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MonteCarlo\MonteCarloEditor.resx">
       <DependentUpon>MonteCarloEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheStuff\TheStuff.resx">
+      <DependentUpon>TheStuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -445,7 +455,6 @@
     <Content Include="Cairo\Resources\none_border.png" />
     <Content Include="Cairo\Resources\pick_range.cur" />
     <Content Include="Cairo\Resources\theme1.xml" />
-    <Content Include="MonteCarlo\Implementation\FastColoredTextBox.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Cairo\App.config" />
@@ -469,7 +478,17 @@
       <Name>GEV Control Layouts</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

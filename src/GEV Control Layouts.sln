@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCL and MonteCarlo Samples"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEV Control Layouts Plus", "GEV Control Layouts Plus\GEV Control Layouts Plus.csproj", "{D93E1488-F699-411A-852F-858BC268F87C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cairo Editor", "Cairo Editor\Cairo Editor.csproj", "{1641784E-0FB1-466E-AD98-1EF27F90872D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IstenemDeUnatkozom", "IstenemDeUnatkozom\IstenemDeUnatkozom.csproj", "{54E3FC47-6B1F-46A6-8713-099DAF888CB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{D93E1488-F699-411A-852F-858BC268F87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D93E1488-F699-411A-852F-858BC268F87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D93E1488-F699-411A-852F-858BC268F87C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1641784E-0FB1-466E-AD98-1EF27F90872D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1641784E-0FB1-466E-AD98-1EF27F90872D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1641784E-0FB1-466E-AD98-1EF27F90872D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1641784E-0FB1-466E-AD98-1EF27F90872D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E3FC47-6B1F-46A6-8713-099DAF888CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E3FC47-6B1F-46A6-8713-099DAF888CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E3FC47-6B1F-46A6-8713-099DAF888CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E3FC47-6B1F-46A6-8713-099DAF888CB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
