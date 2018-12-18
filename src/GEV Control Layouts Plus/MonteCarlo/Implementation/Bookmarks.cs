@@ -48,11 +48,11 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     /// </summary>
     public class Bookmarks : BaseBookmarks
     {
-        protected FastColoredTextBox tb;
+        protected MonteCarloTextBox tb;
         protected List<Bookmark> items = new List<Bookmark>();
         protected int counter;
 
-        public Bookmarks(FastColoredTextBox tb)
+        public Bookmarks(MonteCarloTextBox tb)
         {
             this.tb = tb;
             tb.LineInserted += tb_LineInserted;
@@ -212,7 +212,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     /// </summary>
     public class Bookmark
     {
-        public FastColoredTextBox TB { get; private set; }
+        public MonteCarloTextBox TB { get; private set; }
         /// <summary>
         /// Name of bookmark
         /// </summary>
@@ -236,7 +236,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             TB.Invalidate();
         }
 
-        public Bookmark(FastColoredTextBox tb, string name, int lineIndex)
+        public Bookmark(MonteCarloTextBox tb, string name, int lineIndex)
         {
             this.TB = tb;
             this.Name = name;

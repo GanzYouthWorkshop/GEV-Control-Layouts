@@ -12,18 +12,18 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     /// <summary>
     /// Shows document map of FCTB
     /// </summary>
-    public class DocumentMap : Control
+    public class MonteCarloDocumentMap : Control
     {
         public EventHandler TargetChanged;
 
-        FastColoredTextBox target;
+        MonteCarloTextBox target;
         private float scale = 0.3f;
         private bool needRepaint = true;
         private Place startPlace = Place.Empty;
         private bool scrollbarVisible = true;
 
         [Description("Target FastColoredTextBox")]
-        public FastColoredTextBox Target
+        public MonteCarloTextBox Target
         {
             get { return target; }
             set
@@ -70,7 +70,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             }
         }
 
-        public DocumentMap()
+        public MonteCarloDocumentMap()
         {
             ForeColor = Color.Maroon;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.ResizeRedraw, true);
@@ -91,14 +91,14 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
                 TargetChanged(this, EventArgs.Empty);
         }
 
-        protected virtual void UnSubscribe(FastColoredTextBox target)
+        protected virtual void UnSubscribe(MonteCarloTextBox target)
         {
             target.Scroll -= new ScrollEventHandler(Target_Scroll);
             target.SelectionChangedDelayed -= new EventHandler(Target_SelectionChanged);
             target.VisibleRangeChanged -= new EventHandler(Target_VisibleRangeChanged);
         }
 
-        protected virtual void Subscribe(FastColoredTextBox target)
+        protected virtual void Subscribe(MonteCarloTextBox target)
         {
             target.Scroll += new ScrollEventHandler(Target_Scroll);
             target.SelectionChangedDelayed += new EventHandler(Target_SelectionChanged);

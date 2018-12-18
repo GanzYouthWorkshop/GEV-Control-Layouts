@@ -28,7 +28,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// </summary>
         public event EventHandler<LinePushedEventArgs> LinePushed;
 
-        public FileTextSource(FastColoredTextBox currentTB)
+        public FileTextSource(MonteCarloTextBox currentTB)
             : base(currentTB)
         {
             timer.Interval = 10000;

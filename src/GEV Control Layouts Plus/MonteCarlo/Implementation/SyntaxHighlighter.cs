@@ -114,7 +114,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         protected Regex VBNumberRegex;
         protected Regex VBStringRegex;
 
-        protected FastColoredTextBox currentTb;
+        protected MonteCarloTextBox currentTb;
 
         public static RegexOptions RegexCompiledOption
         {
@@ -127,7 +127,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             }
         }
 
-        public SyntaxHighlighter(FastColoredTextBox currentTb) {
+        public SyntaxHighlighter(MonteCarloTextBox currentTb) {
             this.currentTb = currentTb;
         }
 
@@ -265,19 +265,19 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
 
         protected void SQLAutoIndentNeeded(object sender, AutoIndentEventArgs args)
         {
-            var tb = sender as FastColoredTextBox;
+            var tb = sender as MonteCarloTextBox;
             tb.CalcAutoIndentShiftByCodeFolding(sender, args);
         }
 
         protected void HTMLAutoIndentNeeded(object sender, AutoIndentEventArgs args)
         {
-            var tb = sender as FastColoredTextBox;
+            var tb = sender as MonteCarloTextBox;
             tb.CalcAutoIndentShiftByCodeFolding(sender, args);
         }
 
         protected void XMLAutoIndentNeeded(object sender, AutoIndentEventArgs args)
         {
-            var tb = sender as FastColoredTextBox;
+            var tb = sender as MonteCarloTextBox;
             tb.CalcAutoIndentShiftByCodeFolding(sender, args);
         }
 
@@ -546,7 +546,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             RestoreBrackets(range.tb, oldBrackets);
         }
 
-        protected void RestoreBrackets(FastColoredTextBox tb, char[] oldBrackets)
+        protected void RestoreBrackets(MonteCarloTextBox tb, char[] oldBrackets)
         {
             tb.LeftBracket = oldBrackets[0];
             tb.RightBracket = oldBrackets[1];
@@ -554,7 +554,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             tb.RightBracket2 = oldBrackets[3];
         }
 
-        protected char[] RememberBrackets(FastColoredTextBox tb)
+        protected char[] RememberBrackets(MonteCarloTextBox tb)
         {
             return new[] { tb.LeftBracket, tb.RightBracket, tb.LeftBracket2, tb.RightBracket2 };
         }

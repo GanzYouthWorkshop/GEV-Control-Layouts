@@ -13,13 +13,38 @@ using GEV.Layouts.Extended.MonteCarlo.Implementation;
 
 namespace GEV.Layouts.Extended.MonteCarlo
 {
-    public partial class MonteCarloEditor : UserControl
+    public partial class MonteCarloEditor : UserControl, IGCLControl
     {
+        public new string Text
+        {
+            get { return this.editor.Text; }
+            set { this.editor.Text = value; }
+        }
+
+        public SyntaxHighlighterBase SyntaxHighlighter
+        {
+            get { return this.editor.SyntaxHighlighter; }
+            set { this.editor.SyntaxHighlighter = value; }
+        }
+
+        public bool ShowCodeMap
+        {
+            get { return this.m_ShowCodeMap; }
+            set
+            {
+                this.m_ShowCodeMap = value;
+                this.documentMap.Visible = this.m_ShowCodeMap;
+            }
+        }
+        private bool m_ShowCodeMap;
+
+        public bool UseThemeColors { get; set; }
+
         public MonteCarloEditor()
         {
             InitializeComponent();
 
-            AutocompleteMenu popupMenu = new AutocompleteMenu(this.editor);
+            MonteCarloAutocompleteMenu popupMenu = new MonteCarloAutocompleteMenu(this.editor);
             popupMenu.MinFragmentLength = 1;
 
             this.editor.SyntaxHighlighter = new CSharpHighLighter();
@@ -51,15 +76,17 @@ namespace GEV.Layouts.Extended.MonteCarlo
 
         #endregion
 
-        TextStyle commentStyle = new TextStyle(new SolidBrush(Color.FromArgb(76, 178, 80)), null, FontStyle.Regular);
+        #region Egyedi komment kinézet
+        private TextStyle m_CommentStyle = new TextStyle(new SolidBrush(Color.FromArgb(76, 178, 80)), null, FontStyle.Regular);
 
         private void editor_TextChanged(object sender, TextChangedEventArgs e)
         {
             //clear previous highlighting
-            e.ChangedRange.ClearStyle(commentStyle);
+            e.ChangedRange.ClearStyle(m_CommentStyle);
             //highlight tags
-            e.ChangedRange.SetStyle(commentStyle, @"//.*$");
-            e.ChangedRange.SetStyle(commentStyle, new Regex(@"/\*.*[(\*/)|$]", RegexOptions.None));
+            e.ChangedRange.SetStyle(m_CommentStyle, @"//.*$");
+            e.ChangedRange.SetStyle(m_CommentStyle, new Regex(@"/\*.*[(\*/)|$]", RegexOptions.None));
         }
+        #endregion
     }
 }

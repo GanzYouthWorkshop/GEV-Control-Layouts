@@ -70,12 +70,12 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
 
         public override void AddEventHandler(object component, Delegate value)
         {
-            (component as FastColoredTextBox).BindingTextChanged += value as EventHandler;
+            (component as MonteCarloTextBox).BindingTextChanged += value as EventHandler;
         }
 
         public override Type ComponentType
         {
-            get { return typeof(FastColoredTextBox); }
+            get { return typeof(MonteCarloTextBox); }
         }
 
         public override Type EventType
@@ -90,7 +90,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
 
         public override void RemoveEventHandler(object component, Delegate value)
         {
-            (component as FastColoredTextBox).BindingTextChanged -= value as EventHandler;
+            (component as MonteCarloTextBox).BindingTextChanged -= value as EventHandler;
         }
     }
 }

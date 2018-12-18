@@ -20,7 +20,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// </summary>
         public bool UseOriginalFont { get; set; }
 
-        FastColoredTextBox tb;
+        MonteCarloTextBox tb;
         Dictionary<Color, int> colorTable = new Dictionary<Color, int>();
 
         public ExportToRTF()
@@ -28,7 +28,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             UseOriginalFont = true;
         }
 
-        public string GetRtf(FastColoredTextBox tb)
+        public string GetRtf(MonteCarloTextBox tb)
         {
             this.tb = tb;
             Range sel = new Range(tb);

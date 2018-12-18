@@ -13,7 +13,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     {
         Place start;
         Place end;
-        public readonly FastColoredTextBox tb;
+        public readonly MonteCarloTextBox tb;
         int preferedPos = -1;
         int updating = 0;
 
@@ -24,7 +24,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// Constructor
         /// </summary>
-        public Range(FastColoredTextBox tb)
+        public Range(MonteCarloTextBox tb)
         {
             this.tb = tb;
         }
@@ -56,7 +56,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// Constructor
         /// </summary>
-        public Range(FastColoredTextBox tb, int iStartChar, int iStartLine, int iEndChar, int iEndLine)
+        public Range(MonteCarloTextBox tb, int iStartChar, int iStartLine, int iEndChar, int iEndLine)
             : this(tb)
         {
             start = new Place(iStartChar, iStartLine);
@@ -66,7 +66,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// Constructor
         /// </summary>
-        public Range(FastColoredTextBox tb, Place start, Place end)
+        public Range(MonteCarloTextBox tb, Place start, Place end)
             : this(tb)
         {
             this.start = start;
@@ -76,7 +76,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// Constructor. Creates range of the line
         /// </summary>
-        public Range(FastColoredTextBox tb, int iLine)
+        public Range(MonteCarloTextBox tb, int iLine)
             : this(tb)
         {
             start = new Place(0, iLine);

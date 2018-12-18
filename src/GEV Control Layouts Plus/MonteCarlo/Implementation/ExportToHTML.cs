@@ -37,7 +37,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// </summary>
         public bool IncludeLineNumbers { get; set; }
 
-        FastColoredTextBox tb;
+        MonteCarloTextBox tb;
 
         public ExportToHTML()
         {
@@ -47,7 +47,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             UseBr = true;
         }
 
-        public string GetHtml(FastColoredTextBox tb)
+        public string GetHtml(MonteCarloTextBox tb)
         {
             this.tb = tb;
             Range sel = new Range(tb);

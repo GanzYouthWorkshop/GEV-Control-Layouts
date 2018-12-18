@@ -12,7 +12,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     /// Popup menu for autocomplete
     /// </summary>
     [Browsable(false)]
-    public class AutocompleteMenu : ToolStripDropDown, IDisposable
+    public class MonteCarloAutocompleteMenu : ToolStripDropDown, IDisposable
     {
         AutocompleteListView listView;
         public ToolStripControlHost host;
@@ -75,7 +75,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             set { listView.HoveredColor = value; }
         }
 
-        public AutocompleteMenu(FastColoredTextBox tb)
+        public MonteCarloAutocompleteMenu(MonteCarloTextBox tb)
         {
             // create a new popup and add the list view to it 
             AutoClose = false;
@@ -216,9 +216,9 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             get { return Font.Height + 2; }
         }
 
-        AutocompleteMenu Menu { get { return Parent as AutocompleteMenu; } }
+        MonteCarloAutocompleteMenu Menu { get { return Parent as MonteCarloAutocompleteMenu; } }
         int oldItemCount = 0;
-        FastColoredTextBox tb;
+        MonteCarloTextBox tb;
         internal ToolTip toolTip = new ToolTip();
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
@@ -263,7 +263,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             }
         }
 
-        internal AutocompleteListView(FastColoredTextBox tb)
+        internal AutocompleteListView(MonteCarloTextBox tb)
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
             base.Font = new Font(FontFamily.GenericSansSerif, 9);
@@ -479,7 +479,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
 
         void tb_KeyDown(object sender, KeyEventArgs e)
         {
-            var tb = sender as FastColoredTextBox;
+            var tb = sender as MonteCarloTextBox;
 
             if (Menu.Visible)
                 if (ProcessKey(e.KeyCode, e.Modifiers))
@@ -787,6 +787,6 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     public class SelectedEventArgs : EventArgs
     {
         public AutocompleteItem Item { get; internal set; }
-        public FastColoredTextBox Tb { get; set; }
+        public MonteCarloTextBox Tb { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         protected LinesAccessor linesAccessor;
         int lastLineUniqueId;
         public CommandManager Manager { get; set; }
-        FastColoredTextBox currentTB;
+        MonteCarloTextBox currentTB;
         /// <summary>
         /// Styles
         /// </summary>
@@ -53,7 +53,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// Current focused FastColoredTextBox
         /// </summary>
-        public FastColoredTextBox CurrentTB {
+        public MonteCarloTextBox CurrentTB {
             get { return currentTB; }
             set {
                 if (currentTB == value)
@@ -86,7 +86,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// </summary>
         public TextStyle DefaultStyle { get; set; }
 
-        public TextSource(FastColoredTextBox currentTB)
+        public TextSource(MonteCarloTextBox currentTB)
         {
             this.CurrentTB = currentTB;
             linesAccessor = new LinesAccessor(this);

@@ -13,10 +13,10 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     /// </summary>
     public class Hints : ICollection<Hint>, IDisposable
     {
-        FastColoredTextBox tb;
+        MonteCarloTextBox tb;
         List<Hint> items = new List<Hint>();
 
-        public Hints(FastColoredTextBox tb)
+        public Hints(MonteCarloTextBox tb)
         {
             this.tb = tb;
             tb.TextChanged += OnTextBoxTextChanged;

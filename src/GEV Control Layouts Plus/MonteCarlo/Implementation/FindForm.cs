@@ -9,9 +9,9 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     {
         bool firstSearch = true;
         Place startPlace;
-        FastColoredTextBox tb;
+        MonteCarloTextBox tb;
 
-        public FindForm(FastColoredTextBox tb)
+        public FindForm(MonteCarloTextBox tb)
         {
             InitializeComponent();
             this.tb = tb;

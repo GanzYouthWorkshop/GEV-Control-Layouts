@@ -39,7 +39,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// Occurs when user click on StyleVisualMarker joined to this style 
         /// </summary>
-        public virtual void OnVisualMarkerClick(FastColoredTextBox tb, VisualMarkerEventArgs args)
+        public virtual void OnVisualMarkerClick(MonteCarloTextBox tb, VisualMarkerEventArgs args)
         {
             if (VisualMarkerClick != null)
                 VisualMarkerClick(tb, args);
@@ -49,7 +49,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// Shows VisualMarker
         /// Call this method in Draw method, when you need to show VisualMarker for your style
         /// </summary>
-        protected virtual void AddVisualMarker(FastColoredTextBox tb, StyleVisualMarker marker)
+        protected virtual void AddVisualMarker(MonteCarloTextBox tb, StyleVisualMarker marker)
         {
             tb.AddVisualMarker(marker);
         }
@@ -137,7 +137,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
                     //IME mode
                     for (int i = range.Start.iChar; i < range.End.iChar; i++)
                     {
-                        SizeF size = FastColoredTextBox.GetCharSize(f, line[i].c);
+                        SizeF size = MonteCarloTextBox.GetCharSize(f, line[i].c);
 
                         var gs = gr.Save();
                         float k = size.Width > range.tb.CharWidth + 1 ? range.tb.CharWidth/size.Width : 1;

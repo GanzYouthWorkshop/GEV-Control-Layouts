@@ -7,11 +7,11 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
 {
     public partial class ReplaceForm : Form
     {
-        FastColoredTextBox tb;
+        MonteCarloTextBox tb;
         bool firstSearch = true;
         Place startPlace;
 
-        public ReplaceForm(FastColoredTextBox tb)
+        public ReplaceForm(MonteCarloTextBox tb)
         {
             InitializeComponent();
             this.tb = tb;

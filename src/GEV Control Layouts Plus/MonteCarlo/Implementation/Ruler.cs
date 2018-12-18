@@ -22,10 +22,10 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         [DefaultValue(typeof(Color), "Black")]
         public Color CaretTickColor { get; set; }
 
-        FastColoredTextBox target;
+        MonteCarloTextBox target;
 
         [Description("Target FastColoredTextBox")]
-        public FastColoredTextBox Target
+        public MonteCarloTextBox Target
         {
             get { return target; }
             set
@@ -59,14 +59,14 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
                 TargetChanged(this, EventArgs.Empty);
         }
 
-        protected virtual void UnSubscribe(FastColoredTextBox target)
+        protected virtual void UnSubscribe(MonteCarloTextBox target)
         {
             target.Scroll -= new ScrollEventHandler(target_Scroll);
             target.SelectionChanged -= new EventHandler(target_SelectionChanged);
             target.VisibleRangeChanged -= new EventHandler(target_VisibleRangeChanged);
         }
 
-        protected virtual void Subscribe(FastColoredTextBox target)
+        protected virtual void Subscribe(MonteCarloTextBox target)
         {
             target.Scroll += new ScrollEventHandler(target_Scroll);
             target.SelectionChanged += new EventHandler(target_SelectionChanged);

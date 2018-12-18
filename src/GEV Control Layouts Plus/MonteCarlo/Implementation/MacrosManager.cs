@@ -15,7 +15,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
     {
         private readonly List<object> macro = new List<object>();
 
-        internal MacrosManager(FastColoredTextBox ctrl)
+        internal MacrosManager(MonteCarloTextBox ctrl)
         {
             UnderlayingControl = ctrl;
             AllowMacroRecordingByUser = true;
@@ -40,7 +40,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// FCTB
         /// </summary>
-        public FastColoredTextBox UnderlayingControl { get; private set; }
+        public MonteCarloTextBox UnderlayingControl { get; private set; }
 
         /// <summary>
         /// Executes recorded macro

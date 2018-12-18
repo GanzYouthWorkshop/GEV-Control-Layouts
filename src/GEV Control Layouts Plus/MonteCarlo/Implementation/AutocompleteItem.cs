@@ -15,7 +15,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         string toolTipTitle;
         string toolTipText;
         string menuText;
-        public AutocompleteMenu Parent { get; internal set; }
+        public MonteCarloAutocompleteMenu Parent { get; internal set; }
         
 
         public AutocompleteItem()
@@ -77,7 +77,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         /// <summary>
         /// This method is called after item inserted into text
         /// </summary>
-        public virtual void OnSelected(AutocompleteMenu popupMenu, SelectedEventArgs e)
+        public virtual void OnSelected(MonteCarloAutocompleteMenu popupMenu, SelectedEventArgs e)
         {
             ;
         }
@@ -169,7 +169,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             return Text;
         }
 
-        public override void OnSelected(AutocompleteMenu popupMenu, SelectedEventArgs e)
+        public override void OnSelected(MonteCarloAutocompleteMenu popupMenu, SelectedEventArgs e)
         {
             e.Tb.BeginUpdate();
             e.Tb.Selection.BeginUpdate();
