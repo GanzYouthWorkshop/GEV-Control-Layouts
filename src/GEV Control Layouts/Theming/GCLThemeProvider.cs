@@ -55,7 +55,7 @@ namespace GEV.Layouts.Theming
                     GCLColors.ErrorRed = Color.FromArgb(224, 67, 54);
                     GCLColors.AlertYellow = Color.FromArgb(255, 193, 0);
                 }
-                else
+                else if(value == BasicThemes.Light)
                 {
                     GCLColors.FormBackground = Color.Gainsboro;
                     GCLColors.PanelBackground = Color.White;

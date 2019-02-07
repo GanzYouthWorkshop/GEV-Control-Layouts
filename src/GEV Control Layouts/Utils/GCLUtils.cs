@@ -38,6 +38,7 @@ namespace GEV.Layouts.Utils
                 else
                 {
                     fore = button.UseThemeColors ? GCLColors.SecondaryText : button.ForeColor;
+                    back = Color.FromArgb(200, 200, 200); //TODO: [KG] Ezt normálisan meg kéne csinálni!
                 }
 
                 e.Graphics.Clear(back);

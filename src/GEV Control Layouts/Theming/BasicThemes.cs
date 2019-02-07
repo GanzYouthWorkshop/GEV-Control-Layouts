@@ -10,5 +10,6 @@ namespace GEV.Layouts.Theming
     {
         Dark,
         Light,
+        Custom,
     }
 }

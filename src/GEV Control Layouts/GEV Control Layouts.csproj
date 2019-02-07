@@ -54,6 +54,7 @@
     <Compile Include="DataGrid\GCLDataGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="_Vanilla\SortableBindingList.cs" />
     <Compile Include="Designer\StringCollectionEditor.cs" />
     <Compile Include="Designer\StringCollectionEditorControls.cs">
       <SubType>UserControl</SubType>
@@ -312,6 +313,12 @@
     </Compile>
     <Compile Include="Theming\GCLThemeProvider.Designer.cs">
       <DependentUpon>GCLThemeProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Vanilla\VanillaCheckedDataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\VanillaDataGrid.cs">
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

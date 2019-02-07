@@ -40,6 +40,9 @@ namespace GEV.Layouts.Extended.MonteCarlo
 
         public bool UseThemeColors { get; set; }
 
+        public MonteCarloTextBox Editor { get { return this.editor; } }
+        public MonteCarloDocumentMap CodeMap { get { return this.documentMap; } }
+
         public MonteCarloEditor()
         {
             InitializeComponent();

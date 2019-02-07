@@ -121,7 +121,6 @@ namespace GEV.Layouts.Extended.MonteCarlo
             this.editor.RightBracket = ')';
             this.editor.RightBracket2 = '}';
             this.editor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(86)))), ((int)(((byte)(156)))), ((int)(((byte)(210)))));
-            this.editor.ServiceColors = ((GEV.Layouts.Extended.MonteCarlo.Implementation.ServiceColors)(resources.GetObject("editor.ServiceColors")));
             this.editor.ServiceLinesColor = System.Drawing.SystemColors.ScrollBar;
             this.editor.ShowFoldingLines = true;
             this.editor.Size = new System.Drawing.Size(591, 493);

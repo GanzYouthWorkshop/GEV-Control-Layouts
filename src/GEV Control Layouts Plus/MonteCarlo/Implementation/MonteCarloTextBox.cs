@@ -209,7 +209,6 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
             AutoIndentCharsPatterns = @"^\s*[\w\.]+\s*(?<range>=)\s*(?<range>[^;]+);";
             AutoIndentChars = true;
             CaretBlinking = true;
-            ServiceColors = new ServiceColors();
             //
             base.AutoScroll = true;
             timer.Tick += timer_Tick;
@@ -232,29 +231,6 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         [DefaultValue(false)]
         [Description("AutoComplete brackets.")]
         public bool AutoCompleteBrackets { get; set; }
-
-        /// <summary>
-        /// Colors of some service visual markers
-        /// </summary>
-        [Browsable(true)] 
-        [Description("Colors of some service visual markers.")]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public ServiceColors ServiceColors
-        {
-            get
-            {
-                if(this.m_ServiceColors == null)
-                {
-                    this.ServiceColors = new ServiceColors();
-                }
-                return this.m_ServiceColors;
-            }
-            set
-            {
-                this.m_ServiceColors = value;
-            }
-        }
-        private ServiceColors m_ServiceColors;
 
         /// <summary>
         /// Contains UniqueId of start lines of folded blocks
@@ -5188,19 +5164,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
         {
             foreach (VisualMarker m in visibleMarkers)
             {
-                if(m is CollapseFoldingMarker)
-                    using(var bk = new SolidBrush(ServiceColors.CollapseMarkerBackColor))
-                    using(var fore = new Pen(ServiceColors.CollapseMarkerForeColor))
-                    using(var border = new Pen(ServiceColors.CollapseMarkerBorderColor))
-                        (m as CollapseFoldingMarker).Draw(e.Graphics, border, bk, fore);
-                else
-                if (m is ExpandFoldingMarker)
-                    using (var bk = new SolidBrush(ServiceColors.ExpandMarkerBackColor))
-                    using (var fore = new Pen(ServiceColors.ExpandMarkerForeColor))
-                    using (var border = new Pen(ServiceColors.ExpandMarkerBorderColor))
-                        (m as ExpandFoldingMarker).Draw(e.Graphics, border, bk, fore);
-                else
-                    m.Draw(e.Graphics, servicePen);
+                m.Draw(e.Graphics, servicePen);
             }
         }
 
@@ -8490,27 +8454,6 @@ window.status = ""#print"";
         Right = 2,
         Up = 4,
         Down = 8
-    }
-
-    [Serializable]
-    public class ServiceColors
-    {
-        public Color CollapseMarkerForeColor { get; set; }
-        public Color CollapseMarkerBackColor { get; set; }
-        public Color CollapseMarkerBorderColor { get; set; }
-        public Color ExpandMarkerForeColor { get; set; }
-        public Color ExpandMarkerBackColor { get; set; }
-        public Color ExpandMarkerBorderColor { get; set; }
-
-        public ServiceColors()
-        {
-            CollapseMarkerForeColor = Color.Silver;
-            CollapseMarkerBackColor = Color.White;
-            CollapseMarkerBorderColor = Color.Silver;
-            ExpandMarkerForeColor = Color.Red;
-            ExpandMarkerBackColor = Color.White;
-            ExpandMarkerBorderColor = Color.Silver;
-        }
     }
 
 #if Styles32
