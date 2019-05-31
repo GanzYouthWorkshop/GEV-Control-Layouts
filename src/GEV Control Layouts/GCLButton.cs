@@ -23,6 +23,8 @@ namespace GEV.Layouts
         {
             InitializeComponent();
 
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
+
             this.FlatStyle = FlatStyle.Flat;
 
             this.FlatAppearance.BorderSize = 1;
@@ -49,21 +51,26 @@ namespace GEV.Layouts
         private void OnMouseDown(object sender, MouseEventArgs e)
         {
             this.IsPressed = true;
+            this.Invalidate();
         }
 
         private void OnMouseLeave(object sender, EventArgs e)
         {
             this.IsHovered = false;
+            this.Invalidate();
         }
 
         private void OnMouseEnter(object sender, EventArgs e)
         {
             this.IsHovered = true;
+            this.Invalidate();
         }
 
-        protected override void OnPaint(PaintEventArgs pevent)
+        protected override void OnPaint(PaintEventArgs e)
         {
-            Utils.GCLUtils.DrawButtonlike(this, pevent);
+            base.OnPaint(e);
+
+            Utils.GCLUtils.DrawButtonlike(this, e);
         }
     }
 }

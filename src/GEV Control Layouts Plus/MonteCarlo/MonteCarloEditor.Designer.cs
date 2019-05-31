@@ -31,29 +31,32 @@ namespace GEV.Layouts.Extended.MonteCarlo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonteCarloEditor));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.scrollHorizontal = new GEV.Layouts.Extended.ScrollBar();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.editor = new GEV.Layouts.Extended.MonteCarlo.Implementation.MonteCarloTextBox();
             this.documentMap = new GEV.Layouts.Extended.MonteCarlo.Implementation.MonteCarloDocumentMap();
+            this.scrollHorizontal = new GEV.Layouts.Extended.ScrollBar();
             this.scrollVertical = new GEV.Layouts.Extended.ScrollBar();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editor)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.scrollHorizontal, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.editor, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.documentMap, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.scrollVertical, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.scrollVertical, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -61,24 +64,23 @@ namespace GEV.Layouts.Extended.MonteCarlo
             this.tableLayoutPanel1.Size = new System.Drawing.Size(761, 513);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // scrollHorizontal
+            // splitContainer1
             // 
-            this.scrollHorizontal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.scrollHorizontal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tableLayoutPanel1.SetColumnSpan(this.scrollHorizontal, 2);
-            this.scrollHorizontal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scrollHorizontal.Location = new System.Drawing.Point(0, 497);
-            this.scrollHorizontal.Margin = new System.Windows.Forms.Padding(0);
-            this.scrollHorizontal.Maximum = 100;
-            this.scrollHorizontal.Name = "scrollHorizontal";
-            this.scrollHorizontal.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
-            this.scrollHorizontal.Size = new System.Drawing.Size(745, 16);
-            this.scrollHorizontal.TabIndex = 3;
-            this.scrollHorizontal.Text = "scrollBar2";
-            this.scrollHorizontal.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.scrollHorizontal.ThumbSize = 10;
-            this.scrollHorizontal.Value = 0;
-            this.scrollHorizontal.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBar_Scroll);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.editor);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.documentMap);
+            this.splitContainer1.Size = new System.Drawing.Size(745, 497);
+            this.splitContainer1.SplitterDistance = 597;
+            this.splitContainer1.TabIndex = 5;
             // 
             // editor
             // 
@@ -95,7 +97,7 @@ namespace GEV.Layouts.Extended.MonteCarlo
         '\''};
             this.editor.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n^\\s*(case|default)\\s*[^:]" +
     "*(?<range>:)\\s*(?<range>[^;]+);\r\n";
-            this.editor.AutoScrollMinSize = new System.Drawing.Size(411, 126);
+            this.editor.AutoScrollMinSize = new System.Drawing.Size(61, 18);
             this.editor.BackBrush = null;
             this.editor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.editor.CaretColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
@@ -114,8 +116,8 @@ namespace GEV.Layouts.Extended.MonteCarlo
             this.editor.LeftBracket2 = '{';
             this.editor.LeftPadding = 30;
             this.editor.LineNumberColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.editor.Location = new System.Drawing.Point(2, 2);
-            this.editor.Margin = new System.Windows.Forms.Padding(2);
+            this.editor.Location = new System.Drawing.Point(0, 0);
+            this.editor.Margin = new System.Windows.Forms.Padding(0);
             this.editor.Name = "editor";
             this.editor.Paddings = new System.Windows.Forms.Padding(0);
             this.editor.RightBracket = ')';
@@ -123,9 +125,9 @@ namespace GEV.Layouts.Extended.MonteCarlo
             this.editor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(86)))), ((int)(((byte)(156)))), ((int)(((byte)(210)))));
             this.editor.ServiceLinesColor = System.Drawing.SystemColors.ScrollBar;
             this.editor.ShowFoldingLines = true;
-            this.editor.Size = new System.Drawing.Size(591, 493);
+            this.editor.ShowScrollBars = false;
+            this.editor.Size = new System.Drawing.Size(597, 497);
             this.editor.TabIndex = 4;
-            this.editor.Text = resources.GetString("editor.Text");
             this.editor.Zoom = 100;
             this.editor.TextChanged += new System.EventHandler<GEV.Layouts.Extended.MonteCarlo.Implementation.TextChangedEventArgs>(this.editor_TextChanged);
             this.editor.ScrollbarsUpdated += new System.EventHandler(this.editor_ScrollbarsUpdated);
@@ -135,14 +137,32 @@ namespace GEV.Layouts.Extended.MonteCarlo
             this.documentMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.documentMap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentMap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(86)))), ((int)(((byte)(156)))), ((int)(((byte)(210)))));
-            this.documentMap.Location = new System.Drawing.Point(595, 0);
+            this.documentMap.Location = new System.Drawing.Point(0, 0);
             this.documentMap.Margin = new System.Windows.Forms.Padding(0);
             this.documentMap.Name = "documentMap";
             this.documentMap.ScrollbarVisible = false;
-            this.documentMap.Size = new System.Drawing.Size(150, 497);
+            this.documentMap.Size = new System.Drawing.Size(144, 497);
             this.documentMap.TabIndex = 1;
             this.documentMap.Target = this.editor;
             this.documentMap.Text = "codemap";
+            // 
+            // scrollHorizontal
+            // 
+            this.scrollHorizontal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.scrollHorizontal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.scrollHorizontal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scrollHorizontal.Location = new System.Drawing.Point(0, 497);
+            this.scrollHorizontal.Margin = new System.Windows.Forms.Padding(0);
+            this.scrollHorizontal.Maximum = 100;
+            this.scrollHorizontal.Name = "scrollHorizontal";
+            this.scrollHorizontal.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
+            this.scrollHorizontal.Size = new System.Drawing.Size(745, 16);
+            this.scrollHorizontal.TabIndex = 3;
+            this.scrollHorizontal.Text = "scrollBar2";
+            this.scrollHorizontal.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.scrollHorizontal.ThumbSize = 10;
+            this.scrollHorizontal.Value = 0;
+            this.scrollHorizontal.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBar_Scroll);
             // 
             // scrollVertical
             // 
@@ -166,10 +186,15 @@ namespace GEV.Layouts.Extended.MonteCarlo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MonteCarloEditor";
             this.Size = new System.Drawing.Size(761, 513);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.editor)).EndInit();
             this.ResumeLayout(false);
 
@@ -181,5 +206,6 @@ namespace GEV.Layouts.Extended.MonteCarlo
         private ScrollBar scrollHorizontal;
         private ScrollBar scrollVertical;
         private MonteCarloTextBox editor;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

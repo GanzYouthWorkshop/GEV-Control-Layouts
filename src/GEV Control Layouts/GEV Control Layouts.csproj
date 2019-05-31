@@ -320,6 +320,9 @@
     <Compile Include="_Vanilla\VanillaDataGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="_Vanilla\VanillaListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Designer\StringCollectionEditorControls.resx">

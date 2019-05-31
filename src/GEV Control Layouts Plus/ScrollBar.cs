@@ -108,6 +108,8 @@ namespace GEV.Layouts.Extended
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            base.OnPaint(e);
+
             if (Maximum <= 0)
                 return;
 

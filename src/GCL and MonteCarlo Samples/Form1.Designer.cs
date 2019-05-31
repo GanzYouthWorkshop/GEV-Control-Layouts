@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            GEV.Layouts.Extended.MonteCarlo.HighLighters.CSharpHighLighter cSharpHighLighter1 = new GEV.Layouts.Extended.MonteCarlo.HighLighters.CSharpHighLighter();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -638,6 +639,7 @@
             // gclTextbox1
             // 
             this.gclTextbox1.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
+            this.gclTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.gclTextbox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclTextbox1.Location = new System.Drawing.Point(340, 243);
             this.gclTextbox1.Margin = new System.Windows.Forms.Padding(2);
@@ -814,8 +816,11 @@
             this.monteCarloEditor1.Location = new System.Drawing.Point(10, 10);
             this.monteCarloEditor1.Margin = new System.Windows.Forms.Padding(4);
             this.monteCarloEditor1.Name = "monteCarloEditor1";
+            this.monteCarloEditor1.ShowCodeMap = false;
             this.monteCarloEditor1.Size = new System.Drawing.Size(770, 880);
+            this.monteCarloEditor1.SyntaxHighlighter = cSharpHighLighter1;
             this.monteCarloEditor1.TabIndex = 1;
+            this.monteCarloEditor1.UseThemeColors = false;
             this.monteCarloEditor1.DragDrop += new System.Windows.Forms.DragEventHandler(this.monteCarloEditor1_DragDrop);
             // 
             // gclPropertyGrid1

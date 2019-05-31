@@ -27,18 +27,38 @@ namespace GEV.Layouts.Extended.MonteCarlo
             set { this.editor.SyntaxHighlighter = value; }
         }
 
+        [DefaultValue(true)]
         public bool ShowCodeMap
         {
             get { return this.m_ShowCodeMap; }
             set
             {
                 this.m_ShowCodeMap = value;
-                this.documentMap.Visible = this.m_ShowCodeMap;
+                this.splitContainer1.Panel2Collapsed = !this.m_ShowCodeMap;
             }
         }
         private bool m_ShowCodeMap;
 
-        public bool UseThemeColors { get; set; }
+        [DefaultValue(false)]
+        public bool ReadOnly
+        {
+            get { return this.editor.ReadOnly; }
+            set { this.editor.ReadOnly = value; }
+        }
+
+        [DefaultValue(true)]
+        public bool ShowLineNumbers
+        {
+            get { return this.editor.ShowLineNumbers; }
+            set { this.editor.ShowLineNumbers = value; }
+        }
+
+        public bool UseThemeColors
+        {
+            get { return this.m_UseThemeColors; }
+            set { this.m_UseThemeColors = value; this.SetupColors(); }
+        }
+        private bool m_UseThemeColors;
 
         public MonteCarloTextBox Editor { get { return this.editor; } }
         public MonteCarloDocumentMap CodeMap { get { return this.documentMap; } }
@@ -91,5 +111,47 @@ namespace GEV.Layouts.Extended.MonteCarlo
             e.ChangedRange.SetStyle(m_CommentStyle, new Regex(@"/\*.*[(\*/)|$]", RegexOptions.None));
         }
         #endregion
+
+        private void SetupColors()
+        {
+            if (this.UseThemeColors)
+            {
+                this.editor.BackColor = GCLColors.SoftBorder;
+                this.editor.IndentBackColor = GCLColors.SoftBorder;
+                this.editor.ForeColor = GCLColors.PrimaryText;
+                this.editor.LineNumberColor = GCLColors.SecondaryText;
+
+                this.documentMap.BackColor = GCLColors.SoftBorder;
+
+                this.scrollHorizontal.BackColor = GCLColors.SoftBorder;
+                this.scrollVertical.BackColor = GCLColors.SoftBorder;
+                this.scrollHorizontal.BorderColor = GCLColors.SoftBorder;
+                this.scrollVertical.BorderColor = GCLColors.SoftBorder;
+                this.scrollHorizontal.ThumbColor = GCLColors.SecondaryText;
+                this.scrollVertical.ThumbColor = GCLColors.SecondaryText;
+
+            }
+            else
+            {
+                this.editor.BackColor = this.BackColor;
+                this.editor.IndentBackColor = this.BackColor;
+                this.editor.ForeColor = this.ForeColor;
+                this.editor.LineNumberColor = GCLColors.SecondaryText;
+
+                this.documentMap.BackColor = this.BackColor;
+
+                this.scrollHorizontal.BackColor = this.BackColor;
+                this.scrollVertical.BackColor = this.BackColor;
+                this.scrollHorizontal.BorderColor = this.BackColor;
+                this.scrollVertical.BorderColor = this.BackColor;
+                this.scrollHorizontal.ThumbColor = GCLColors.SecondaryText;
+                this.scrollVertical.ThumbColor = GCLColors.SecondaryText;
+            }
+
+            this.editor.Invalidate();
+            this.documentMap.Invalidate();
+            this.scrollHorizontal.Invalidate();
+            this.scrollVertical.Invalidate();
+        }
     }
 }
