@@ -840,6 +840,7 @@
             this.gclPropertyGrid1.PropertyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclPropertyGrid1.Size = new System.Drawing.Size(382, 880);
             this.gclPropertyGrid1.TabIndex = 0;
+            this.gclPropertyGrid1.UseThemeColors = false;
             // 
             // tabPage4
             // 

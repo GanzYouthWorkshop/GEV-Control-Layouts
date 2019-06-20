@@ -45,6 +45,7 @@ namespace GEV.Layouts.Docking
         public FloatingWindow(GCLDockingContainer provider)
         {
             this.m_DockExtender = provider;
+            this.m_DockState.OriginalDockingParent = provider;
             InitializeComponent();
         }
 

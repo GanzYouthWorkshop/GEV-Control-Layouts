@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Diagnostics;
 using GEV.Layouts.Meta;
 using GEV.Layouts.Utils;
+using GEV.Common;
 
 namespace GEV.Layouts.PropertyGrid
 {
@@ -38,6 +39,11 @@ namespace GEV.Layouts.PropertyGrid
 
         public override void BuildGUI()
         {
+            if(this.Method.GetCustomAttribute<CommandAttribute>(true).ShowButtonOnly)
+            {
+                this.container.Panel1Collapsed = true;
+            }
+
             this.lblName.Text = PropertyGridUtils.GetLocalizedName(this.Method);
             this.gclButton1.Text = PropertyGridUtils.GetLocalizedCommandName(this.Method);
         }
@@ -52,7 +58,7 @@ namespace GEV.Layouts.PropertyGrid
             {
                 object result =  this.Method.Invoke(this.DataSource, null);
 
-                if(result != null && this.Method.GetCustomAttribute<GCLCommandAttribute>(true).ShowResultInMessageBox)
+                if(result != null && this.Method.GetCustomAttribute<CommandAttribute>(true).ShowResultInMessageBox)
                 {
                     if (result is CommandResult)
                     {

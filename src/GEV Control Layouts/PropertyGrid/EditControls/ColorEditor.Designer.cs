@@ -57,6 +57,7 @@
             // 
             this.gclColorPicker1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gclColorPicker1.Location = new System.Drawing.Point(4, 47);
+            this.gclColorPicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gclColorPicker1.Name = "gclColorPicker1";
             this.gclColorPicker1.Size = new System.Drawing.Size(274, 202);
             this.gclColorPicker1.TabIndex = 0;
@@ -70,7 +71,7 @@
             this.gclWindowHeader1.Name = "gclWindowHeader1";
             this.gclWindowHeader1.ShowCloseButton = true;
             this.gclWindowHeader1.ShowWindowButtons = false;
-            this.gclWindowHeader1.Size = new System.Drawing.Size(450, 40);
+            this.gclWindowHeader1.Size = new System.Drawing.Size(450, 32);
             this.gclWindowHeader1.TabIndex = 1;
             this.gclWindowHeader1.Title = "Color Picker";
             // 
@@ -344,7 +345,7 @@
             // 
             // ColorEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(452, 300);

@@ -45,6 +45,7 @@
             // gclButton1
             // 
             this.gclButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
+            this.gclButton1.Checked = false;
             this.gclButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
@@ -56,6 +57,7 @@
             this.gclButton1.Size = new System.Drawing.Size(472, 20);
             this.gclButton1.TabIndex = 0;
             this.gclButton1.Text = "Run";
+            this.gclButton1.UseThemeColors = true;
             this.gclButton1.UseVisualStyleBackColor = false;
             this.gclButton1.Click += new System.EventHandler(this.gclButton1_Click);
             // 

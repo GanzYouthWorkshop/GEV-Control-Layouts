@@ -20,6 +20,5 @@ namespace GEV.Layouts.Meta
         {
             this.ShowResultInMessageBox = showResultInMessageBox;
         }
-
     }
 }

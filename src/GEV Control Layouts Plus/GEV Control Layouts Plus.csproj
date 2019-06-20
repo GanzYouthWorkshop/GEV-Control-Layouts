@@ -310,7 +310,7 @@
     <Compile Include="MonteCarlo\Implementation\EncodingDetector.cs" />
     <Compile Include="MonteCarlo\Implementation\ExportToHTML.cs" />
     <Compile Include="MonteCarlo\Implementation\ExportToRTF.cs" />
-    <Compile Include="MonteCarlo\Implementation\MonteCarloTextBox.cs">
+    <Compile Include="MonteCarlo\MonteCarloTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MonteCarlo\Implementation\FileTextSource.cs" />
@@ -415,7 +415,7 @@
     <EmbeddedResource Include="MiniCAD\MiniCADEditor.resx">
       <DependentUpon>MiniCADEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonteCarlo\Implementation\MonteCarloTextBox.resx">
+    <EmbeddedResource Include="MonteCarlo\MonteCarloTextBox.resx">
       <DependentUpon>MonteCarloTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonteCarlo\Implementation\FindForm.resx">

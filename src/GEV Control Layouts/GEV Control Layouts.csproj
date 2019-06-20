@@ -396,7 +396,6 @@
       <DependentUpon>PropertyPresenter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
@@ -406,6 +405,12 @@
     <Content Include="sciter.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\GEV-Common-Library\src\GEV Common Library\GEV Common Library %28.NET Framework%29.csproj">
+      <Project>{cb307fcc-19fe-4138-beaf-20fec5d9d6b7}</Project>
+      <Name>GEV Common Library %28.NET Framework%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

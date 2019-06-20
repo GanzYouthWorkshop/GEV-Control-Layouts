@@ -29,15 +29,18 @@ namespace GEV.Layouts.Docking
         {
             this.Padding = new Padding(1);
             this.Controls.Add(this.Header);
-            this.Controls.Add(this.ControlContainer);
+            //this.Controls.Add(this.ControlContainer);
 
             this.ControlAdded += GCLDockablePanel_ControlAdded;
         }
 
         private void GCLDockablePanel_ControlAdded(object sender, ControlEventArgs e)
         {
-            //this.Controls.Remove(e.Control);
-            //this.ControlContainer.Controls.Add(e.Control);
+            if(e.Control != this.Header)
+            {
+                this.Controls.Remove(this.Header);
+                this.Controls.Add(this.Header);
+            }
         }
     }
 }

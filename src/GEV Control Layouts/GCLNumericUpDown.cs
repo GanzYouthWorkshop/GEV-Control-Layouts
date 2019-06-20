@@ -24,10 +24,12 @@ namespace GEV.Layouts
 
             set
             {
-                if (this.IsHandleCreated)
+                if(!this.IsHandleCreated)
                 {
-                    this.gclTextbox1.Invoke(new Action(() => this.gclTextbox1.Text = value.ToString()));
+                    this.CreateHandle();
                 }
+
+                this.gclTextbox1.Invoke(new Action(() => this.gclTextbox1.Text = value.ToString()));
                 this.m_Value = value;
                 this.ValueChanged?.Invoke(this, null);
             }

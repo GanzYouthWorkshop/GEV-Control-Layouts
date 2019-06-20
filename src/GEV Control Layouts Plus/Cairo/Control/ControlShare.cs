@@ -177,13 +177,10 @@ namespace GEV.Layouts.Extended.Cairo
 					HideVerScrollBar();
 				}
 
-				if (this.SettingsChanged != null)
-				{
-					this.SettingsChanged(this, null);
-				}
-			};
+                this.SettingsChanged?.Invoke(this, null);
+            };
 
-			this.workbook.ExceptionHappened += workbook_ErrorHappened;
+			this.workbook.ExceptionHappened += Workbook_ErrorHappened;
 
 			#endregion // Workbook Event Attach
 
@@ -434,19 +431,16 @@ namespace GEV.Layouts.Extended.Cairo
 					// update bounds for viewport of worksheet
 					this.currentWorksheet.UpdateViewportControllBounds();
 
-					// update bounds for viewport of worksheet
-					var scrollableViewportController = this.currentWorksheet.ViewportController as IScrollableViewportController;
+                    // update bounds for viewport of worksheet
+                    IScrollableViewportController scrollableViewportController = this.currentWorksheet.ViewportController as IScrollableViewportController;
 					if (scrollableViewportController != null)
 					{
 						scrollableViewportController.SynchronizeScrollBar();
 					}
 
-					if (this.CurrentWorksheetChanged != null)
-					{
-						this.CurrentWorksheetChanged(this, null);
-					}
+                    this.CurrentWorksheetChanged?.Invoke(this, null);
 
-					this.sheetTab.SelectedIndex = GetWorksheetIndex(this.currentWorksheet);
+                    this.sheetTab.SelectedIndex = GetWorksheetIndex(this.currentWorksheet);
 					this.sheetTab.ScrollToItem(this.sheetTab.SelectedIndex);
 
 					this.adapter.Invalidate();
@@ -788,8 +782,8 @@ namespace GEV.Layouts.Extended.Cairo
 				this.CurrentWorksheet = sheet;
 			}
 
-			if (ActionPerformed != null) ActionPerformed(this, new WorkbookActionEventArgs(action));
-		}
+            ActionPerformed?.Invoke(this, new WorkbookActionEventArgs(action));
+        }
 
 		/// <summary>
 		/// Undo the last action.
@@ -814,13 +808,13 @@ namespace GEV.Layouts.Extended.Cairo
 				}
 				else if (action is BaseWorksheetAction)
 				{
-					var worksheetAction = (BaseWorksheetAction)action;
+                    BaseWorksheetAction worksheetAction = (BaseWorksheetAction)action;
 
 					var sheet = worksheetAction.Worksheet;
 
 					if (action is WorksheetReusableAction)
 					{
-						var reusableAction = (WorksheetReusableAction)action;
+                        WorksheetReusableAction reusableAction = (WorksheetReusableAction)action;
 
 						if (sheet != null)
 						{
@@ -835,8 +829,8 @@ namespace GEV.Layouts.Extended.Cairo
 					}
 				}
 
-				if (Undid != null) Undid(this, new WorkbookActionEventArgs(action));
-			}
+                Undid?.Invoke(this, new WorkbookActionEventArgs(action));
+            }
 		}
 
 		/// <summary>
@@ -1140,13 +1134,10 @@ namespace GEV.Layouts.Extended.Cairo
 		/// </summary>
 		public event EventHandler<ExceptionHappenEventArgs> ExceptionHappened;
 
-		void workbook_ErrorHappened(object sender, ExceptionHappenEventArgs e)
+		void Workbook_ErrorHappened(object sender, ExceptionHappenEventArgs e)
 		{
-			if (this.ExceptionHappened != null)
-			{
-				this.ExceptionHappened(this, e);
-			}
-		}
+            this.ExceptionHappened?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Notify that there are exceptions happen on any worksheet. 
@@ -1312,7 +1303,7 @@ namespace GEV.Layouts.Extended.Cairo
 				// if currently control is in editing mode, make the input fields invisible
 				if (sheet.currentEditingCell != null)
 				{
-					var editableAdapter = this.adapter as IEditableControlAdapter;
+                    IEditableControlAdapter editableAdapter = this.adapter as IEditableControlAdapter;
 
 					if (editableAdapter != null)
 					{
@@ -1453,15 +1444,12 @@ namespace GEV.Layouts.Extended.Cairo
 		/// <param name="y">Scroll value on vertical direction.</param>
 		public void RaiseWorksheetScrolledEvent(Worksheet worksheet, RGFloat x, RGFloat y)
 		{
-			if (this.WorksheetScrolled != null)
-			{
-				this.WorksheetScrolled(this, new WorksheetScrolledEventArgs(worksheet)
-				{
-					OffsetX = x,
-					OffsetY = y,
-				});
-			}
-		}
+            this.WorksheetScrolled?.Invoke(this, new WorksheetScrolledEventArgs(worksheet)
+            {
+                OffsetX = x,
+                OffsetY = y,
+            });
+        }
 
 		private bool showScrollEndSpacing = true;
 

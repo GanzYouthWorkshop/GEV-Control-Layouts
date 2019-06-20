@@ -1,4 +1,5 @@
-﻿using GEV.Layouts.Meta;
+﻿using GEV.Common;
+using GEV.Layouts.Meta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -134,7 +135,7 @@ namespace GEV.Layouts.Utils
         #region Command method
         public static bool IsCommandMethod(MethodInfo mi)
         {
-            GCLCommandAttribute attr = mi.GetCustomAttribute<GCLCommandAttribute>(true);
+            CommandAttribute attr = mi.GetCustomAttribute<CommandAttribute>(true);
             if(attr != null)
             {
                 if(mi.GetParameters().Length == 0)
@@ -147,14 +148,12 @@ namespace GEV.Layouts.Utils
 
         public static string GetLocalizedCommandName(MethodInfo mi)
         {
-            string result = GetLocalizedAttribute<GCLCommandDescriptionAttribute>(mi);
-
-            if(result == null)
+            DisplayNameAttribute attr = mi.GetCustomAttribute<DisplayNameAttribute>(true);
+            if(attr != null)
             {
-                result = "";
+                return attr.DisplayName;
             }
-
-            return result;
+            return "Run";
         }
         #endregion
     }

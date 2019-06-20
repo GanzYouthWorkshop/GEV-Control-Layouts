@@ -14,9 +14,8 @@ using GEV.Layouts.Utils;
 
 namespace GEV.Layouts.PropertyGrid
 {
-    public partial class GCLPropertyGrid : UserControl
+    public partial class GCLPropertyGrid : UserControl, IGCLControl
     {
-        protected object m_DataSource;
         public object DataSource
         {
             get
@@ -26,14 +25,42 @@ namespace GEV.Layouts.PropertyGrid
 
             set
             {
-                this.m_DataSource = value;
+                this.SuspendLayout();
 
+                this.pnlCategoryPresenters.Controls.Clear();
+
+                this.m_DataSource = value;
                 if (this.m_DataSource != null)
                 {
                     this.BuildGUI();
                 }
+
+                this.ResumeLayout();
             }
         }
+        protected object m_DataSource;
+
+
+        public bool UseThemeColors
+        {
+            get
+            {
+                return this.m_UseThemeColors;
+            }
+            set
+            {
+                foreach(Control c in this.pnlCategoryPresenters.Controls)
+                {
+                    if(c is IGCLControl)
+                    {
+                        (c as IGCLControl).UseThemeColors = value;
+                    }
+                }
+                this.m_UseThemeColors = value;
+            }
+        }
+        protected bool m_UseThemeColors;
+
 
         private List<PropertyCategory> m_InternalPropertyData;
 
@@ -73,16 +100,26 @@ namespace GEV.Layouts.PropertyGrid
                                          .Select(group => new { Category = group.First().GetCustomAttribute<CategoryAttribute>(true), Items = group.ToList() })
                                          .ToList();
 
+            var propertyCategories = propertyData.Select(item => item.Category);
+            var commandCategories = methodData.Select(item => item.Category);
+
+            var categoriesFound = propertyCategories.Union(commandCategories);
+
             this.m_InternalPropertyData = new List<PropertyCategory>();
-            foreach(var pd in propertyData)
+            foreach(var category in categoriesFound)
             {
-                string cat = pd.Category != null ? pd.Category.Category : "Egyéb";
+                string cat = category != null ? category.Category : "Egyéb";
 
-                var methodsInCategory = methodData.FirstOrDefault(item => (item.Category == null && pd.Category == null) || item.Category.Category == pd.Category.Category);
+                var propertiesInCategory = propertyData.SingleOrDefault(item => (item.Category == null && category == null) || item.Category == category);
+                var methodsInCategory = methodData.SingleOrDefault(item => (item.Category == null && category == null) || item.Category == category);
 
-                List<MemberInfo> allMembers = new List<MemberInfo>();
-                allMembers.AddRange(pd.Items);
-                if(methodsInCategory != null)
+                List <MemberInfo> allMembers = new List<MemberInfo>();
+
+                if(propertiesInCategory != null)
+                {
+                    allMembers.AddRange(propertiesInCategory.Items);
+                }
+                if (methodsInCategory != null)
                 {
                     allMembers.AddRange(methodsInCategory.Items);
                 }

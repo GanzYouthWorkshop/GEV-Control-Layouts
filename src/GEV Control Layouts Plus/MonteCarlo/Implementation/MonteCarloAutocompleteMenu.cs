@@ -105,8 +105,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
 
         new internal void OnOpening(CancelEventArgs args)
         {
-            if (Opening != null)
-                Opening(this, args);
+            Opening?.Invoke(this, args);
         }
 
         public new void Close()
@@ -133,14 +132,12 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
 
         internal void OnSelecting(SelectingEventArgs args)
         {
-            if (Selecting != null)
-                Selecting(this, args);
+            Selecting?.Invoke(this, args);
         }
 
         public void OnSelected(SelectedEventArgs args)
         {
-            if (Selected != null)
-                Selected(this, args);
+            Selected?.Invoke(this, args);
         }
 
         public new AutocompleteListView Items
@@ -243,8 +240,7 @@ namespace GEV.Layouts.Extended.MonteCarlo.Implementation
                 if (focussedItemIndex != value)
                 {
                     focussedItemIndex = value;
-                    if (FocussedItemIndexChanged != null)
-                        FocussedItemIndexChanged(this, EventArgs.Empty);
+                    FocussedItemIndexChanged?.Invoke(this, EventArgs.Empty);
                 }
             }
         }

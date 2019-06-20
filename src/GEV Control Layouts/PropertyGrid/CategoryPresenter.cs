@@ -12,10 +12,31 @@ using System.Reflection;
 namespace GEV.Layouts.PropertyGrid
 {
     [ToolboxItem(false)]
-    internal partial class CategoryPresenter : UserControl
+    internal partial class CategoryPresenter : UserControl, IGCLControl
     {
         public object DataSource { get; set; }
         public PropertyCategory Category { get; set; }
+
+        public bool UseThemeColors
+        {
+            get
+            {
+                return this.m_UseThemeColors;
+            }
+            set
+            {
+                foreach (Control c in this.pnlPropertyPresenters.Controls)
+                {
+                    if (c is IGCLControl)
+                    {
+                        (c as IGCLControl).UseThemeColors = value;
+                    }
+                }
+                this.m_UseThemeColors = value;
+            }
+        }
+        protected bool m_UseThemeColors;
+
 
         public event EventHandler ElementSelected;
         public event EventHandler<int> GridChanging;
@@ -44,28 +65,32 @@ namespace GEV.Layouts.PropertyGrid
                 if(this.Category.Properties[i] is PropertyInfo)
                 {
                     PropertyInfo info = (PropertyInfo)this.Category.Properties[i];
+                    bool browsable = info.CustomAttributes.Count(attr => attr.AttributeType.Equals(typeof(BrowsableAttribute))) == 0;
 
-                    string strvalue = "null";
-                    object value = info.GetValue(this.DataSource);
-                    if (value != null)
+                    if(browsable)
                     {
-                        strvalue = value.ToString();
+                        string strvalue = "null";
+                        object value = info.GetValue(this.DataSource);
+                        if (value != null)
+                        {
+                            strvalue = value.ToString();
+                        }
+
+                        PropertyPresenter tmp = new PropertyPresenter()
+                        {
+                            DataSource = this.DataSource,
+                            Property = info,
+                            Dock = DockStyle.Top,
+
+                            ActiveColor = this.ActiveColor,
+                            BackColor = this.BackColor,
+                            BorderColor = this.PropertyBorderColor,
+                            //Property háttér, border, text?
+                        };
+                        tmp.ElementSelected += OnElementSelected;
+                        tmp.GridChanging += OnGridChanging;
+                        this.pnlPropertyPresenters.Controls.Add(tmp);
                     }
-
-                    PropertyPresenter tmp = new PropertyPresenter()
-                    {
-                        DataSource = this.DataSource,
-                        Property = info,
-                        Dock = DockStyle.Top,
-
-                        ActiveColor = this.ActiveColor,
-                        BackColor = this.BackColor,
-                        BorderColor = this.PropertyBorderColor,
-                        //Property háttér, border, text?
-                    };
-                    tmp.ElementSelected += OnElementSelected;
-                    tmp.GridChanging += OnGridChanging;
-                    this.pnlPropertyPresenters.Controls.Add(tmp);
                 }
                 else if(this.Category.Properties[i] is MethodInfo)
                 {
