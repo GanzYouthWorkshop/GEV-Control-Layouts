@@ -391,6 +391,12 @@
     <Compile Include="TheStuff\TheStuff.Designer.cs">
       <DependentUpon>TheStuff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wizard\Wizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cairo\Properties\Resources.resx" />
@@ -441,6 +447,9 @@
     <EmbeddedResource Include="TheStuff\TheStuff.resx">
       <DependentUpon>TheStuff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cairo\ReoGrid.csproj" />
@@ -466,7 +475,6 @@
     <None Include="Cairo\Resources\NewBuildDefinition_8952_inactive.png.dat" />
     <None Include="Cairo\Resources\seek.dat" />
     <None Include="MonteCarlo\Implementation\FCTB_key.snk" />
-    <None Include="MonteCarlo\Implementation\SyntaxHighlighter.cs.old" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings2.Designer.cs</LastGenOutput>

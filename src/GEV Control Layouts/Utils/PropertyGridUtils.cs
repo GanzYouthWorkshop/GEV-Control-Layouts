@@ -1,5 +1,4 @@
-﻿using GEV.Common;
-using GEV.Layouts.Meta;
+﻿using GEV.Layouts.Meta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -135,7 +134,7 @@ namespace GEV.Layouts.Utils
         #region Command method
         public static bool IsCommandMethod(MethodInfo mi)
         {
-            CommandAttribute attr = mi.GetCustomAttribute<CommandAttribute>(true);
+            GCLCommandAttribute attr = mi.GetCustomAttribute<GCLCommandAttribute>(true);
             if(attr != null)
             {
                 if(mi.GetParameters().Length == 0)

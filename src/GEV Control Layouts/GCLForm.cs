@@ -18,28 +18,28 @@ namespace GEV.Layouts
 
         public Color BorderColor { get; set; } = GCLColors.Border;
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                if (m_previousExStyle == -1)
-                {
-                    m_previousExStyle = base.CreateParams.ExStyle;
-                }
-                CreateParams cp = base.CreateParams;
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        if (m_previousExStyle == -1)
+        //        {
+        //            m_previousExStyle = base.CreateParams.ExStyle;
+        //        }
+        //        CreateParams cp = base.CreateParams;
 
-                if (m_EnableAntiFlicker)
-                {
-                    cp.ExStyle |= 0x02000000; //WS_EX_COMPOSITED
-                }
-                else
-                {
-                    cp.ExStyle = m_previousExStyle;
-                }
+        //        if (m_EnableAntiFlicker)
+        //        {
+        //            cp.ExStyle |= 0x02000000; //WS_EX_COMPOSITED
+        //        }
+        //        else
+        //        {
+        //            cp.ExStyle = m_previousExStyle;
+        //        }
 
-                return cp;
-            }
-        }
+        //        return cp;
+        //    }
+        //}
 
         private int m_previousExStyle = -1;
         private bool m_EnableAntiFlicker;
