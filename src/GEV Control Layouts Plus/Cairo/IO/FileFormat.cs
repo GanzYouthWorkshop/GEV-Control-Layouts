@@ -33,7 +33,7 @@ namespace GEV.Layouts.Extended.Cairo.IO
 		/// <summary>
 		/// ReoGrid Format (RGF)
 		/// </summary>
-		ReoGridFormat = 1,
+		CairoXmlFormat = 1,
 
 		/// <summary>
 		/// CSV Plain-text format

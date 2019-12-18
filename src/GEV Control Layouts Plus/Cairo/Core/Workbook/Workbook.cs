@@ -117,7 +117,7 @@ namespace GEV.Layouts.Extended.Cairo
 
 		static Workbook()
 		{
-			FileFormatProviders[FileFormat.ReoGridFormat] = (IFileFormatProvider)new ReoGridFileFormatProvider();
+			FileFormatProviders[FileFormat.CairoXmlFormat] = (IFileFormatProvider)new ReoGridFileFormatProvider();
 			FileFormatProviders[FileFormat.Excel2007] = (IFileFormatProvider)new ExcelFileFormatProvider();
 			FileFormatProviders[FileFormat.CSV] = (IFileFormatProvider)new CSVFileFormatProvider();
 		}

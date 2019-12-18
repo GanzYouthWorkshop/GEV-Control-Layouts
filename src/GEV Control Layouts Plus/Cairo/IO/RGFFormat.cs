@@ -839,7 +839,7 @@ namespace GEV.Layouts.Extended.Cairo
 				}
 				else if (path.EndsWith(".rgf", StringComparison.CurrentCultureIgnoreCase))
 				{
-					format = FileFormat.ReoGridFormat;
+					format = FileFormat.CairoXmlFormat;
 				}
 				else if (path.EndsWith(".csv", StringComparison.CurrentCultureIgnoreCase))
 				{
@@ -849,7 +849,7 @@ namespace GEV.Layouts.Extended.Cairo
 
 			switch (format)
 			{
-				case FileFormat.ReoGridFormat:
+				case FileFormat.CairoXmlFormat:
 					return SaveRGF(path);
 
 				case FileFormat.CSV:
@@ -870,11 +870,11 @@ namespace GEV.Layouts.Extended.Cairo
 		/// <param name="stream">Stream to output worksheet.</param>
 		/// <param name="format">File format used to save worksheet.</param>
 		/// <returns>True if saving is successful; otherwise return false.</returns>
-		public bool Save(Stream stream, FileFormat format = FileFormat.ReoGridFormat)
+		public bool Save(Stream stream, FileFormat format = FileFormat.CairoXmlFormat)
 		{
 			switch (format)
 			{
-				case FileFormat.ReoGridFormat:
+				case FileFormat.CairoXmlFormat:
 					return SaveRGF(stream);
 
 				case FileFormat.CSV:
@@ -919,7 +919,7 @@ namespace GEV.Layouts.Extended.Cairo
 		/// </remarks>
 		public bool SaveRGF(Stream s)
 		{
-			string editorProgram = "ReoGrid Core";
+			string editorProgram = "GEV Cairo";
 
 			var cas = this.GetType().Assembly.GetCustomAttributes(typeof(System.Reflection.AssemblyVersionAttribute), false);
 
