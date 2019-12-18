@@ -135,12 +135,12 @@ namespace GEV.Layouts.DataGrid
                     }
                 }
 
-                if(this.RowCount >= this.ScrollRow)
+                if(this.RowCount > this.ScrollRow)
                 {
                     this.FirstDisplayedScrollingRowIndex = this.ScrollRow;
                 }
 
-                if (this.ColumnCount >= this.ScrollColumn)
+                if (this.ColumnCount > this.ScrollColumn)
                 {
                     this.FirstDisplayedScrollingRowIndex = this.ScrollColumn;
                 }
