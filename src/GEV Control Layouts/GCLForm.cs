@@ -28,14 +28,14 @@ namespace GEV.Layouts
                 }
                 CreateParams cp = base.CreateParams;
 
-                if (m_EnableAntiFlicker)
-                {
-                    cp.ExStyle |= 0x02000000; //WS_EX_COMPOSITED
-                }
-                else
-                {
-                    cp.ExStyle = m_previousExStyle;
-                }
+                //if (m_EnableAntiFlicker)
+                //{
+                //    cp.ExStyle |= 0x02000000; //WS_EX_COMPOSITED
+                //}
+                //else
+                //{
+                //    cp.ExStyle = m_previousExStyle;
+                //}
 
                 return cp;
             }
