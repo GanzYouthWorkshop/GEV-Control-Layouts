@@ -56,6 +56,7 @@
             this.cairoSpreadsheet1 = new GEV.Layouts.Extended.Cairo.CairoSpreadsheet();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.vanillaCheckedDataGrid1 = new GEV.Layouts.Vanilla.VanillaCheckedDataGrid();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gclButton2 = new GEV.Layouts.GCLButton();
@@ -73,6 +74,8 @@
             this.gclDockablePanel1 = new GEV.Layouts.Docking.GCLDockablePanel();
             this.gclNumericUpDown3 = new GEV.Layouts.GCLNumericUpDown();
             this.gclThemeProvider1 = new GEV.Layouts.Theming.GCLThemeProvider(this.components);
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.treeListView1 = new CommonTools.TreeListView();
             this.gclTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,6 +89,8 @@
             this.tabPage6.SuspendLayout();
             this.gclDockablePanel2.SuspendLayout();
             this.gclDockablePanel1.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gclWindowHeader1
@@ -122,6 +127,7 @@
             this.gclTabControl1.Controls.Add(this.tabPage4);
             this.gclTabControl1.Controls.Add(this.tabPage5);
             this.gclTabControl1.Controls.Add(this.tabPage6);
+            this.gclTabControl1.Controls.Add(this.tabPage7);
             this.gclTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclTabControl1.ItemSize = new System.Drawing.Size(155, 55);
             this.gclTabControl1.Location = new System.Drawing.Point(1, 41);
@@ -151,6 +157,7 @@
             // 
             // monteCarloEditor1
             // 
+            this.monteCarloEditor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.monteCarloEditor1.Location = new System.Drawing.Point(136, 8);
             this.monteCarloEditor1.Name = "monteCarloEditor1";
             this.monteCarloEditor1.ShowCodeMap = false;
@@ -338,7 +345,7 @@
             this.gclRadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclRadioButton1.Location = new System.Drawing.Point(195, 123);
             this.gclRadioButton1.Name = "gclRadioButton1";
-            this.gclRadioButton1.Size = new System.Drawing.Size(106, 25);
+            this.gclRadioButton1.Size = new System.Drawing.Size(105, 25);
             this.gclRadioButton1.TabIndex = 5;
             this.gclRadioButton1.Text = "gclRadioButton1";
             this.gclRadioButton1.UseThemeColors = true;
@@ -376,7 +383,6 @@
             // gclTextbox1
             // 
             this.gclTextbox1.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(87)))));
-            this.gclTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(74)))));
             this.gclTextbox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
             this.gclTextbox1.Location = new System.Drawing.Point(276, 22);
             this.gclTextbox1.Margin = new System.Windows.Forms.Padding(2);
@@ -402,7 +408,7 @@
             this.gclToggleButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclToggleButton1.Location = new System.Drawing.Point(38, 125);
             this.gclToggleButton1.Name = "gclToggleButton1";
-            this.gclToggleButton1.Size = new System.Drawing.Size(109, 23);
+            this.gclToggleButton1.Size = new System.Drawing.Size(108, 23);
             this.gclToggleButton1.TabIndex = 2;
             this.gclToggleButton1.Text = "gclToggleButton1";
             this.gclToggleButton1.UseThemeColors = true;
@@ -416,7 +422,7 @@
             this.gclCheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gclCheckBox1.Location = new System.Drawing.Point(141, 22);
             this.gclCheckBox1.Name = "gclCheckBox1";
-            this.gclCheckBox1.Size = new System.Drawing.Size(94, 17);
+            this.gclCheckBox1.Size = new System.Drawing.Size(93, 17);
             this.gclCheckBox1.TabIndex = 1;
             this.gclCheckBox1.Text = "gclCheckBox1";
             this.gclCheckBox1.UseThemeColors = true;
@@ -488,6 +494,7 @@
             // 
             this.vanillaCheckedDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vanillaCheckedDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn3,
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewCheckBoxColumn1});
             this.vanillaCheckedDataGrid1.Location = new System.Drawing.Point(369, 79);
@@ -499,6 +506,13 @@
             this.vanillaCheckedDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vanillaCheckedDataGrid1.Size = new System.Drawing.Size(371, 245);
             this.vanillaCheckedDataGrid1.TabIndex = 2;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Checked";
+            this.dataGridViewCheckBoxColumn3.HeaderText = "";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Width = 32;
             // 
             // dataGridViewCheckBoxColumn2
             // 
@@ -743,6 +757,26 @@
             this.gclThemeProvider1.SoftBorder = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
             this.gclThemeProvider1.SuccessGreen = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.treeListView1);
+            this.tabPage7.Location = new System.Drawing.Point(155, -3);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1222, 608);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // treeListView1
+            // 
+            this.treeListView1.Images = null;
+            this.treeListView1.Location = new System.Drawing.Point(240, 131);
+            this.treeListView1.Name = "treeListView1";
+            this.treeListView1.Size = new System.Drawing.Size(615, 356);
+            this.treeListView1.TabIndex = 0;
+            this.treeListView1.Text = "treeListView1";
+            // 
             // LightColors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -768,6 +802,8 @@
             this.tabPage6.ResumeLayout(false);
             this.gclDockablePanel2.ResumeLayout(false);
             this.gclDockablePanel1.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -818,5 +854,8 @@
         private GEV.Layouts.Extended.MonteCarlo.MonteCarloEditor monteCarloEditor1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.TabPage tabPage7;
+        private CommonTools.TreeListView treeListView1;
     }
 }

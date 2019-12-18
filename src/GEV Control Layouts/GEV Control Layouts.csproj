@@ -54,6 +54,31 @@
     <Compile Include="DataGrid\GCLDataGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="_Vanilla\ImageBox\ImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\ImageBox\ImageBoxActionSources.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxBorderStyles.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxCancelEventArgs.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxGridDisplayModes.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxGridScales.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxMouseWheelMessageFilter.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxNativeMethods.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxSelectionModes.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxSizeModes.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxZoomActions.cs" />
+    <Compile Include="_Vanilla\ImageBox\ImageBoxZoomEventArgs.cs" />
+    <Compile Include="_Vanilla\ImageBox\ScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\ImageBox\ScrollProperties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\ImageBox\VirtualScrollableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\ImageBox\ZoomLevelCollection.cs" />
+    <Compile Include="_Vanilla\ImageBox\ZoomLevelCollectionConverter.cs" />
     <Compile Include="_Vanilla\SortableBindingList.cs" />
     <Compile Include="Designer\StringCollectionEditor.cs" />
     <Compile Include="Designer\StringCollectionEditorControls.cs">
@@ -294,17 +319,11 @@
     </Compile>
     <Compile Include="Sciter\Framework\EventHandler.cs" />
     <Compile Include="Sciter\Framework\Host.cs" />
-    <Compile Include="Sciter\Framework\HtmlControlBase.cs">
+    <Compile Include="Sciter\GCLHtmlControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Sciter\Framework\HtmlControlBase.Designer.cs">
-      <DependentUpon>HtmlControlBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sciter\TestHtmlControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Sciter\TestHtmlControl.Designer.cs">
-      <DependentUpon>TestHtmlControl.cs</DependentUpon>
+    <Compile Include="Sciter\GCLHtmlControl.Designer.cs">
+      <DependentUpon>GCLHtmlControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Theming\BasicThemes.cs" />
     <Compile Include="Theming\ControlExtensions.cs" />
@@ -314,10 +333,88 @@
     <Compile Include="Theming\GCLThemeProvider.Designer.cs">
       <DependentUpon>GCLThemeProvider.cs</DependentUpon>
     </Compile>
-    <Compile Include="_Vanilla\VanillaCheckedDataGrid.cs">
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_Vanilla\VanillaDataGrid.cs">
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorPickerCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorPickerCtrl.Designer.cs">
+      <DependentUpon>ColorPickerCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorPickerDialog.Designer.cs">
+      <DependentUpon>ColorPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorWheel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorWheelCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\ColorWheelCtrl.Designer.cs">
+      <DependentUpon>ColorWheelCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\EyedropColorPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\HSLColor.cs" />
+    <Compile Include="_Vanilla\Treeview\ColorPickerCtrl\Resources\Images.cs" />
+    <Compile Include="_Vanilla\Treeview\ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\DataBinding.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\DropdownContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\Editors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\LabelRotate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\Line.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\NameObject.cs" />
+    <Compile Include="_Vanilla\Treeview\PropertyDialog\PropertyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\PropertyDialog\PropertyDialog.Designer.cs">
+      <DependentUpon>PropertyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\PropertyDialog\PropertyDialogInterface.cs" />
+    <Compile Include="_Vanilla\Treeview\PropertyDialog\ViewMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\PropertyUtil.cs" />
+    <Compile Include="_Vanilla\Treeview\RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\Tracing.cs" />
+    <Compile Include="_Vanilla\Treeview\TreeList\TreeListColumn.cs" />
+    <Compile Include="_Vanilla\Treeview\TreeList\TreeListColumn.Design.cs" />
+    <Compile Include="_Vanilla\Treeview\TreeList\TreeListNode.cs" />
+    <Compile Include="_Vanilla\Treeview\TreeList\TreeListOptions.cs" />
+    <Compile Include="_Vanilla\Treeview\TreeList\TreeListPainter.cs" />
+    <Compile Include="_Vanilla\Treeview\TreeList\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\Treeview\Util.cs" />
+    <Compile Include="_Vanilla\DataGrid\VanillaCheckedDataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Vanilla\DataGrid\VanillaDataGrid.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="_Vanilla\VanillaListView.cs">
@@ -395,6 +492,18 @@
     <EmbeddedResource Include="PropertyGrid\PropertyPresenter.resx">
       <DependentUpon>PropertyPresenter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_Vanilla\Treeview\ColorPickerCtrl\ColorPickerCtrl.resx">
+      <DependentUpon>ColorPickerCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Vanilla\Treeview\ColorPickerCtrl\ColorPickerDialog.resx">
+      <DependentUpon>ColorPickerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Vanilla\Treeview\ColorPickerCtrl\ColorWheelCtrl.resx">
+      <DependentUpon>ColorWheelCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Vanilla\Treeview\PropertyDialog\PropertyDialog.resx">
+      <DependentUpon>PropertyDialog.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -406,6 +515,10 @@
     <Content Include="sciter.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="_Vanilla\Treeview\ColorPickerCtrl\ColorPickerTest.csproj" />
+    <Content Include="_Vanilla\Treeview\ColorPickerCtrl\Resources\colorbarIndicators.bmp" />
+    <Content Include="_Vanilla\Treeview\ColorPickerCtrl\Resources\eyedropper.bmp" />
+    <Content Include="_Vanilla\Treeview\ColorPickerCtrl\Resources\popupcontainerbuttons.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
