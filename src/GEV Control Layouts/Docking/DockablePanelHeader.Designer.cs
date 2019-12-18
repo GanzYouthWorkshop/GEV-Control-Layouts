@@ -38,9 +38,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label1.Size = new System.Drawing.Size(53, 21);
+            this.label1.Padding = new System.Windows.Forms.Padding(4, 2, 2, 2);
+            this.label1.Size = new System.Drawing.Size(41, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tlpFormHeader_MouseDown);
@@ -55,10 +56,10 @@
             this.gclButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
             this.gclButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gclButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.gclButton1.Location = new System.Drawing.Point(276, 0);
+            this.gclButton1.Location = new System.Drawing.Point(207, 0);
             this.gclButton1.Margin = new System.Windows.Forms.Padding(0);
             this.gclButton1.Name = "gclButton1";
-            this.gclButton1.Size = new System.Drawing.Size(21, 21);
+            this.gclButton1.Size = new System.Drawing.Size(16, 17);
             this.gclButton1.TabIndex = 1;
             this.gclButton1.Text = "✖";
             this.gclButton1.UseThemeColors = false;
@@ -67,13 +68,15 @@
             // 
             // DockablePanelHeader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.gclButton1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DockablePanelHeader";
-            this.Size = new System.Drawing.Size(297, 21);
+            this.Size = new System.Drawing.Size(223, 17);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OnDoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tlpFormHeader_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();

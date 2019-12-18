@@ -33,7 +33,7 @@ namespace GEV.Layouts.Docking
         {
             if (this.ParentForm != null && e.Button == MouseButtons.Left && this.OwnerIsFloating)
             {
-                ReleaseCapture();
+                //ReleaseCapture();
                 if(this.ParentForm is FloatingWindow)
                 {
                     ((FloatingWindow)this.ParentForm).PerformOnMove();
@@ -51,6 +51,14 @@ namespace GEV.Layouts.Docking
             else
             {
                 this.Parent.Hide();
+            }
+        }
+
+        private void OnDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(this.OwnerIsFloating)
+            {
+                this.ParentForm.WindowState = this.ParentForm.WindowState == FormWindowState.Normal ? FormWindowState.Maximized : FormWindowState.Normal;
             }
         }
     }

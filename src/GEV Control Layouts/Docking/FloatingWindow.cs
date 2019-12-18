@@ -366,7 +366,7 @@ namespace GEV.Layouts.Docking
         private void DockWindow()
         {
             // bring dockhost to front first to prevent flickering
-            this.m_DockState.OriginalDockHost.TopLevelControl.BringToFront();
+            this.m_DockState.OriginalDockHost?.TopLevelControl.BringToFront();
             this.Hide();
             this.m_DockState.Container.Visible = false; // hide it temporarely
             this.m_DockState.Container.Parent = this.m_DockState.OriginalDockingParent;
