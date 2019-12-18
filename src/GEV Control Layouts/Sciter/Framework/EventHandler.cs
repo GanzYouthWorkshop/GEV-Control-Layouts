@@ -9,9 +9,9 @@ namespace GEV.Layouts.Sciter.Framework
 {
     public class EventHandler : SciterEventHandler
     {
-        private HtmlControlBase m_Control;
+        private GCLHtmlControl m_Control;
 
-        public EventHandler(HtmlControlBase control)
+        public EventHandler(GCLHtmlControl control)
         {
             this.m_Control = control;
         }
