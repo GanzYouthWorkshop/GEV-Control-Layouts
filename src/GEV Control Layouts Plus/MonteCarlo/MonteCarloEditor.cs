@@ -76,8 +76,8 @@ namespace GEV.Layouts.Extended.MonteCarlo
         #region Scrollozás
         private void AdjustScrollbars()
         {
-            AdjustScrollbar(this.scrollVertical, this.editor.VerticalScroll.Maximum, this.editor.VerticalScroll.Value, this.editor.ClientSize.Height);
-            AdjustScrollbar(this.scrollHorizontal, this.editor.HorizontalScroll.Maximum, this.editor.HorizontalScroll.Value, this.editor.ClientSize.Width);
+            //AdjustScrollbar(this.scrollVertical, this.editor.VerticalScroll.Maximum, this.editor.VerticalScroll.Value, this.editor.ClientSize.Height);
+            //AdjustScrollbar(this.scrollHorizontal, this.editor.HorizontalScroll.Maximum, this.editor.HorizontalScroll.Value, this.editor.ClientSize.Width);
         }
 
         private void AdjustScrollbar(ScrollBar scrollBar, int max, int value, int clientSize)
@@ -123,12 +123,12 @@ namespace GEV.Layouts.Extended.MonteCarlo
 
                 this.documentMap.BackColor = GCLColors.SoftBorder;
 
-                this.scrollHorizontal.BackColor = GCLColors.SoftBorder;
-                this.scrollVertical.BackColor = GCLColors.SoftBorder;
-                this.scrollHorizontal.BorderColor = GCLColors.SoftBorder;
-                this.scrollVertical.BorderColor = GCLColors.SoftBorder;
-                this.scrollHorizontal.ThumbColor = GCLColors.SecondaryText;
-                this.scrollVertical.ThumbColor = GCLColors.SecondaryText;
+                //this.scrollHorizontal.BackColor = GCLColors.SoftBorder;
+                //this.scrollVertical.BackColor = GCLColors.SoftBorder;
+                //this.scrollHorizontal.BorderColor = GCLColors.SoftBorder;
+                //this.scrollVertical.BorderColor = GCLColors.SoftBorder;
+                //this.scrollHorizontal.ThumbColor = GCLColors.SecondaryText;
+                //this.scrollVertical.ThumbColor = GCLColors.SecondaryText;
 
             }
             else
@@ -140,18 +140,18 @@ namespace GEV.Layouts.Extended.MonteCarlo
 
                 this.documentMap.BackColor = this.BackColor;
 
-                this.scrollHorizontal.BackColor = this.BackColor;
-                this.scrollVertical.BackColor = this.BackColor;
-                this.scrollHorizontal.BorderColor = this.BackColor;
-                this.scrollVertical.BorderColor = this.BackColor;
-                this.scrollHorizontal.ThumbColor = GCLColors.SecondaryText;
-                this.scrollVertical.ThumbColor = GCLColors.SecondaryText;
+                //this.scrollHorizontal.BackColor = this.BackColor;
+                //this.scrollVertical.BackColor = this.BackColor;
+                //this.scrollHorizontal.BorderColor = this.BackColor;
+                //this.scrollVertical.BorderColor = this.BackColor;
+                //this.scrollHorizontal.ThumbColor = GCLColors.SecondaryText;
+                //this.scrollVertical.ThumbColor = GCLColors.SecondaryText;
             }
 
             this.editor.Invalidate();
             this.documentMap.Invalidate();
-            this.scrollHorizontal.Invalidate();
-            this.scrollVertical.Invalidate();
+            //this.scrollHorizontal.Invalidate();
+            //this.scrollVertical.Invalidate();
         }
     }
 }

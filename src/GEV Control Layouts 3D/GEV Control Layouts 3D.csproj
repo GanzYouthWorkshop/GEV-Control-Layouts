@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9F102E5-2825-46CC-9671-F9EBA7FB9163}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GEV.Layouts.D3</RootNamespace>
+    <AssemblyName>gcl3d</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=3.0.1.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>OpenTK\OpenTK.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=3.0.1.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>OpenTK\OpenTK.GLControl.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Camera\ICamera.cs" />
+    <Compile Include="Camera\StaticCamera.cs" />
+    <Compile Include="Data\GCLVertex.cs" />
+    <Compile Include="Graphics\Mesh\ColoredRangeMap.cs" />
+    <Compile Include="Graphics\Renderable\TexturedRenderable.cs" />
+    <Compile Include="Data\GCLScene.cs" />
+    <Compile Include="Data\SceneObject.cs" />
+    <Compile Include="GCL3DViewport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Graphics\Mesh\BasicMesh.cs" />
+    <Compile Include="Graphics\Mesh\ColoredCube.cs" />
+    <Compile Include="Graphics\Renderable\ColoredRenderable.cs" />
+    <Compile Include="Graphics\Vertex\ColoredVertex.cs" />
+    <Compile Include="Graphics\Vertex\IVertex.cs" />
+    <Compile Include="Graphics\Vertex\TexturedVertex.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Graphics\Renderable\BasicRenderable.cs" />
+    <Compile Include="Shading\ShaderProgram.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Shaders\Vertex\goraud.c" />
+    <Content Include="Resources\Shaders\Vertex\phong.c" />
+    <Content Include="Resources\Shaders\Vertex\textured.c" />
+    <Content Include="Resources\Shaders\Vertex\solid.c" />
+    <Content Include="Resources\Shaders\Vertex\text.c" />
+    <Content Include="Resources\Shaders\Tesselation\tesselationControl.c" />
+    <Content Include="Resources\Shaders\Tesselation\tesselationEvaluation.c" />
+    <Content Include="Resources\Shaders\Geometry\geometry.c" />
+    <Content Include="Resources\Shaders\Fragment\goraud.c" />
+    <Content Include="Resources\Shaders\Fragment\phong.c" />
+    <Content Include="Resources\Shaders\Fragment\solid.c" />
+    <Content Include="Resources\Shaders\Fragment\textured.c" />
+    <Content Include="Resources\Shaders\Fragment\text.c" />
+    <Content Include="Resources\Shaders\Fragment\valve.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

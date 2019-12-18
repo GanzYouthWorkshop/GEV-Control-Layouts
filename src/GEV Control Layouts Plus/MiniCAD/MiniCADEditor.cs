@@ -26,6 +26,16 @@ namespace GEV.Layouts.Extended.MiniCAD
             this.canvas.MouseWheel += MiniCADCanvas1_MouseWheel;
         }
 
+        public void Draw()
+        {
+            this.canvas.Draw();
+        }
+
+        public void Draw(Components.IComponent component)
+        {
+            this.canvas.Draw(component);
+        }
+
         private void MiniCADCanvas1_MouseWheel(object sender, MouseEventArgs e)
         {
             int i = e.Delta;
@@ -83,7 +93,10 @@ namespace GEV.Layouts.Extended.MiniCAD
 
         private void canvas_MouseEnter(object sender, EventArgs e)
         {
-            this.canvas.Focus();
+            if(this.ParentForm != null && this.ParentForm.Focused)
+            {
+                this.canvas.Focus();
+            }
         }
     }
 }

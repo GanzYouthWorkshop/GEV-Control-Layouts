@@ -12,6 +12,9 @@ namespace GEV.Layouts.Theming
 {
     public partial class GCLThemeProvider : Component
     {
+        public event EventHandler ThemeChanged;
+
+
         public GCLThemeProvider()
         {
             InitializeComponent();
@@ -85,6 +88,8 @@ namespace GEV.Layouts.Theming
                 {
                     (this.Container as Form).Invalidate();
                 }
+
+                this.ThemeChanged?.Invoke(this, new EventArgs());
             }
         }
         private BasicThemes m_BasicTheme = BasicThemes.Dark;

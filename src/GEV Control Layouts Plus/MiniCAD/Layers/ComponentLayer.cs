@@ -12,6 +12,7 @@ namespace GEV.Layouts.Extended.MiniCAD.Layers
     public class ComponentLayer : ILayer
     {
         public List<IComponent> Components { get; } = new List<IComponent>();
+        public Color LayerColor { get; set; } = Color.White;
 
         public void Draw(Graphics g, RectangleF viewport, float zoom)
         {

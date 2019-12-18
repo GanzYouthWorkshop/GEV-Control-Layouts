@@ -147,14 +147,12 @@ namespace GEV.Layouts.Utils
 
         public static string GetLocalizedCommandName(MethodInfo mi)
         {
-            string result = GetLocalizedAttribute<GCLCommandDescriptionAttribute>(mi);
-
-            if(result == null)
+            DisplayNameAttribute attr = mi.GetCustomAttribute<DisplayNameAttribute>(true);
+            if(attr != null)
             {
-                result = "";
+                return attr.DisplayName;
             }
-
-            return result;
+            return "Run";
         }
         #endregion
     }

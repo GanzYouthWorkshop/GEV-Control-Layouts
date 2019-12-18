@@ -310,7 +310,7 @@
     <Compile Include="MonteCarlo\Implementation\EncodingDetector.cs" />
     <Compile Include="MonteCarlo\Implementation\ExportToHTML.cs" />
     <Compile Include="MonteCarlo\Implementation\ExportToRTF.cs" />
-    <Compile Include="MonteCarlo\Implementation\MonteCarloTextBox.cs">
+    <Compile Include="MonteCarlo\MonteCarloTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MonteCarlo\Implementation\FileTextSource.cs" />
@@ -391,6 +391,12 @@
     <Compile Include="TheStuff\TheStuff.Designer.cs">
       <DependentUpon>TheStuff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wizard\Wizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cairo\Properties\Resources.resx" />
@@ -415,7 +421,7 @@
     <EmbeddedResource Include="MiniCAD\MiniCADEditor.resx">
       <DependentUpon>MiniCADEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonteCarlo\Implementation\MonteCarloTextBox.resx">
+    <EmbeddedResource Include="MonteCarlo\MonteCarloTextBox.resx">
       <DependentUpon>MonteCarloTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonteCarlo\Implementation\FindForm.resx">
@@ -440,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TheStuff\TheStuff.resx">
       <DependentUpon>TheStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -466,7 +475,6 @@
     <None Include="Cairo\Resources\NewBuildDefinition_8952_inactive.png.dat" />
     <None Include="Cairo\Resources\seek.dat" />
     <None Include="MonteCarlo\Implementation\FCTB_key.snk" />
-    <None Include="MonteCarlo\Implementation\SyntaxHighlighter.cs.old" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings2.Designer.cs</LastGenOutput>

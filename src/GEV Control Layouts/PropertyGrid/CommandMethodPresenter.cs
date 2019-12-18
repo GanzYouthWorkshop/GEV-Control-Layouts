@@ -38,6 +38,11 @@ namespace GEV.Layouts.PropertyGrid
 
         public override void BuildGUI()
         {
+            if(this.Method.GetCustomAttribute<GCLCommandAttribute>(true).ShowButtonOnly)
+            {
+                this.container.Panel1Collapsed = true;
+            }
+
             this.lblName.Text = PropertyGridUtils.GetLocalizedName(this.Method);
             this.gclButton1.Text = PropertyGridUtils.GetLocalizedCommandName(this.Method);
         }

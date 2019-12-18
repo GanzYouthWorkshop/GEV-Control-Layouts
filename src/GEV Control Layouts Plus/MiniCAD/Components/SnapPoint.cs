@@ -27,7 +27,22 @@ namespace GEV.Layouts.Extended.MiniCAD.Components
             Triangle
         }
 
-        public PointF Position { get; set; }
+        public PointF RelativePosition { get; set; }
+        public PointF AbsolutePosition
+        {
+            get
+            {
+                if(this.Owner != null)
+                {
+                    return new PointF(this.Owner.Position.X + this.RelativePosition.X, this.Owner.Position.Y + this.RelativePosition.Y);
+                }
+                else
+                {
+                    return this.RelativePosition;
+                }
+            }
+        }
+
         public string Name { get; set; }
         public IEditableComponent Owner { get; set; }
 
@@ -40,10 +55,14 @@ namespace GEV.Layouts.Extended.MiniCAD.Components
         {
             this.Owner = owner;
             this.Name = name;
-            this.Position = position;
+            this.RelativePosition = position;
 
             switch (role)
             {
+                case Roles.Connector:
+                    this.Color = GCLColors.SuccessGreen;
+                    this.Symbol = Symbols.Circle;
+                    break;
                 case Roles.CornerPoint:
                     this.Color = GCLColors.AccentColor1;
                     this.Symbol = Symbols.Rectangle;
@@ -59,7 +78,7 @@ namespace GEV.Layouts.Extended.MiniCAD.Components
         {
             using (Brush b = new SolidBrush(this.Color))
             {
-                PointF p = GeometryUtils.MapInnerToScreen(this.Position, viewport, zoom);
+                PointF p = GeometryUtils.MapInnerToScreen(this.AbsolutePosition, viewport, zoom);
                 RectangleF r = new RectangleF(p.X - 5, p.Y - 5, 10, 10);
 
                 switch (this.Symbol)

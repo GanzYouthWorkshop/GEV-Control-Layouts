@@ -15,11 +15,6 @@ namespace GEV.Layouts.Extended.MonteCarlo.HighLighters
             get
             {
                 return RegexOptions.Compiled;
-
-                if (platformType == Platform.X86)
-                    return RegexOptions.Compiled;
-                else
-                    return RegexOptions.None;
             }
         }
         protected static readonly Platform platformType = PlatformType.GetOperationSystemPlatform();

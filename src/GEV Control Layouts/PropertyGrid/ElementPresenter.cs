@@ -14,7 +14,7 @@ using GEV.Layouts.PropertyGrid.DisplayControls;
 namespace GEV.Layouts.PropertyGrid
 {
     [ToolboxItem(false)]
-    internal partial  class ElementPresenter : UserControl
+    internal partial  class ElementPresenter : UserControl, IGCLControl
     {
         public Color ActiveColor { get; set; }
         public override Color BackColor { get; set; }
@@ -24,6 +24,9 @@ namespace GEV.Layouts.PropertyGrid
         public event EventHandler<int> GridChanging;
 
         public object DataSource { get; set; }
+
+        public bool UseThemeColors { get; set; }
+
 
         public MemberInfo ReflectionInfo
         {

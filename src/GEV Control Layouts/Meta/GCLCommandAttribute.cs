@@ -10,16 +10,18 @@ namespace GEV.Layouts.Meta
     public class GCLCommandAttribute : Attribute
     {
         public bool ShowResultInMessageBox { get; }
+        public bool ShowButtonOnly { get; }
 
         public GCLCommandAttribute()
         {
             this.ShowResultInMessageBox = true;
+            this.ShowButtonOnly = true;
         }
 
-        public GCLCommandAttribute(bool showResultInMessageBox)
+        public GCLCommandAttribute(bool showButtonOnly, bool showResultInMessageBox)
         {
             this.ShowResultInMessageBox = showResultInMessageBox;
+            this.ShowButtonOnly = showButtonOnly;
         }
-
     }
 }

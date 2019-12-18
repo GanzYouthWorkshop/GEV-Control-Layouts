@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Collections;
 
 namespace GEV.Layouts.PropertyGrid.DisplayControls
 {
@@ -26,6 +27,14 @@ namespace GEV.Layouts.PropertyGrid.DisplayControls
 
         public void Setup(object dataSource, PropertyInfo info, object value)
         {
+            if(value is ICollection)
+            {
+                this.label1.Text = (value as ICollection).Count.ToString();
+            }
+            else
+            {
+                this.label1.Text = "-";
+            }
         }
     }
 }

@@ -10,5 +10,15 @@ src/GEV Control Layouts/obj/
 src/GEV Control Layouts Plus/bin/
 
 src/GEV Control Layouts Plus/obj/
-
-src/IstenemDeUnatkozom/
+src/Console Sample/bin
+src/Console Sample/obj
+src/GEV Text Layouts/bin
+src/GEV Text Layouts/obj
+src/.vs/GEV Control Layouts/DesignTimeBuild
+src/.vs
+src/.vs
+src/.vs
+src/GEV Control Layouts 3D/bin
+src/GEV Control Layouts 3D/obj
+src/3D Sample/bin
+src/3D Sample/obj

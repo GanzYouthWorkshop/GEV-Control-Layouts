@@ -42,6 +42,10 @@ namespace GEV.Layouts.Extended.MiniCAD.Components
             this.SnapPoints.Add(new SnapPoint(this, "Start", new PointF(0, 0), SnapPoint.Roles.CornerPoint));
             this.SnapPoints.Add(new SnapPoint(this, "End", new PointF(5, 5), SnapPoint.Roles.CornerPoint));
         }
+        public event EventHandler MouseDown;
+        public event EventHandler MouseUp;
+        public event EventHandler Click;
+        public event EventHandler MouseMove;
 
         public void Draw(Graphics g, RectangleF viewport, float zoom)
         {
@@ -50,5 +54,24 @@ namespace GEV.Layouts.Extended.MiniCAD.Components
             g.DrawLine(Pens.LightGreen, startScr, endScr);
         }
 
+        public void Clicked()
+        {
+            this.Click?.Invoke(this, null);
+        }
+
+        public void MousePressedDown()
+        {
+            this.MouseDown?.Invoke(this, null);
+        }
+
+        public void MousePressedUp()
+        {
+            this.MouseUp?.Invoke(this, null);
+        }
+
+        public void MouseMoved()
+        {
+            this.MouseMove?.Invoke(this, null);
+        }
     }
 }

@@ -106,7 +106,7 @@ namespace GEV.Layouts.Docking
             DockState dockState = new DockState();
             dockState.Container = container;
             dockState.Handle = handle;
-            dockState.OriginalDockHost = m_dockHost;
+            dockState.OriginalDockHost = this; // m_dockHost;
             dockState.Splitter = splitter;
 
             FloatingWindow floaty = new FloatingWindow(this);

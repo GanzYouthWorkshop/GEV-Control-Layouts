@@ -42,6 +42,39 @@ namespace GEV.Layouts.Extended.MiniCAD.Implementation
 
             this.Resize += MiniCADCanvas_Resize;
             this.MouseMove += MiniCADCanvas_MouseMove;
+            this.MouseDown += MiniCADCanvas_MouseDown;
+            this.MouseUp += MiniCADCanvas_MouseUp;
+            this.Click += MiniCADCanvas_Click;
+        }
+
+        private void MiniCADCanvas_Click(object sender, EventArgs e)
+        {
+            IComponent clicked = this.SearchComponent(this.CursorPosition);
+
+            if(clicked is IEditableComponent)
+            {
+                (clicked as IEditableComponent).Clicked();
+            }
+        }
+
+        private void MiniCADCanvas_MouseUp(object sender, MouseEventArgs e)
+        {
+            IComponent clicked = this.SearchComponent(this.CursorPosition);
+
+            if (clicked is IEditableComponent)
+            {
+                (clicked as IEditableComponent).MousePressedUp();
+            }
+        }
+
+        private void MiniCADCanvas_MouseDown(object sender, MouseEventArgs e)
+        {
+            IComponent clicked = this.SearchComponent(this.CursorPosition);
+
+            if (clicked is IEditableComponent)
+            {
+                (clicked as IEditableComponent).MousePressedDown();
+            }
         }
 
         private void MiniCADCanvas_MouseMove(object sender, MouseEventArgs e)
@@ -50,7 +83,7 @@ namespace GEV.Layouts.Extended.MiniCAD.Implementation
            
             if(sp != null)
             {
-                this.CursorPosition = sp.Position;
+                this.CursorPosition = sp.AbsolutePosition;
             }
             else
             {
@@ -63,6 +96,14 @@ namespace GEV.Layouts.Extended.MiniCAD.Implementation
             }
 
             this.SnapPointUnderCursor = sp;
+
+
+            IComponent clicked = this.SearchComponent(this.CursorPosition);
+
+            if (clicked is IEditableComponent)
+            {
+                (clicked as IEditableComponent).MouseMoved();
+            }
         }
 
         private void MiniCADCanvas_Resize(object sender, EventArgs e)
@@ -92,7 +133,7 @@ namespace GEV.Layouts.Extended.MiniCAD.Implementation
                             IEditableComponent ecomponent = component as IEditableComponent;
                             foreach(SnapPoint sp in ecomponent.SnapPoints)
                             {
-                                PointF p = GeometryUtils.MapInnerToScreen(sp.Position, this.Viewport, this.Zoom);
+                                PointF p = GeometryUtils.MapInnerToScreen(sp.AbsolutePosition, this.Viewport, this.Zoom);
 
                                 if(GeometryUtils.PointDistance(p, location) <= 7)
                                 {
@@ -111,7 +152,7 @@ namespace GEV.Layouts.Extended.MiniCAD.Implementation
                     GridLayer glayer = layer as GridLayer;
                     foreach (SnapPoint sp in glayer.SnapPoints)
                     {
-                        PointF p = GeometryUtils.MapInnerToScreen(sp.Position, this.Viewport, this.Zoom);
+                        PointF p = GeometryUtils.MapInnerToScreen(sp.RelativePosition, this.Viewport, this.Zoom);
 
                         if (GeometryUtils.PointDistance(p, location) <= 7)
                         {
@@ -121,6 +162,60 @@ namespace GEV.Layouts.Extended.MiniCAD.Implementation
                 }
             }
             return null;
+        }
+
+        private IComponent SearchComponent(PointF location)
+        {
+            foreach (ILayer layer in this.Document.Layers)
+            {
+                if (layer is ComponentLayer)
+                {
+                    ComponentLayer clayer = layer as ComponentLayer;
+                    foreach (IComponent component in clayer.Components)
+                    {
+                        if (GeometryUtils.IsPontInBoundingBox(location, component.BoundingBox))
+                        {
+                            return component;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public void Draw()
+        {
+            using (Graphics g = this.CreateGraphics())
+            {
+                this.OnPaint(new PaintEventArgs(g, this.Bounds));
+            }
+        }
+
+        public void Draw(ILayer layer)
+        {
+            using (Graphics g = this.CreateGraphics())
+            {
+                layer.Draw(g, this.Viewport, this.Zoom);
+            }
+        }
+
+        public void Draw(IComponent component)
+        {
+            using (Graphics g = this.CreateGraphics())
+            {
+                foreach (ILayer layer in this.Document.Layers)
+                {
+                    if(layer is ComponentLayer && (layer as ComponentLayer).Components.Contains(component))
+                    {
+                        if (GeometryUtils.IsBoundingBoxInViewport(this.Viewport, component.BoundingBox))
+                        {
+                            component.Draw(g, this.Viewport, this.Zoom);
+                        }
+                        return;
+                    }
+                }
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)

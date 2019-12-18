@@ -21,6 +21,18 @@ namespace GEV.Layouts.Extended.MiniCAD.Implementation
             return true;
         }
 
+        public static bool IsPontInBoundingBox(PointF point, RectangleF boundingBox)
+        {
+            RectangleF bb = boundingBox;
+            PointF p = point;
+
+            if (p.X > bb.Right || p.X < bb.Left || p.Y > bb.Bottom || p.Y < bb.Top)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public static PointF MapInnerToScreen(PointF p, RectangleF viewport, float zoom)
         {
             float x = (p.X - viewport.X) * zoom;
